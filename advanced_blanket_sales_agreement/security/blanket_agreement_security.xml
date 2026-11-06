@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="group_blanket_sale_agreement" model="res.groups">
+        <field name="name">Blanket Sales Agreements</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+    </record>
+
+    <data noupdate="1">
+        <record id="rule_blanket_agreement_company" model="ir.rule">
+            <field name="name">Blanket Agreement: multi-company</field>
+            <field name="model_id" ref="model_blanket_sale_agreement"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        </record>
+        <record id="rule_blanket_agreement_line_company" model="ir.rule">
+            <field name="name">Blanket Agreement Line: multi-company</field>
+            <field name="model_id" ref="model_blanket_sale_agreement_line"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        </record>
+        <record id="rule_blanket_approval_template_company" model="ir.rule">
+            <field name="name">Agreement Approval Template: multi-company</field>
+            <field name="model_id" ref="model_blanket_agreement_approval_template"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">['|', ('company_id', '=', False), ('company_id', 'in', company_ids)]</field>
+        </record>
+        <record id="rule_blanket_approval_role_company" model="ir.rule">
+            <field name="name">Agreement Approval Role: multi-company</field>
+            <field name="model_id" ref="model_blanket_agreement_approval_role"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">['|', ('company_id', '=', False), ('company_id', 'in', company_ids)]</field>
+        </record>
+
+        <!-- Visibility: own documents / all documents / approver of the document -->
+        <record id="rule_blanket_agreement_own" model="ir.rule">
+            <field name="name">Blanket Agreement: own documents</field>
+            <field name="model_id" ref="model_blanket_sale_agreement"/>
+            <field name="groups" eval="[(4, ref('sales_team.group_sale_salesman'))]"/>
+            <field name="domain_force">[('user_id', '=', user.id)]</field>
+        </record>
+        <record id="rule_blanket_agreement_all" model="ir.rule">
+            <field name="name">Blanket Agreement: all documents</field>
+            <field name="model_id" ref="model_blanket_sale_agreement"/>
+            <field name="groups" eval="[(4, ref('sales_team.group_sale_salesman_all_leads'))]"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+        </record>
+        <record id="rule_blanket_agreement_approver" model="ir.rule">
+            <field name="name">Blanket Agreement: approver documents</field>
+            <field name="model_id" ref="model_blanket_sale_agreement"/>
+            <field name="groups" eval="[(4, ref('advanced_blanket_sales_agreement.group_blanket_sale_agreement'))]"/>
+            <field name="domain_force">['|', ('user_id', '=', user.id), ('approval_ids.approver_ids', 'in', [user.id])]</field>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+
+        <!-- Lines, delivery schedules and approval rows follow the access to their agreement -->
+        <record id="rule_blanket_schedule_company" model="ir.rule">
+            <field name="name">Agreement Schedule: multi-company</field>
+            <field name="model_id" ref="model_blanket_sale_agreement_schedule"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        </record>
+        <record id="rule_blanket_approval_row_company" model="ir.rule">
+            <field name="name">Agreement Approval Row: multi-company</field>
+            <field name="model_id" ref="model_blanket_sale_agreement_approval"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        </record>
+
+        <record id="rule_blanket_line_own" model="ir.rule">
+            <field name="name">Agreement Line: own documents</field>
+            <field name="model_id" ref="model_blanket_sale_agreement_line"/>
+            <field name="groups" eval="[(4, ref('sales_team.group_sale_salesman'))]"/>
+            <field name="domain_force">[('agreement_id.user_id', '=', user.id)]</field>
+        </record>
+        <record id="rule_blanket_line_all" model="ir.rule">
+            <field name="name">Agreement Line: all documents</field>
+            <field name="model_id" ref="model_blanket_sale_agreement_line"/>
+            <field name="groups" eval="[(4, ref('sales_team.group_sale_salesman_all_leads'))]"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+        </record>
+        <record id="rule_blanket_line_approver" model="ir.rule">
+            <field name="name">Agreement Line: approver documents</field>
+            <field name="model_id" ref="model_blanket_sale_agreement_line"/>
+            <field name="groups" eval="[(4, ref('advanced_blanket_sales_agreement.group_blanket_sale_agreement'))]"/>
+            <field name="domain_force">['|', ('agreement_id.user_id', '=', user.id), ('agreement_id.approval_ids.approver_ids', 'in', [user.id])]</field>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+
+        <record id="rule_blanket_schedule_own" model="ir.rule">
+            <field name="name">Agreement Schedule: own documents</field>
+            <field name="model_id" ref="model_blanket_sale_agreement_schedule"/>
+            <field name="groups" eval="[(4, ref('sales_team.group_sale_salesman'))]"/>
+            <field name="domain_force">[('agreement_id.user_id', '=', user.id)]</field>
+        </record>
+        <record id="rule_blanket_schedule_all" model="ir.rule">
+            <field name="name">Agreement Schedule: all documents</field>
+            <field name="model_id" ref="model_blanket_sale_agreement_schedule"/>
+            <field name="groups" eval="[(4, ref('sales_team.group_sale_salesman_all_leads'))]"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+        </record>
+        <record id="rule_blanket_schedule_approver" model="ir.rule">
+            <field name="name">Agreement Schedule: approver documents</field>
+            <field name="model_id" ref="model_blanket_sale_agreement_schedule"/>
+            <field name="groups" eval="[(4, ref('advanced_blanket_sales_agreement.group_blanket_sale_agreement'))]"/>
+            <field name="domain_force">['|', ('agreement_id.user_id', '=', user.id), ('agreement_id.approval_ids.approver_ids', 'in', [user.id])]</field>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+
+        <record id="rule_blanket_approval_row_own" model="ir.rule">
+            <field name="name">Agreement Approval Row: own and approver documents</field>
+            <field name="model_id" ref="model_blanket_sale_agreement_approval"/>
+            <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+            <field name="domain_force">['|', ('agreement_id.user_id', '=', user.id), ('agreement_id.approval_ids.approver_ids', 'in', [user.id])]</field>
+        </record>
+        <record id="rule_blanket_approval_row_all" model="ir.rule">
+            <field name="name">Agreement Approval Row: all documents</field>
+            <field name="model_id" ref="model_blanket_sale_agreement_approval"/>
+            <field name="groups" eval="[(4, ref('sales_team.group_sale_salesman_all_leads'))]"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+        </record>
+    </data>
+</odoo>

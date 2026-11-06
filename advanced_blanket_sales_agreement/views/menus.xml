@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_blanket_sale_agreement"
+              name="Blanket Agreements"
+              parent="sale.sale_order_menu"
+              action="action_blanket_sale_agreement"
+              groups="advanced_blanket_sales_agreement.group_blanket_sale_agreement"
+              sequence="25"/>
+
+    <menuitem id="menu_blanket_agreement_config"
+              name="Blanket Agreements"
+              parent="sale.menu_sale_config"
+              groups="advanced_blanket_sales_agreement.group_blanket_sale_agreement"
+              sequence="40"/>
+    <menuitem id="menu_blanket_approval_template"
+              name="Approval Templates"
+              parent="menu_blanket_agreement_config"
+              action="action_blanket_approval_template"
+              groups="sales_team.group_sale_manager"
+              sequence="10"/>
+    <menuitem id="menu_blanket_approval_role"
+              name="Approval Roles"
+              parent="menu_blanket_agreement_config"
+              action="action_blanket_approval_role"
+              groups="sales_team.group_sale_manager"
+              sequence="20"/>
+</odoo>

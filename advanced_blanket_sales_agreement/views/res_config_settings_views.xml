@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form_blanket_agreement" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.blanket.agreement</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="sale.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='quotation_order_setting_container']" position="after">
+                <h2>Blanket Sales Agreements</h2>
+                <div class="row mt16 o_settings_container" name="blanket_agreement_setting_container">
+                    <div class="col-12 col-lg-6 o_setting_box" id="blanket_agreement_enable">
+                        <div class="o_setting_left_pane">
+                            <field name="group_blanket_sale_agreement"/>
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="group_blanket_sale_agreement"/>
+                            <div class="text-muted">
+                                Long-term customer agreements with approvals, delivery schedules and expiry reminders
+                            </div>
+                            <div class="mt8" attrs="{'invisible': [('group_blanket_sale_agreement', '=', False)]}">
+                                <button name="%(advanced_blanket_sales_agreement.action_blanket_approval_template)d"
+                                        icon="fa-arrow-right" type="action" string="Approval Templates" class="btn-link"/>
+                                <br/>
+                                <button name="%(advanced_blanket_sales_agreement.action_blanket_approval_role)d"
+                                        icon="fa-arrow-right" type="action" string="Approval Roles" class="btn-link"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 o_setting_box" id="blanket_agreement_approval"
+                         attrs="{'invisible': [('group_blanket_sale_agreement', '=', False)]}">
+                        <div class="o_setting_left_pane"/>
+                        <div class="o_setting_right_pane">
+                            <span class="o_form_label">Approval &amp; Reminders</span>
+                            <span class="fa fa-lg fa-building-o" title="Values set here are company-specific." groups="base.group_multi_company"/>
+                            <div class="text-muted">
+                                Default approval template and pre-expiration reminder for new agreements
+                            </div>
+                            <div class="content-group mt16">
+                                <div class="row">
+                                    <label for="blanket_approval_template_id" string="Template" class="col-lg-4 o_light_label"/>
+                                    <field name="blanket_approval_template_id" class="col-lg-8"/>
+                                </div>
+                                <div class="row mt8">
+                                    <label for="blanket_reminder_days" string="Remind" class="col-lg-4 o_light_label"/>
+                                    <div class="col-lg-8">
+                                        <field name="blanket_reminder_days" class="oe_inline"/> days before expiry
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 o_setting_box" id="blanket_agreement_segregation"
+                         attrs="{'invisible': [('group_blanket_sale_agreement', '=', False)]}">
+                        <div class="o_setting_left_pane">
+                            <field name="blanket_segregation_of_duties"/>
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="blanket_segregation_of_duties"/>
+                            <span class="fa fa-lg fa-building-o" title="Values set here are company-specific." groups="base.group_multi_company"/>
+                            <div class="text-muted">
+                                Nobody approves their own agreement or more than one tier of the same submission
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 o_setting_box" id="blanket_agreement_terms"
+                         attrs="{'invisible': [('group_blanket_sale_agreement', '=', False)]}">
+                        <div class="o_setting_left_pane"/>
+                        <div class="o_setting_right_pane">
+                            <span class="o_form_label">Default Terms &amp; Conditions</span>
+                            <div class="text-muted">Pre-filled legal terms of new blanket agreements</div>
+                            <field name="blanket_default_terms" class="oe-bordered-editor mt8"
+                                   placeholder="Agreement terms and conditions..."/>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

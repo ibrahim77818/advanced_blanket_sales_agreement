@@ -1,0 +1,260 @@
+<!-- Odoo Apps description page for advanced_blanket_sales_agreement (Odoo 16.0). Inline styles only: apps.odoo.com strips <style> and <script> blocks. -->
+<section style="max-width:1120px;margin:0 auto;padding:0 16px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;color:#2b2b33;">
+
+<!-- ============================== HERO ============================== -->
+<div style="background:linear-gradient(120deg,#017E84 0%,#3d6b78 45%,#714B67 100%);border-radius:18px;padding:48px 40px 40px;color:#ffffff;margin-top:12px;">
+  <div style="font-size:13px;letter-spacing:2px;text-transform:uppercase;opacity:.85;margin-bottom:10px;">Sales &middot; Approvals &middot; Contracts</div>
+  <h1 style="font-size:40px;line-height:1.15;font-weight:700;margin:0 0 14px;color:#ffffff;">Advanced Blanket Sales Agreement</h1>
+  <p style="font-size:19px;line-height:1.55;max-width:760px;margin:0 0 24px;color:#ffffff;opacity:.95;">Agree long-term quantities and prices with a customer, take the agreement through a sequential multi-tier approval, and issue it as a formal PDF by e-mail. Call-off quotations, quantity consumption, expiry reminders and the final expiration notice then run on their own.</p>
+  <div>
+    <span style="display:inline-block;border:1px solid rgba(255,255,255,.7);border-radius:20px;padding:6px 14px;margin:0 8px 8px 0;font-size:14px;">Odoo 16.0</span>
+    <span style="display:inline-block;border:1px solid rgba(255,255,255,.7);border-radius:20px;padding:6px 14px;margin:0 8px 8px 0;font-size:14px;">Community &amp; Enterprise</span>
+    <span style="display:inline-block;border:1px solid rgba(255,255,255,.7);border-radius:20px;padding:6px 14px;margin:0 8px 8px 0;font-size:14px;">Arabic (ar_001) &amp; RTL PDF</span>
+    <span style="display:inline-block;border:1px solid rgba(255,255,255,.7);border-radius:20px;padding:6px 14px;margin:0 8px 8px 0;font-size:14px;">33 automated tests</span>
+    <span style="display:inline-block;border:1px solid rgba(255,255,255,.7);border-radius:20px;padding:6px 14px;margin:0 8px 8px 0;font-size:14px;">Technical name: advanced_blanket_sales_agreement</span>
+    <span style="display:inline-block;border:1px solid rgba(255,255,255,.7);border-radius:20px;padding:6px 14px;margin:0 8px 8px 0;font-size:14px;">LGPL-3</span>
+  </div>
+</div>
+
+<!-- ============================== KEY NUMBERS ============================== -->
+<div style="display:flex;flex-wrap:wrap;margin:28px -8px 8px;">
+  <div style="flex:1 1 220px;margin:8px;background:#f6f4f6;border-radius:14px;padding:20px 22px;"><div style="font-size:30px;font-weight:700;color:#714B67;">Unlimited tiers</div><div style="font-size:15px;color:#555;">Sequential approval by role or by named user, one template per policy</div></div>
+  <div style="flex:1 1 220px;margin:8px;background:#eef6f6;border-radius:14px;padding:20px 22px;"><div style="font-size:30px;font-weight:700;color:#017E84;">3 e-mails</div><div style="font-size:15px;color:#555;">Issued agreement with PDF, pre-expiry reminder, final expiration notice</div></div>
+  <div style="flex:1 1 220px;margin:8px;background:#f6f4f6;border-radius:14px;padding:20px 22px;"><div style="font-size:30px;font-weight:700;color:#714B67;">7 statuses</div><div style="font-size:15px;color:#555;">Draft, Waiting Approval, Approved, Issued, Expired, Rejected, Cancelled</div></div>
+  <div style="flex:1 1 220px;margin:8px;background:#eef6f6;border-radius:14px;padding:20px 22px;"><div style="font-size:30px;font-weight:700;color:#017E84;">0 over-orders</div><div style="font-size:15px;color:#555;">Confirmation, and later changes to confirmed orders, are blocked beyond the agreed quantity</div></div>
+</div>
+
+<!-- ============================== WHY ============================== -->
+<h2 style="font-size:28px;font-weight:700;margin:40px 0 6px;color:#2b2b33;">Why this module</h2>
+<p style="font-size:16px;color:#555;margin:0 0 18px;">Odoo 16 has blanket orders on the purchase side only. On the sales side, framework agreements usually live in spreadsheets and e-mail threads, away from the quotations they govern.</p>
+<div style="display:flex;flex-wrap:wrap;margin:0 -10px;">
+  <div style="flex:1 1 440px;margin:10px;border:1px solid #f1d6d6;background:#fff8f8;border-radius:14px;padding:24px 26px;">
+    <h3 style="font-size:19px;font-weight:700;color:#b33939;margin:0 0 12px;">In standard Odoo 16</h3>
+    <ul style="font-size:15px;line-height:1.65;margin:0;padding-left:20px;color:#3a3a42;">
+      <li>No <b>sales blanket agreement</b> document: agreed volumes and prices are tracked outside Odoo.</li>
+      <li>No <b>approval cycle</b> for a customer commitment before it is sent.</li>
+      <li>No <b>delivery schedule</b> tied to a commercial agreement.</li>
+      <li>Legal terms are free text on each quotation, with <b>no governing law or termination notice</b> fields.</li>
+      <li>Nothing stops a salesperson from <b>ordering more than was agreed</b>.</li>
+      <li>No automatic <b>reminder before expiry</b>, so renewals are missed.</li>
+    </ul>
+  </div>
+  <div style="flex:1 1 440px;margin:10px;border:1px solid #cfe7e7;background:#f4fbfb;border-radius:14px;padding:24px 26px;">
+    <h3 style="font-size:19px;font-weight:700;color:#017E84;margin:0 0 12px;">With this module</h3>
+    <ul style="font-size:15px;line-height:1.65;margin:0;padding-left:20px;color:#3a3a42;">
+      <li>A <b>Blanket Agreements</b> document under Sales with lines, prices, discounts, taxes and live <b>Ordered / Remaining</b> quantities.</li>
+      <li><b>Approval templates</b> with sequential tiers; every approver gets a <b>mail.activity</b> task.</li>
+      <li>A <b>Delivery Schedules</b> tab, with one-click quotations per scheduled delivery.</li>
+      <li>A <b>Legal Terms &amp; Conditions</b> tab: governing law, dispute resolution, termination notice and rich-text terms.</li>
+      <li>Confirmation of a linked sales order <b>checks the remaining quantity</b> and the agreement validity.</li>
+      <li>A daily scheduled action e-mails the <b>pre-expiry reminder</b> and the <b>final expiration notice</b>.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ============================== HOW IT WORKS ============================== -->
+<h2 style="font-size:28px;font-weight:700;margin:40px 0 6px;color:#2b2b33;">How it works</h2>
+<p style="font-size:16px;color:#555;margin:0 0 18px;">Four steps from draft to a running agreement.</p>
+<div style="display:flex;flex-wrap:wrap;margin:0 -8px;">
+  <div style="flex:1 1 200px;margin:8px;border-radius:12px;border:1px solid #e3dde2;padding:18px;"><div style="width:34px;height:34px;border-radius:50%;background:#714B67;color:#fff;font-weight:700;text-align:center;line-height:34px;margin-bottom:10px;">1</div><div style="font-weight:700;margin-bottom:4px;">Draft</div><div style="font-size:14px;color:#555;">The salesperson enters lines, delivery schedule and legal terms. They become the <b>Responsible</b> user.</div></div>
+  <div style="flex:1 1 200px;margin:8px;border-radius:12px;border:1px solid #e3dde2;padding:18px;"><div style="width:34px;height:34px;border-radius:50%;background:#714B67;color:#fff;font-weight:700;text-align:center;line-height:34px;margin-bottom:10px;">2</div><div style="font-weight:700;margin-bottom:4px;">Approve</div><div style="font-size:14px;color:#555;"><b>Submit for Approval</b> opens tier 1. Each approval closes the tier&rsquo;s activities and opens the next tier.</div></div>
+  <div style="flex:1 1 200px;margin:8px;border-radius:12px;border:1px solid #e3dde2;padding:18px;"><div style="width:34px;height:34px;border-radius:50%;background:#714B67;color:#fff;font-weight:700;text-align:center;line-height:34px;margin-bottom:10px;">3</div><div style="font-weight:700;margin-bottom:4px;">Issue</div><div style="font-size:14px;color:#555;">The Responsible user gets an <b>Issue Agreement</b> task. Issuing e-mails the formal PDF to the customer.</div></div>
+  <div style="flex:1 1 200px;margin:8px;border-radius:12px;border:1px solid #cfe7e7;background:#f4fbfb;padding:18px;"><div style="width:34px;height:34px;border-radius:50%;background:#017E84;color:#fff;font-weight:700;text-align:center;line-height:34px;margin-bottom:10px;">4</div><div style="font-weight:700;margin-bottom:4px;">Run &amp; expire</div><div style="font-size:14px;color:#555;">Quotations draw down the agreed quantities. The daily job sends the reminder and the expiration notice, then expires the agreement.</div></div>
+</div>
+
+<!-- ============================== FEATURES ============================== -->
+<h2 style="font-size:28px;font-weight:700;margin:40px 0 6px;color:#2b2b33;">Features</h2>
+<p style="font-size:16px;color:#555;margin:0 0 4px;">The screenshots use a demo company, <b>Al Noor Industrial Supplies</b> (Jeddah, SAR), with nine agreements across every status. Sara is the salesperson. Khalid and Nora are Finance Controllers, and Omar is the Sales Director.</p>
+
+<div style="margin:44px 0 0;">
+  <div style="font-size:13px;font-weight:700;color:#017E84;letter-spacing:1px;text-transform:uppercase;">Menus &amp; settings</div>
+  <h3 style="font-size:23px;font-weight:700;margin:4px 0 8px;">Off by default, one switch to turn on</h3>
+  <p style="font-size:15px;line-height:1.6;color:#555;margin:0 0 14px;">Enable it in <b>Sales &rsaquo; Configuration &rsaquo; Settings &rsaquo; Blanket Sales Agreements</b>. The same section sets the company&rsquo;s default <b>approval template</b>, the default <b>reminder days before expiry</b> and the <b>default terms &amp; conditions</b>, and links to <b>Approval Templates</b> and <b>Approval Roles</b>. Once enabled, the menus appear: <b>Sales &rsaquo; Orders &rsaquo; Blanket Agreements</b> and <b>Sales &rsaquo; Configuration &rsaquo; Blanket Agreements</b>.</p>
+  <img src="bsa_01_settings.png" alt="Blanket Sales Agreements section in Sales settings" style="width:100%;max-width:1000px;border:1px solid #e1e1e6;border-radius:10px;box-shadow:0 6px 24px rgba(30,30,60,.10);"/>
+</div>
+
+<div style="margin:44px 0 0;">
+  <div style="font-size:13px;font-weight:700;color:#017E84;letter-spacing:1px;text-transform:uppercase;">Feature 1</div>
+  <h3 style="font-size:23px;font-weight:700;margin:4px 0 8px;">Every agreement, its status and its next action in one list</h3>
+  <p style="font-size:15px;line-height:1.6;color:#555;margin:0 0 14px;">The list shows the customer, the <b>Responsible</b> user, the validity dates, the agreement total and a <b>Consumed (%)</b> bar. The <b>Activities</b> column shows the pending approval or issue task. Agreements close to their end date are highlighted. Filters include <b>My Agreements</b>, <b>My Pending Approvals</b>, each status and <b>Expiring within 30 Days</b>. You can group by customer, responsible, status or end month.</p>
+  <img src="bsa_02_list.png" alt="Blanket agreements list with status badges, consumption and activities" style="width:100%;border:1px solid #e1e1e6;border-radius:10px;box-shadow:0 6px 24px rgba(30,30,60,.10);"/>
+</div>
+
+<div style="margin:44px 0 0;">
+  <div style="font-size:13px;font-weight:700;color:#017E84;letter-spacing:1px;text-transform:uppercase;">Feature 2</div>
+  <h3 style="font-size:23px;font-weight:700;margin:4px 0 8px;">Order lines with live consumption</h3>
+  <p style="font-size:15px;line-height:1.6;color:#555;margin:0 0 14px;">Each line holds the <b>Agreed Qty</b>, <b>Unit of Measure</b>, <b>Unit Price</b>, <b>Disc.%</b> and <b>Taxes</b>. The price is suggested from the pricelist (or the product price) when the product is chosen, then stays as negotiated: changing the quantity or the pricelist never overwrites it. Taxes are mapped through the customer&rsquo;s fiscal position. <b>Ordered Qty</b>, <b>Delivered Qty</b> and <b>Remaining Qty</b> are computed from confirmed sales orders, with UoM conversion. The footer adds <b>Ordered Amount</b> and <b>Consumed (%)</b> to the usual totals.</p>
+  <img src="bsa_03_form_lines.png" alt="Issued agreement with order lines, remaining quantities and the issue e-mail in the chatter" style="width:100%;border:1px solid #e1e1e6;border-radius:10px;box-shadow:0 6px 24px rgba(30,30,60,.10);"/>
+  <div style="font-size:13px;color:#777;margin:6px 0 22px;">BSA/2026/0001: 120 t of rebar already ordered, 360 t remaining. The chatter shows the formal e-mail sent to the customer with the agreement PDF.</div>
+</div>
+
+<div style="margin:22px 0 0;">
+  <div style="font-size:13px;font-weight:700;color:#017E84;letter-spacing:1px;text-transform:uppercase;">Feature 3</div>
+  <h3 style="font-size:23px;font-weight:700;margin:4px 0 8px;">Delivery schedules that turn into quotations</h3>
+  <p style="font-size:15px;line-height:1.6;color:#555;margin:0 0 14px;">Plan deliveries per agreement line with a <b>Scheduled Date</b>, <b>Quantity</b> and <b>Delivery Notes</b>. Once the agreement is issued, the button on a schedule row creates a quotation for that quantity, with the scheduled date as the delivery date. The row then shows <b>Planned</b>, <b>Quoted</b>, <b>Ordered</b> or <b>Delivered</b>. Scheduled dates must fall within the agreement period, and scheduled quantities cannot exceed the agreed quantity.</p>
+  <img src="bsa_04_schedules.png" alt="Delivery Schedules tab with planned, quoted and ordered rows" style="width:100%;border:1px solid #e1e1e6;border-radius:10px;box-shadow:0 6px 24px rgba(30,30,60,.10);"/>
+</div>
+
+<div style="margin:44px 0 0;">
+  <div style="font-size:13px;font-weight:700;color:#017E84;letter-spacing:1px;text-transform:uppercase;">Feature 4</div>
+  <h3 style="font-size:23px;font-weight:700;margin:4px 0 8px;">Legal terms &amp; conditions on the agreement itself</h3>
+  <p style="font-size:15px;line-height:1.6;color:#555;margin:0 0 14px;">The <b>Legal Terms &amp; Conditions</b> tab holds <b>Governing Law</b>, <b>Dispute Resolution</b>, <b>Termination Notice (Days)</b> and a rich-text <b>Terms &amp; Conditions</b> body. The body is pre-filled from the company default and can be edited per agreement. All of it is printed on the PDF.</p>
+  <img src="bsa_05_legal_terms.png" alt="Legal Terms and Conditions tab" style="width:100%;border:1px solid #e1e1e6;border-radius:10px;box-shadow:0 6px 24px rgba(30,30,60,.10);"/>
+</div>
+
+<div style="margin:44px 0 0;">
+  <div style="font-size:13px;font-weight:700;color:#017E84;letter-spacing:1px;text-transform:uppercase;">Feature 5</div>
+  <h3 style="font-size:23px;font-weight:700;margin:4px 0 8px;">Approval templates with roles and sequential tiers</h3>
+  <p style="font-size:15px;line-height:1.6;color:#555;margin:0 0 14px;">An <b>Approval Role</b> groups the users allowed to approve, such as <i>Finance Controller</i> or <i>Sales Director</i>. An <b>Approval Template</b> lists the tiers in order. Each tier is assigned either to a <b>Role</b> (any member can approve) or to a <b>Specific User</b>. Use different templates for different policies; for example, a 3-tier <i>Key Account</i> template for large agreements.</p>
+  <img src="bsa_06_template.png" alt="Approval template with three sequential tiers" style="width:100%;max-width:1000px;border:1px solid #e1e1e6;border-radius:10px;box-shadow:0 6px 24px rgba(30,30,60,.10);"/>
+</div>
+
+<div style="margin:44px 0 0;">
+  <div style="font-size:13px;font-weight:700;color:#017E84;letter-spacing:1px;text-transform:uppercase;">Feature 6</div>
+  <h3 style="font-size:23px;font-weight:700;margin:4px 0 8px;">Approvers work from their activities, even without Sales rights</h3>
+  <p style="font-size:15px;line-height:1.6;color:#555;margin:0 0 14px;"><b>Submit for Approval</b> schedules an <b>Agreement Approval</b> activity for every approver of the first tier, with the customer and total in the note. A banner shows who the agreement is waiting for. Only the current tier&rsquo;s approvers see <b>Approve</b> and <b>Reject</b>. The approver does not need any Sales access rights: Khalid below is a finance user who can only open agreements he has to approve.</p>
+  <img src="bsa_07_approver_view.png" alt="Agreement seen by a finance approver with Approve and Reject buttons and his approval activity" style="width:100%;margin-bottom:22px;border:1px solid #e1e1e6;border-radius:10px;box-shadow:0 6px 24px rgba(30,30,60,.10);"/>
+  <p style="font-size:15px;line-height:1.6;color:#555;margin:0 0 14px;">When a tier is approved, the approver&rsquo;s activity is marked done, the other approvers of the same tier have theirs removed, and the next tier opens. The <b>Approvals</b> tab keeps the trail: submission, tier, role, approvers, decision, who decided and when.</p>
+  <p style="font-size:15px;line-height:1.6;color:#555;margin:0 0 14px;">With <b>Agreement Segregation of Duties</b> (on by default), the Responsible user never approves their own agreement, and one person approves at most one tier of a submission. Submission is refused when a template cannot be approved by a different person at each tier. Approving is refused when it would leave a later tier with nobody to approve it. The approval rows themselves are written by the workflow only, so not even a Sales Administrator can add an approver to an open tier.</p>
+  <img src="bsa_08_tier_two.png" alt="Approvals tab: Finance Review approved, Commercial Approval pending" style="width:100%;border:1px solid #e1e1e6;border-radius:10px;box-shadow:0 6px 24px rgba(30,30,60,.10);"/>
+</div>
+
+<div style="margin:44px 0 0;">
+  <div style="font-size:13px;font-weight:700;color:#017E84;letter-spacing:1px;text-transform:uppercase;">Feature 7</div>
+  <h3 style="font-size:23px;font-weight:700;margin:4px 0 8px;">Rejection with a reason, then resubmit</h3>
+  <p style="font-size:15px;line-height:1.6;color:#555;margin:0 0 14px;"><b>Reject</b> asks for a <b>Rejection Reason</b>, records it on the tier, removes the open approval activities and notifies the Responsible user. The agreement lines become editable again. <b>Resubmit</b> starts a new submission; the earlier decisions, including the rejection reason, stay in the <b>Approvals</b> tab as history. <b>Reset to Draft</b> is also available.</p>
+  <img src="bsa_09_rejected.png" alt="Rejected agreement with the rejection reason in the chatter" style="width:100%;border:1px solid #e1e1e6;border-radius:10px;box-shadow:0 6px 24px rgba(30,30,60,.10);"/>
+</div>
+
+<div style="margin:44px 0 0;">
+  <div style="font-size:13px;font-weight:700;color:#017E84;letter-spacing:1px;text-transform:uppercase;">Feature 8</div>
+  <h3 style="font-size:23px;font-weight:700;margin:4px 0 8px;">Issue it: the formal PDF goes to the customer</h3>
+  <p style="font-size:15px;line-height:1.6;color:#555;margin:0 0 14px;">When the last tier signs off, the agreement is <b>Approved</b>. The Responsible user receives an <b>Issue Agreement</b> activity and a notification. <b>Issue Agreement</b> (allowed for the Responsible user or a Sales Administrator) sets the issue date, closes the activity and e-mails the customer in their own language with the agreement PDF attached. If the customer has no e-mail address, the agreement is still issued and a note is logged.</p>
+  <img src="bsa_10_ready_to_issue.png" alt="Approved agreement with the Issue Agreement activity for the responsible user" style="width:100%;border:1px solid #e1e1e6;border-radius:10px;box-shadow:0 6px 24px rgba(30,30,60,.10);"/>
+</div>
+
+<div style="margin:44px 0 0;">
+  <div style="font-size:13px;font-weight:700;color:#017E84;letter-spacing:1px;text-transform:uppercase;">Feature 9</div>
+  <h3 style="font-size:23px;font-weight:700;margin:4px 0 8px;">Expiry reminder and final notice, automatically</h3>
+  <p style="font-size:15px;line-height:1.6;color:#555;margin:0 0 14px;">Each agreement has its own <b>Reminder Before Expiry (Days)</b>; the computed reminder date is shown next to it. The daily scheduled action <b>Blanket Agreements: Expiry Reminders &amp; Notices</b> does three things. It e-mails the reminder once that date is reached. On the end date, it sends the final <b>expiration notice</b>. The next day, it sets the agreement to <b>Expired</b>. Each e-mail is sent once only.</p>
+  <img src="bsa_11_reminder.png" alt="Issued agreement with the automatic expiry reminder in the chatter" style="width:100%;margin-bottom:22px;border:1px solid #e1e1e6;border-radius:10px;box-shadow:0 6px 24px rgba(30,30,60,.10);"/>
+  <img src="bsa_12_expired.png" alt="Expired agreement with the expiration notice and status change in the chatter" style="width:100%;border:1px solid #e1e1e6;border-radius:10px;box-shadow:0 6px 24px rgba(30,30,60,.10);"/>
+</div>
+
+<div style="margin:44px 0 0;">
+  <div style="font-size:13px;font-weight:700;color:#017E84;letter-spacing:1px;text-transform:uppercase;">Feature 10</div>
+  <h3 style="font-size:23px;font-weight:700;margin:4px 0 8px;">Quotations from the agreement, with quantity control</h3>
+  <p style="font-size:15px;line-height:1.6;color:#555;margin:0 0 14px;"><b>Create Quotation</b> on an issued agreement creates a quotation for what is neither ordered nor already in an open quotation. The quotation copies the agreed price, discount and taxes, and links each line to its agreement line. It is always in the agreement&rsquo;s currency: it uses the agreement&rsquo;s pricelist, or another pricelist in that currency, so the agreed prices are never converted. Lines added by hand with an <b>Agreement Line</b> get the agreed price and discount too. Sales orders carry a <b>Blanket Agreement</b> field and the <b>Sales Orders</b> smart button lists them. Confirmation is refused when:</p>
+  <ul style="font-size:15px;line-height:1.65;margin:0 0 14px;padding-left:20px;color:#3a3a42;">
+    <li>the agreement is not issued;</li>
+    <li>today is outside its validity period;</li>
+    <li>the customer does not match the agreement;</li>
+    <li>the order is in another currency;</li>
+    <li>a linked line is not at the agreed net price (a Sales Administrator may confirm anyway; the difference is logged on the order);</li>
+    <li>or the quantity exceeds what remains.</li>
+  </ul>
+  <img src="bsa_13_consumption_check.png" alt="Validation error when a sales order exceeds the remaining agreed quantity" style="width:100%;border:1px solid #e1e1e6;border-radius:10px;box-shadow:0 6px 24px rgba(30,30,60,.10);"/>
+  <div style="background:#f4fbfb;border-left:4px solid #017E84;border-radius:8px;padding:16px 20px;font-size:15px;line-height:1.6;margin-top:14px;"><b>Rule:</b> remaining quantity = agreed quantity &minus; quantities on <b>confirmed</b> sales orders, converted to the agreement line&rsquo;s unit. Example: 320 t agreed and nothing confirmed yet, so a quotation for 400 t is blocked at confirmation. Several orders confirmed together are checked as one total, and the same quantity and price checks run again whenever a line of a confirmed order is changed or added.</div>
+</div>
+
+<div style="margin:44px 0 0;">
+  <div style="font-size:13px;font-weight:700;color:#017E84;letter-spacing:1px;text-transform:uppercase;">Feature 11</div>
+  <h3 style="font-size:23px;font-weight:700;margin:4px 0 8px;">A modern PDF, in English and in right-to-left Arabic</h3>
+  <p style="font-size:15px;line-height:1.6;color:#555;margin:0 0 14px;">The <b>Blanket Sales Agreement</b> report prints in the customer&rsquo;s language. It includes the parties, agreement details, agreed products and prices, totals, the delivery schedule, the legal terms, the internal approval trail and signature blocks. A dedicated paper format leaves room for the company header, so the table never overlaps it, including the repeated table header on later pages. In Arabic, the columns, alignment and totals mirror to right-to-left.</p>
+  <img src="bsa_14_pdf_report.png" alt="Agreement PDF in English and in Arabic RTL" style="width:100%;border:1px solid #e1e1e6;border-radius:10px;box-shadow:0 6px 24px rgba(30,30,60,.10);"/>
+</div>
+
+<div style="margin:44px 0 0;">
+  <div style="font-size:13px;font-weight:700;color:#017E84;letter-spacing:1px;text-transform:uppercase;">Feature 12</div>
+  <h3 style="font-size:23px;font-weight:700;margin:4px 0 8px;">Fully translated to Arabic</h3>
+  <p style="font-size:15px;line-height:1.6;color:#555;margin:0 0 14px;">Every label, button, status, message, activity and error is translated to Arabic (<b>ar_001</b>). The three customer e-mails have complete right-to-left Arabic versions, and Arabic-speaking customers receive them automatically.</p>
+  <img src="bsa_15_arabic_form.png" alt="Agreement form in Arabic with the Arabic issue e-mail in the chatter" style="width:100%;border:1px solid #e1e1e6;border-radius:10px;box-shadow:0 6px 24px rgba(30,30,60,.10);"/>
+</div>
+
+<!-- ============================== STATUSES ============================== -->
+<h2 style="font-size:28px;font-weight:700;margin:40px 0 6px;color:#2b2b33;">Agreement statuses</h2>
+<p style="font-size:16px;color:#555;margin:0 0 18px;">What each status means and what can happen next.</p>
+<div style="font-size:15px;line-height:1.6;color:#3a3a42;">
+  <div style="margin-bottom:6px;"><span style="display:inline-block;min-width:150px;text-align:center;background:#f3f4f6;color:#4b5563;border-radius:10px;padding:1px 8px;font-size:13px;margin-right:10px;">Draft</span> everything is editable; <b>Submit for Approval</b> or <b>Cancel</b></div>
+  <div style="margin-bottom:6px;"><span style="display:inline-block;min-width:150px;text-align:center;background:#dbeafe;color:#1d4ed8;border-radius:10px;padding:1px 8px;font-size:13px;margin-right:10px;">Waiting Approval</span> content locked on the server; one tier at a time, current approvers can <b>Approve</b> or <b>Reject</b></div>
+  <div style="margin-bottom:6px;"><span style="display:inline-block;min-width:150px;text-align:center;background:#dbeafe;color:#1d4ed8;border-radius:10px;padding:1px 8px;font-size:13px;margin-right:10px;">Approved</span> all tiers signed off; only the end date and delivery schedule can change; the Responsible user can <b>Issue</b> it</div>
+  <div style="margin-bottom:6px;"><span style="display:inline-block;min-width:150px;text-align:center;background:#d1fae5;color:#047857;border-radius:10px;padding:1px 8px;font-size:13px;margin-right:10px;">Issued</span> sent to the customer; quotations can be created and confirmed against it; only the end date and delivery schedule can change</div>
+  <div style="margin-bottom:6px;"><span style="display:inline-block;min-width:150px;text-align:center;background:#fef3c7;color:#b45309;border-radius:10px;padding:1px 8px;font-size:13px;margin-right:10px;">Expired</span> set by the daily job the day after the end date; no new orders can be confirmed</div>
+  <div style="margin-bottom:6px;"><span style="display:inline-block;min-width:150px;text-align:center;background:#fee2e2;color:#b91c1c;border-radius:10px;padding:1px 8px;font-size:13px;margin-right:10px;">Rejected</span> reason recorded; edit and <b>Resubmit</b>, or <b>Reset to Draft</b></div>
+  <div style="margin-bottom:6px;"><span style="display:inline-block;min-width:150px;text-align:center;background:#fee2e2;color:#b91c1c;border-radius:10px;padding:1px 8px;font-size:13px;margin-right:10px;">Cancelled</span> cancelling is refused once confirmed sales orders exist; <b>Reset to Draft</b> to reuse</div>
+</div>
+<div style="background:#f4fbfb;border-left:4px solid #017E84;border-radius:8px;padding:16px 20px;font-size:15px;line-height:1.6;margin-top:14px;"><b>Timeline example:</b> end date 31/12, reminder 30 days. On 01/12 the customer receives the reminder. On 31/12 (still valid) they receive the expiration notice. On 01/01 the agreement becomes <b>Expired</b>. If no template is set, submitting approves the agreement immediately.</div>
+
+<!-- ============================== CORNER CASES ============================== -->
+<h2 style="font-size:28px;font-weight:700;margin:40px 0 6px;color:#2b2b33;">Built for real-world corner cases</h2>
+<p style="font-size:16px;color:#555;margin:0 0 18px;">Behaviour that is covered in the code and, where marked, by the automated tests.</p>
+<div style="display:flex;flex-wrap:wrap;margin:0 -8px;font-size:15px;line-height:1.55;">
+  <div style="flex:1 1 320px;margin:8px;padding:16px 18px;border:1px solid #e8e8ee;border-radius:12px;"><b>Approver outside the sales team</b><br/><span style="color:#555;">Approvers only need to be internal users. They can open, approve, reject and comment on the agreements assigned to them, and see nothing else.</span></div>
+  <div style="flex:1 1 320px;margin:8px;padding:16px 18px;border:1px solid #e8e8ee;border-radius:12px;"><b>Wrong person clicks Approve</b><br/><span style="color:#555;">Only approvers of the current tier can decide, never the Responsible user, and nobody twice in one submission. Tested.</span></div>
+  <div style="flex:1 1 320px;margin:8px;padding:16px 18px;border:1px solid #e8e8ee;border-radius:12px;"><b>Empty role in a tier</b><br/><span style="color:#555;">Submission is refused when a tier has no active approver, so an agreement can never get stuck waiting for nobody. Tested.</span></div>
+  <div style="flex:1 1 320px;margin:8px;padding:16px 18px;border:1px solid #e8e8ee;border-radius:12px;"><b>Different units of measure</b><br/><span style="color:#555;">Ordered and remaining quantities convert sales order units to the agreement line unit. The line unit must be in the product&rsquo;s UoM category.</span></div>
+  <div style="flex:1 1 320px;margin:8px;padding:16px 18px;border:1px solid #e8e8ee;border-radius:12px;"><b>Orders changed after confirmation</b><br/><span style="color:#555;">Raising a quantity, changing a price or adding a linked line on a confirmed order is checked against the agreement again. Tested.</span></div>
+  <div style="flex:1 1 320px;margin:8px;padding:16px 18px;border:1px solid #e8e8ee;border-radius:12px;"><b>Customer without e-mail</b><br/><span style="color:#555;">Issuing still works and a note in the chatter records that no e-mail could be sent (tested). The cron logs the same note for reminders and notices.</span></div>
+  <div style="flex:1 1 320px;margin:8px;padding:16px 18px;border:1px solid #e8e8ee;border-radius:12px;"><b>Cron runs every day</b><br/><span style="color:#555;">Reminders and notices are flagged once sent and never repeat (tested). Each agreement is processed in its own savepoint, so one failure does not block the others.</span></div>
+  <div style="flex:1 1 320px;margin:8px;padding:16px 18px;border:1px solid #e8e8ee;border-radius:12px;"><b>Multi-currency &amp; pricelists</b><br/><span style="color:#555;">Agreements created by import or API take the customer&rsquo;s pricelist like the form. Quotations stay in the agreement currency, and orders in another currency cannot be confirmed against it. Tested.</span></div>
+  <div style="flex:1 1 320px;margin:8px;padding:16px 18px;border:1px solid #e8e8ee;border-radius:12px;"><b>Deleting and cancelling</b><br/><span style="color:#555;">Only draft, rejected or cancelled agreements can be deleted. Cancelling is refused once confirmed sales orders exist. Agreement lines used on orders and schedules on confirmed orders cannot be deleted. Tested.</span></div>
+  <div style="flex:1 1 320px;margin:8px;padding:16px 18px;border:1px solid #e8e8ee;border-radius:12px;"><b>Edits after submission</b><br/><span style="color:#555;">Lines, prices, dates, customer and legal terms are locked on the server, not only on screen, once the agreement is submitted. Issued agreements still accept a later end date. Tested.</span></div>
+  <div style="flex:1 1 320px;margin:8px;padding:16px 18px;border:1px solid #e8e8ee;border-radius:12px;"><b>Open quotations</b><br/><span style="color:#555;">Create Quotation skips quantities already in open quotations, and each product appears once per agreement, so every order line maps to exactly one agreement line. Tested.</span></div>
+  <div style="flex:1 1 320px;margin:8px;padding:16px 18px;border:1px solid #e8e8ee;border-radius:12px;"><b>Past end date</b><br/><span style="color:#555;">An agreement whose end date has passed cannot be submitted or issued until the end date is extended. Delivery schedules must use lines of their own agreement. Tested.</span></div>
+</div>
+
+<!-- ============================== SECURITY ============================== -->
+<h2 style="font-size:28px;font-weight:700;margin:40px 0 6px;color:#2b2b33;">Security</h2>
+<p style="font-size:16px;color:#555;margin:0 0 18px;">Uses the standard Sales groups; enabling the feature grants read-only approver access to internal users.</p>
+<table style="width:100%;border-collapse:collapse;font-size:15px;">
+  <thead><tr style="background:#714B67;color:#fff;"><th style="text-align:left;padding:10px 14px;">Who</th><th style="text-align:left;padding:10px 14px;">Sees and does</th></tr></thead>
+  <tbody>
+    <tr style="border-bottom:1px solid #eee;"><td style="padding:10px 14px;">Internal user (feature enabled)</td><td style="padding:10px 14px;">Read-only: agreements they are responsible for or are an approver on; approve, reject and comment when they are the current approver</td></tr>
+    <tr style="border-bottom:1px solid #eee;background:#fafafa;"><td style="padding:10px 14px;">Sales / User: Own Documents Only</td><td style="padding:10px 14px;">Creates and manages their own agreements, submits, issues as Responsible, creates quotations</td></tr>
+    <tr style="border-bottom:1px solid #eee;"><td style="padding:10px 14px;">Sales / User: All Documents</td><td style="padding:10px 14px;">The same on all agreements of their companies</td></tr>
+    <tr style="border-bottom:1px solid #eee;background:#fafafa;"><td style="padding:10px 14px;">Sales / Administrator</td><td style="padding:10px 14px;">Everything above, plus Approval Templates and Approval Roles; can issue any approved agreement and confirm an order at a price that differs from the agreement (logged on the order)</td></tr>
+    <tr style="border-bottom:1px solid #eee;"><td style="padding:10px 14px;">Approval trail</td><td style="padding:10px 14px;">Read-only for everyone, administrators included; only the approval workflow writes it</td></tr>
+    <tr style="border-bottom:1px solid #eee;background:#fafafa;"><td style="padding:10px 14px;">Lines, schedules, approval rows</td><td style="padding:10px 14px;">Visible only to users who can see the agreement (own documents, all documents or approver)</td></tr>
+    <tr style="border-bottom:1px solid #eee;"><td style="padding:10px 14px;">Multi-company</td><td style="padding:10px 14px;">Agreements, lines, delivery schedules, approval rows, templates and roles are restricted to the user&rsquo;s allowed companies; templates and roles can also be shared across companies</td></tr>
+  </tbody>
+</table>
+
+<!-- ============================== TECHNICAL ============================== -->
+<h2 style="font-size:28px;font-weight:700;margin:40px 0 6px;color:#2b2b33;">Technical details</h2>
+<table style="width:100%;border-collapse:collapse;font-size:15px;">
+  <tbody>
+    <tr style="border-bottom:1px solid #eee;"><td style="padding:10px 14px;width:30%;color:#777;vertical-align:top;">Odoo version</td><td style="padding:10px 14px;word-break:break-word;">16.0, Community and Enterprise (module version 16.0.1.1.0)</td></tr>
+    <tr style="border-bottom:1px solid #eee;background:#fafafa;"><td style="padding:10px 14px;width:30%;color:#777;vertical-align:top;">Depends on</td><td style="padding:10px 14px;word-break:break-word;"><code>sale_management</code>, <code>account</code></td></tr>
+    <tr style="border-bottom:1px solid #eee;"><td style="padding:10px 14px;width:30%;color:#777;vertical-align:top;">Python dependency</td><td style="padding:10px 14px;word-break:break-word;">None</td></tr>
+    <tr style="border-bottom:1px solid #eee;background:#fafafa;"><td style="padding:10px 14px;width:30%;color:#777;vertical-align:top;">Menus</td><td style="padding:10px 14px;word-break:break-word;">Sales &rsaquo; Orders &rsaquo; Blanket Agreements; Sales &rsaquo; Configuration &rsaquo; Blanket Agreements &rsaquo; Approval Templates / Approval Roles</td></tr>
+    <tr style="border-bottom:1px solid #eee;"><td style="padding:10px 14px;width:30%;color:#777;vertical-align:top;">Settings</td><td style="padding:10px 14px;word-break:break-word;">Sales &rsaquo; Configuration &rsaquo; Settings &rsaquo; Blanket Sales Agreements (default template, reminder days, segregation of duties, default terms)</td></tr>
+    <tr style="border-bottom:1px solid #eee;background:#fafafa;"><td style="padding:10px 14px;width:30%;color:#777;vertical-align:top;">Models</td><td style="padding:10px 14px;word-break:break-word;"><code>blanket.sale.agreement</code>, <code>.line</code>, <code>.schedule</code>, <code>.approval</code>, <code>blanket.agreement.approval.role</code>, <code>blanket.agreement.approval.template</code>, <code>.template.line</code>; extends <code>sale.order</code>, <code>sale.order.line</code>, <code>res.company</code></td></tr>
+    <tr style="border-bottom:1px solid #eee;"><td style="padding:10px 14px;width:30%;color:#777;vertical-align:top;">Automation</td><td style="padding:10px 14px;word-break:break-word;">Daily scheduled action; activity types <b>Agreement Approval</b> and <b>Issue Agreement</b>; mail templates <b>Issued</b>, <b>Expiry Reminder</b>, <b>Expiration Notice</b></td></tr>
+    <tr style="border-bottom:1px solid #eee;background:#fafafa;"><td style="padding:10px 14px;width:30%;color:#777;vertical-align:top;">Report</td><td style="padding:10px 14px;word-break:break-word;">QWeb PDF <b>Blanket Sales Agreement</b> with its own A4 paper format, printed in the customer&rsquo;s language</td></tr>
+    <tr style="border-bottom:1px solid #eee;"><td style="padding:10px 14px;width:30%;color:#777;vertical-align:top;">Automated tests</td><td style="padding:10px 14px;word-break:break-word;">33 tests covering:
+      <ul style="margin:6px 0 0;padding-left:20px;">
+        <li>the settings toggle, amounts and sequence;</li>
+        <li>the full multi-tier cycle with access checks, and the approver-without-Sales-rights view;</li>
+        <li>issuing with the PDF e-mail, and with no customer e-mail;</li>
+        <li>rejection and resubmission, plus submission checks;</li>
+        <li>the reminder, expiration notice and expiry cron;</li>
+        <li>quotations and quantity consumption, delivery schedules and confirmation rules;</li>
+        <li>LTR and RTL report rendering, deletion and reset, the form flow and the read-only rules per status;</li>
+        <li>one regression test for each issue of an independent functional review: negotiated prices, post-confirmation changes, currency, server-side locks, schedules, past end dates, price deviations, open quotations, order linkage, one line per product, approval history, segregation of duties and record rules.</li>
+      </ul>
+      The suite passes on an English and on an Arabic-default database.</td></tr>
+    <tr style="border-bottom:1px solid #eee;background:#fafafa;"><td style="padding:10px 14px;width:30%;color:#777;vertical-align:top;">Translations</td><td style="padding:10px 14px;word-break:break-word;">Arabic <code>ar_001</code> (all 318 terms, including the three e-mail bodies)</td></tr>
+    <tr style="border-bottom:1px solid #eee;"><td style="padding:10px 14px;width:30%;color:#777;vertical-align:top;">License</td><td style="padding:10px 14px;word-break:break-word;">LGPL-3</td></tr>
+  </tbody>
+</table>
+
+<!-- ============================== CONTACT ============================== -->
+<div style="margin:52px 0 40px;background:linear-gradient(120deg,#714B67 0%,#017E84 100%);border-radius:18px;padding:36px 40px;color:#fff;">
+  <h2 style="font-size:26px;font-weight:700;margin:0 0 8px;color:#fff;">Support &amp; customization</h2>
+  <p style="font-size:16px;line-height:1.6;margin:0 0 20px;color:#fff;opacity:.95;">Questions, a demo, or an adaptation to your own process? Get in touch.</p>
+  <a href="mailto:ibrahim.yahiah@gmail.com" style="display:inline-block;background:#fff;color:#714B67;font-weight:700;text-decoration:none;border-radius:8px;padding:12px 22px;margin:0 12px 10px 0;">&#9993;&nbsp; ibrahim.yahiah@gmail.com</a>
+  <a href="https://www.linkedin.com/in/ibrahim-yahia" target="_blank" rel="noopener" style="display:inline-block;border:2px solid #fff;color:#fff;font-weight:700;text-decoration:none;border-radius:8px;padding:10px 22px;margin:0 0 10px 0;">LinkedIn: Ibrahim Yahia</a>
+  <p style="font-size:13px;margin:14px 0 0;opacity:.8;color:#fff;">Author: Ibrahim Yahia &middot; License: LGPL-3</p>
+</div>
+
+</section>

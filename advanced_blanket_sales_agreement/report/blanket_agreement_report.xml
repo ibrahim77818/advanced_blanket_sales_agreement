@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="paperformat_blanket_agreement" model="report.paperformat">
+        <field name="name">Blanket Agreement A4</field>
+        <field name="default" eval="False"/>
+        <field name="format">A4</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">52</field>
+        <field name="margin_bottom">30</field>
+        <field name="margin_left">8</field>
+        <field name="margin_right">8</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">44</field>
+        <field name="dpi">90</field>
+    </record>
+
+    <record id="action_report_blanket_agreement" model="ir.actions.report">
+        <field name="name">Blanket Sales Agreement</field>
+        <field name="model">blanket.sale.agreement</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">advanced_blanket_sales_agreement.report_blanket_agreement</field>
+        <field name="report_file">advanced_blanket_sales_agreement.report_blanket_agreement</field>
+        <field name="print_report_name">'Blanket Agreement - %s' % (object.name or '').replace('/', '_')</field>
+        <field name="paperformat_id" ref="paperformat_blanket_agreement"/>
+        <field name="binding_model_id" ref="model_blanket_sale_agreement"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="mail_activity_blanket_approval" model="mail.activity.type">
+        <field name="name">Agreement Approval</field>
+        <field name="summary">Approve blanket sales agreement</field>
+        <field name="icon">fa-check-square-o</field>
+        <field name="res_model">blanket.sale.agreement</field>
+        <field name="delay_count">1</field>
+        <field name="sequence">40</field>
+    </record>
+    <record id="mail_activity_blanket_issue" model="mail.activity.type">
+        <field name="name">Issue Agreement</field>
+        <field name="summary">Issue the approved agreement to the customer</field>
+        <field name="icon">fa-paper-plane</field>
+        <field name="res_model">blanket.sale.agreement</field>
+        <field name="delay_count">1</field>
+        <field name="sequence">41</field>
+    </record>
+</odoo>

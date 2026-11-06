@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_blanket_agreement_document">
+        <t t-call="web.external_layout">
+            <t t-set="o" t-value="o.with_context(lang=lang)"/>
+            <t t-set="direction" t-value="env['res.lang']._lang_get(lang or env.user.lang).direction or 'ltr'"/>
+            <t t-set="currency" t-value="o.currency_id"/>
+            <div class="page bsa-report" t-att-dir="direction">
+                <style>
+                    .bsa-report { font-size: 11px; color: #1f2933; }
+                    .bsa-report table { width: 100%; border-collapse: collapse; border: 0 !important; margin-bottom: 0; }
+                    .bsa-report table tbody, .bsa-report table thead, .bsa-report table tr,
+                    .bsa-report table td, .bsa-report table th { border: 0 none !important; }
+                    .bsa-report .bsa-start { text-align: start; }
+                    .bsa-report .bsa-end { text-align: end; }
+                    .bsa-report .bsa-center { text-align: center; }
+                    .bsa-report .bsa-muted { color: #616e7c; }
+                    .bsa-report .bsa-title { margin: 0 0 4px 0; padding-top: 6px; }
+                    .bsa-report .bsa-title td { vertical-align: bottom; padding: 0; }
+                    .bsa-report .bsa-title h2 { font-size: 20px; font-weight: bold; color: #0b3c5d; margin: 0; }
+                    .bsa-report .bsa-ref { font-size: 13px; color: #328cc1; font-weight: bold; }
+                    .bsa-report .bsa-status { display: inline-block; padding: 3px 10px; border-radius: 10px;
+                        background-color: #e3f0fb; color: #0b3c5d; font-size: 10px; font-weight: bold; }
+                    .bsa-report .bsa-accent { height: 3px; background-color: #328cc1; margin: 6px 0 14px 0; }
+                    .bsa-report .bsa-cards td.bsa-card { width: 50%; vertical-align: top; padding: 0; }
+                    .bsa-report .bsa-card-inner { border: 1px solid #d9e2ec; border-radius: 6px; padding: 10px 12px;
+                        background-color: #f8fafc; min-height: 92px; }
+                    .bsa-report .bsa-gap { width: 12px; }
+                    .bsa-report .bsa-card-title { font-size: 9px; font-weight: bold; letter-spacing: 1px;
+                        text-transform: uppercase; color: #328cc1; margin-bottom: 6px; }
+                    .bsa-report .bsa-kv td { padding: 2px 0; vertical-align: top; }
+                    .bsa-report .bsa-kv td.bsa-k { color: #616e7c; width: 42%; }
+                    .bsa-report h4.bsa-section { font-size: 13px; color: #0b3c5d; font-weight: bold;
+                        margin: 18px 0 6px 0; padding-bottom: 4px; border-bottom: 1px solid #d9e2ec;
+                        page-break-after: avoid; }
+                    .bsa-report table.bsa-grid thead { display: table-header-group; }
+                    .bsa-report table.bsa-grid tr { page-break-inside: avoid; }
+                    .bsa-report table.bsa-grid th { background-color: #0b3c5d; color: #ffffff; font-weight: bold;
+                        padding: 6px 6px; font-size: 10px; border: 0; }
+                    .bsa-report table.bsa-grid td { padding: 6px 6px; border-bottom: 1px solid #e4e7eb !important; vertical-align: top; }
+                    .bsa-report table.bsa-grid tbody tr:nth-child(even) td { background-color: #f8fafc; }
+                    .bsa-report .bsa-totals { width: 45%; margin-top: 8px; page-break-inside: avoid; }
+                    .bsa-report .bsa-totals td { padding: 4px 6px; }
+                    .bsa-report .bsa-totals tr.bsa-grand td { border-top: 2px solid #0b3c5d !important; font-weight: bold;
+                        font-size: 13px; color: #0b3c5d; }
+                    .bsa-report .bsa-terms { border: 1px solid #d9e2ec; border-radius: 6px; padding: 10px 12px; }
+                    .bsa-report .bsa-sign { margin-top: 24px; page-break-inside: avoid; }
+                    .bsa-report .bsa-sign td.bsa-sig { width: 46%; vertical-align: top; padding: 0; }
+                    .bsa-report .bsa-sign-line { border-bottom: 1px solid #1f2933; height: 46px; margin-bottom: 4px; }
+                </style>
+
+                <!-- Title band (kept inside the body: never overlaps the layout header) -->
+                <table class="bsa-title">
+                    <tr>
+                        <td class="bsa-start">
+                            <h2>Blanket Sales Agreement</h2>
+                            <span class="bsa-ref" t-field="o.name"/>
+                        </td>
+                        <td class="bsa-end">
+                            <span class="bsa-status" t-field="o.state"/>
+                        </td>
+                    </tr>
+                </table>
+                <div class="bsa-accent"/>
+
+                <!-- Parties & agreement summary -->
+                <table class="bsa-cards">
+                    <tr>
+                        <td class="bsa-card bsa-start">
+                            <div class="bsa-card-inner">
+                                <div class="bsa-card-title">Customer</div>
+                                <div t-field="o.partner_id"
+                                     t-options="{'widget': 'contact', 'fields': ['address', 'name', 'phone', 'email', 'vat'], 'no_marker': True}"/>
+                            </div>
+                        </td>
+                        <td class="bsa-gap"/>
+                        <td class="bsa-card bsa-start">
+                            <div class="bsa-card-inner">
+                                <div class="bsa-card-title">Agreement Details</div>
+                                <table class="bsa-kv">
+                                    <tr><td class="bsa-k">Validity</td>
+                                        <td><span t-field="o.date_start"/> - <span t-field="o.date_end"/></td></tr>
+                                    <tr t-if="o.issue_date"><td class="bsa-k">Issue Date</td>
+                                        <td><span t-field="o.issue_date"/></td></tr>
+                                    <tr t-if="o.client_order_ref"><td class="bsa-k">Customer Reference</td>
+                                        <td><span t-field="o.client_order_ref"/></td></tr>
+                                    <tr t-if="o.payment_term_id"><td class="bsa-k">Payment Terms</td>
+                                        <td><span t-field="o.payment_term_id.name"/></td></tr>
+                                    <tr t-if="o.incoterm_id"><td class="bsa-k">Incoterm</td>
+                                        <td><span t-field="o.incoterm_id.code"/></td></tr>
+                                    <tr><td class="bsa-k">Responsible</td>
+                                        <td><span t-field="o.user_id"/></td></tr>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+                <!-- Agreement lines -->
+                <h4 class="bsa-section bsa-start">Agreed Products &amp; Prices</h4>
+                <table class="bsa-grid">
+                    <thead>
+                        <tr>
+                            <th class="bsa-center" style="width: 4%;">#</th>
+                            <th class="bsa-start">Description</th>
+                            <th class="bsa-end" style="width: 15%;">Agreed Qty</th>
+                            <th class="bsa-end" style="width: 12%;">Unit Price</th>
+                            <th class="bsa-end" style="width: 8%;">Disc.%</th>
+                            <th class="bsa-start" style="width: 11%;">Taxes</th>
+                            <th class="bsa-end" style="width: 15%;">Subtotal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="o.line_ids" t-as="line">
+                            <tr>
+                                <td class="bsa-center"><span t-out="line_index + 1"/></td>
+                                <td class="bsa-start"><span t-field="line.name"/></td>
+                                <td class="bsa-end">
+                                    <span t-field="line.product_uom_qty"/> <span t-field="line.product_uom"/>
+                                </td>
+                                <td class="bsa-end"><span t-field="line.price_unit"/></td>
+                                <td class="bsa-end"><span t-field="line.discount"/></td>
+                                <td class="bsa-start"><span t-out="', '.join(line.tax_ids.mapped('name'))"/></td>
+                                <td class="bsa-end">
+                                    <span t-field="line.price_subtotal" t-options="{'widget': 'monetary', 'display_currency': currency}"/>
+                                </td>
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+                <table class="bsa-totals" t-att-align="'left' if direction == 'rtl' else 'right'">
+                    <tr>
+                        <td class="bsa-start bsa-muted">Untaxed Amount</td>
+                        <td class="bsa-end"><span t-field="o.amount_untaxed" t-options="{'widget': 'monetary', 'display_currency': currency}"/></td>
+                    </tr>
+                    <tr>
+                        <td class="bsa-start bsa-muted">Taxes</td>
+                        <td class="bsa-end"><span t-field="o.amount_tax" t-options="{'widget': 'monetary', 'display_currency': currency}"/></td>
+                    </tr>
+                    <tr class="bsa-grand">
+                        <td class="bsa-start">Agreement Total</td>
+                        <td class="bsa-end"><span t-field="o.amount_total" t-options="{'widget': 'monetary', 'display_currency': currency}"/></td>
+                    </tr>
+                </table>
+                <div style="clear: both;"/>
+
+                <!-- Delivery schedule -->
+                <t t-if="o.schedule_ids">
+                    <h4 class="bsa-section bsa-start">Delivery Schedule</h4>
+                    <table class="bsa-grid">
+                        <thead>
+                            <tr>
+                                <th class="bsa-start" style="width: 18%;">Scheduled Date</th>
+                                <th class="bsa-start">Product</th>
+                                <th class="bsa-end" style="width: 18%;">Quantity</th>
+                                <th class="bsa-start" style="width: 30%;">Delivery Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr t-foreach="o.schedule_ids" t-as="schedule">
+                                <td class="bsa-start"><span t-field="schedule.scheduled_date"/></td>
+                                <td class="bsa-start"><span t-field="schedule.product_id"/></td>
+                                <td class="bsa-end"><span t-field="schedule.quantity"/> <span t-field="schedule.product_uom"/></td>
+                                <td class="bsa-start"><span t-field="schedule.note"/></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </t>
+
+                <!-- Legal terms -->
+                <h4 class="bsa-section bsa-start">Terms &amp; Conditions</h4>
+                <table class="bsa-kv" style="margin-bottom: 8px;">
+                    <tr t-if="o.governing_law">
+                        <td class="bsa-k bsa-start" style="width: 28%;">Governing Law</td>
+                        <td class="bsa-start"><span t-field="o.governing_law"/></td>
+                    </tr>
+                    <tr t-if="o.dispute_resolution">
+                        <td class="bsa-k bsa-start" style="width: 28%;">Dispute Resolution</td>
+                        <td class="bsa-start"><span t-field="o.dispute_resolution"/></td>
+                    </tr>
+                    <tr t-if="o.termination_notice_days">
+                        <td class="bsa-k bsa-start" style="width: 28%;">Termination Notice</td>
+                        <td class="bsa-start"><span t-field="o.termination_notice_days"/> <span>days</span></td>
+                    </tr>
+                </table>
+                <div class="bsa-terms bsa-start" t-if="not is_html_empty(o.terms_conditions)">
+                    <div t-field="o.terms_conditions"/>
+                </div>
+
+                <!-- Approval trail -->
+                <t t-set="approved_tiers" t-value="o.approval_ids.filtered(lambda a: a.state == 'approved' and not a.superseded)"/>
+                <div t-if="approved_tiers" style="page-break-inside: avoid;">
+                    <h4 class="bsa-section bsa-start">Internal Approvals</h4>
+                    <table class="bsa-grid">
+                        <thead>
+                            <tr>
+                                <th class="bsa-start">Tier</th>
+                                <th class="bsa-start">Approved By</th>
+                                <th class="bsa-start" style="width: 28%;">Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr t-foreach="approved_tiers" t-as="approval">
+                                <td class="bsa-start"><span t-field="approval.name"/></td>
+                                <td class="bsa-start"><span t-field="approval.user_id"/></td>
+                                <td class="bsa-start"><span t-field="approval.date" t-options="{'widget': 'date'}"/></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Signatures -->
+                <table class="bsa-sign">
+                    <tr>
+                        <td class="bsa-sig bsa-start">
+                            <div class="bsa-card-title">For the Supplier</div>
+                            <div class="bsa-sign-line"/>
+                            <div t-field="o.company_id.name"/>
+                            <div class="bsa-muted">Name, signature and date</div>
+                        </td>
+                        <td style="width: 8%;"/>
+                        <td class="bsa-sig bsa-start">
+                            <div class="bsa-card-title">For the Customer</div>
+                            <div class="bsa-sign-line"/>
+                            <div t-field="o.partner_id.commercial_partner_id.name"/>
+                            <div class="bsa-muted">Name, signature and date</div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </t>
+    </template>
+
+    <template id="report_blanket_agreement">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-set="lang" t-value="o.partner_id.lang or o.env.lang"/>
+                <t t-call="advanced_blanket_sales_agreement.report_blanket_agreement_document" t-lang="lang"/>
+            </t>
+        </t>
+    </template>
+</odoo>

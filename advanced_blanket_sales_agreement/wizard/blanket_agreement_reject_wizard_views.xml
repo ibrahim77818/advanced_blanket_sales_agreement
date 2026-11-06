@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="blanket_agreement_reject_wizard_form" model="ir.ui.view">
+        <field name="name">blanket.agreement.reject.wizard.form</field>
+        <field name="model">blanket.agreement.reject.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Reject Agreement">
+                <field name="agreement_id" invisible="1"/>
+                <group>
+                    <field name="reason" placeholder="Explain why the agreement is rejected..."/>
+                </group>
+                <footer>
+                    <button name="action_reject" string="Reject" type="object" class="btn-danger" data-hotkey="q"/>
+                    <button string="Discard" class="btn-secondary" special="cancel" data-hotkey="z"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

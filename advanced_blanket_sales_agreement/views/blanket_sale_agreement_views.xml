@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="blanket_sale_agreement_view_tree" model="ir.ui.view">
+        <field name="name">blanket.sale.agreement.tree</field>
+        <field name="model">blanket.sale.agreement</field>
+        <field name="arch" type="xml">
+            <tree string="Blanket Agreements" sample="1"
+                  decoration-muted="state in ('cancel', 'expired')"
+                  decoration-info="state == 'to_approve'"
+                  decoration-warning="state == 'issued' and days_to_expiry &lt;= reminder_days">
+                <field name="name" decoration-bf="1"/>
+                <field name="partner_id"/>
+                <field name="client_order_ref" optional="hide"/>
+                <field name="user_id" widget="many2one_avatar_user" optional="show"/>
+                <field name="date_start"/>
+                <field name="date_end"/>
+                <field name="days_to_expiry" invisible="1"/>
+                <field name="reminder_days" invisible="1"/>
+                <field name="company_id" groups="base.group_multi_company" optional="show"/>
+                <field name="currency_id" invisible="1"/>
+                <field name="amount_total" sum="Total" widget="monetary" decoration-bf="1"/>
+                <field name="consumption_percent" widget="progressbar" optional="show"/>
+                <field name="activity_ids" widget="list_activity" optional="show"/>
+                <field name="state" widget="badge"
+                       decoration-success="state == 'issued'"
+                       decoration-info="state in ('to_approve', 'approved')"
+                       decoration-danger="state == 'rejected'"
+                       decoration-muted="state in ('cancel', 'expired')"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="blanket_sale_agreement_view_form" model="ir.ui.view">
+        <field name="name">blanket.sale.agreement.form</field>
+        <field name="model">blanket.sale.agreement</field>
+        <field name="arch" type="xml">
+            <form string="Blanket Sales Agreement">
+                <header>
+                    <button name="action_submit" type="object" string="Submit for Approval" class="btn-primary" groups="sales_team.group_sale_salesman"
+                            states="draft" data-hotkey="v"/>
+                    <button name="action_approve" type="object" string="Approve" class="btn-primary"
+                            attrs="{'invisible': [('can_approve', '=', False)]}" data-hotkey="a"/>
+                    <button name="action_open_reject_wizard" type="object" string="Reject"
+                            attrs="{'invisible': [('can_approve', '=', False)]}" data-hotkey="r"/>
+                    <button name="action_issue" type="object" string="Issue Agreement" class="btn-primary" groups="sales_team.group_sale_salesman"
+                            states="approved" data-hotkey="i"/>
+                    <button name="action_create_quotation" type="object" string="Create Quotation" class="btn-primary" groups="sales_team.group_sale_salesman"
+                            states="issued" data-hotkey="q"/>
+                    <button name="action_print" type="object" string="Print" states="approved,issued,expired"/>
+                    <button name="action_submit" type="object" string="Resubmit" states="rejected" groups="sales_team.group_sale_salesman"/>
+                    <button name="action_draft" type="object" string="Reset to Draft" states="rejected,cancel" groups="sales_team.group_sale_salesman"/>
+                    <button name="action_cancel" type="object" string="Cancel" states="draft,to_approve,approved,issued" groups="sales_team.group_sale_salesman"
+                            confirm="Cancel this agreement?" data-hotkey="z"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,to_approve,approved,issued,expired"/>
+                </header>
+                <div class="alert alert-info mb-0" role="alert"
+                     attrs="{'invisible': [('state', '!=', 'to_approve')]}">
+                    Waiting for approval: <strong><field name="current_approval_id" readonly="1" options="{'no_open': True}" class="oe_inline"/></strong>
+                    (<field name="current_approver_ids" widget="many2many_tags" readonly="1" class="oe_inline"/>)
+                </div>
+                <div class="alert alert-success mb-0" role="alert"
+                     attrs="{'invisible': [('state', '!=', 'approved')]}">
+                    All approvers signed off. The agreement is ready to be issued to the customer.
+                </div>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_sale_orders" type="object" class="oe_stat_button" icon="fa-dollar"
+                                groups="sales_team.group_sale_salesman"
+                                attrs="{'invisible': [('sale_order_count', '=', 0)]}">
+                            <field name="sale_order_count" widget="statinfo" string="Sales Orders"/>
+                        </button>
+                    </div>
+                    <widget name="web_ribbon" title="Expired" bg_color="bg-warning" attrs="{'invisible': [('state', '!=', 'expired')]}"/>
+                    <widget name="web_ribbon" title="Rejected" bg_color="bg-danger" attrs="{'invisible': [('state', '!=', 'rejected')]}"/>
+                    <widget name="web_ribbon" title="Cancelled" bg_color="bg-danger" attrs="{'invisible': [('state', '!=', 'cancel')]}"/>
+                    <div class="oe_title">
+                        <h1><field name="name" readonly="1"/></h1>
+                    </div>
+                    <group>
+                        <group name="customer">
+                            <field name="partner_id" widget="res_partner_many2one" attrs="{'readonly': [('state', 'not in', ('draft', 'rejected'))]}"
+                                   context="{'res_partner_search_mode': 'customer', 'show_vat': True}"/>
+                            <field name="client_order_ref" attrs="{'readonly': [('state', 'not in', ('draft', 'rejected'))]}"/>
+                            <field name="pricelist_id" groups="product.group_product_pricelist" options="{'no_create': True}"
+                                   attrs="{'readonly': [('state', 'not in', ('draft', 'rejected'))]}"/>
+                            <field name="currency_id" invisible="1"/>
+                            <field name="payment_term_id" options="{'no_create': True}" attrs="{'readonly': [('state', 'not in', ('draft', 'rejected'))]}"/>
+                            <field name="incoterm_id" attrs="{'readonly': [('state', 'not in', ('draft', 'rejected'))]}"/>
+                        </group>
+                        <group name="validity">
+                            <label for="date_start" string="Validity"/>
+                            <div class="o_row">
+                                <field name="date_start" attrs="{'readonly': [('state', 'not in', ('draft', 'rejected'))]}"/>
+                                <i class="fa fa-long-arrow-right mx-2 oe_edit_only" aria-label="Arrow icon" title="Arrow"/>
+                                <field name="date_end" attrs="{'readonly': [('state', 'not in', ('draft', 'rejected', 'approved', 'issued'))]}"/>
+                            </div>
+                            <label for="reminder_days"/>
+                            <div class="o_row">
+                                <field name="reminder_days" class="oe_inline"/>
+                                <span>days</span>
+                                <span class="text-muted" attrs="{'invisible': [('reminder_date', '=', False)]}">
+                                    (<field name="reminder_date" readonly="1" class="oe_inline"/>)
+                                </span>
+                            </div>
+                            <field name="user_id" widget="many2one_avatar_user"/>
+                            <field name="approval_template_id" options="{'no_create': True}" attrs="{'readonly': [('state', 'not in', ('draft', 'rejected'))]}"/>
+                            <field name="company_id" groups="base.group_multi_company" options="{'no_create': True}"/>
+                            <field name="can_approve" invisible="1"/>
+                            <field name="company_id" invisible="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Order Lines" name="order_lines">
+                            <field name="line_ids" attrs="{'readonly': [('state', 'not in', ('draft', 'rejected'))]}"
+                                   context="{'default_agreement_id': id}">
+                                <tree editable="bottom">
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="company_id" invisible="1"/>
+                                    <field name="currency_id" invisible="1"/>
+                                    <field name="product_uom_category_id" invisible="1"/>
+                                    <field name="product_id" options="{'no_create': True}"/>
+                                    <field name="name" optional="show"/>
+                                    <field name="product_uom_qty"/>
+                                    <field name="product_uom" groups="uom.group_uom" options="{'no_create': True}"/>
+                                    <field name="price_unit"/>
+                                    <field name="discount" groups="product.group_discount_per_so_line" optional="show"/>
+                                    <field name="tax_ids" widget="many2many_tags" options="{'no_create': True}" optional="show"/>
+                                    <field name="qty_scheduled" optional="hide"/>
+                                    <field name="qty_quoted" optional="hide"/>
+                                    <field name="qty_ordered" optional="show"/>
+                                    <field name="qty_delivered" optional="hide"/>
+                                    <field name="qty_remaining" optional="show"
+                                           decoration-danger="qty_remaining == 0" decoration-bf="1"/>
+                                    <field name="price_subtotal" widget="monetary"/>
+                                    <field name="price_total" widget="monetary" optional="hide"/>
+                                </tree>
+                            </field>
+                            <group name="totals" col="6" class="mt-2 mt-md-0">
+                                <group colspan="4">
+                                    <field name="note" nolabel="1" colspan="2" placeholder="Internal notes..."/>
+                                </group>
+                                <group class="oe_subtotal_footer oe_right" colspan="2" name="amounts">
+                                    <field name="amount_untaxed" widget="monetary"/>
+                                    <field name="amount_tax" widget="monetary"/>
+                                    <div class="oe_subtotal_footer_separator oe_inline o_td_label">
+                                        <label for="amount_total"/>
+                                    </div>
+                                    <field name="amount_total" nolabel="1" class="oe_subtotal_footer_separator" widget="monetary"/>
+                                    <field name="amount_ordered" widget="monetary"/>
+                                    <field name="consumption_percent" widget="progressbar"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Delivery Schedules" name="delivery_schedules">
+                            <field name="schedule_ids" context="{'default_agreement_id': id}"
+                                   attrs="{'readonly': [('state', 'in', ('to_approve', 'cancel', 'expired'))]}">
+                                <tree editable="bottom" decoration-muted="state == 'delivered'" decoration-info="state == 'quoted'">
+                                    <field name="agreement_id" invisible="1"/>
+                                    <field name="scheduled_date"/>
+                                    <field name="line_id" options="{'no_create': True, 'no_open': True}"/>
+                                    <field name="quantity"/>
+                                    <field name="product_uom" groups="uom.group_uom"/>
+                                    <field name="note"/>
+                                    <field name="sale_order_id" optional="show" groups="sales_team.group_sale_salesman"/>
+                                    <field name="state" widget="badge"
+                                           decoration-success="state == 'delivered'"
+                                           decoration-info="state in ('quoted', 'ordered')"/>
+                                    <button name="action_create_quotation" type="object" icon="fa-file-text-o" groups="sales_team.group_sale_salesman"
+                                            title="Create Quotation"
+                                            attrs="{'invisible': ['|', ('state', '!=', 'planned'), ('parent.state', '!=', 'issued')]}"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Legal Terms &amp; Conditions" name="legal_terms">
+                            <group>
+                                <group>
+                                    <field name="governing_law" attrs="{'readonly': [('state', 'not in', ('draft', 'rejected'))]}" placeholder="e.g. Laws of the Kingdom of Saudi Arabia"/>
+                                    <field name="dispute_resolution" attrs="{'readonly': [('state', 'not in', ('draft', 'rejected'))]}" placeholder="e.g. Arbitration in Riyadh"/>
+                                </group>
+                                <group>
+                                    <label for="termination_notice_days"/>
+                                    <div class="o_row">
+                                        <field name="termination_notice_days" class="oe_inline" attrs="{'readonly': [('state', 'not in', ('draft', 'rejected'))]}"/>
+                                        <span>days</span>
+                                    </div>
+                                </group>
+                            </group>
+                            <field name="terms_conditions" class="oe-bordered-editor" attrs="{'readonly': [('state', 'not in', ('draft', 'rejected'))]}"
+                                   placeholder="Detailed terms and conditions of the agreement..."/>
+                        </page>
+                        <page string="Approvals" name="approvals" attrs="{'invisible': [('approval_ids', '=', [])]}">
+                            <field name="approval_ids">
+                                <tree decoration-success="state == 'approved' and not superseded"
+                                      decoration-danger="state == 'rejected' and not superseded"
+                                      decoration-info="state == 'pending'"
+                                      decoration-muted="state == 'waiting' or superseded">
+                                    <field name="sequence" invisible="1"/>
+                                    <field name="superseded" invisible="1"/>
+                                    <field name="cycle"/>
+                                    <field name="name"/>
+                                    <field name="role_id"/>
+                                    <field name="approver_ids" widget="many2many_tags_avatar"/>
+                                    <field name="state" widget="badge"/>
+                                    <field name="user_id" widget="many2one_avatar_user"/>
+                                    <field name="date"/>
+                                    <field name="comment"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Other Info" name="other_info">
+                            <group>
+                                <group>
+                                    <field name="submitted_date"/>
+                                    <field name="approved_date"/>
+                                    <field name="issue_date"/>
+                                </group>
+                                <group>
+                                    <field name="reminder_sent"/>
+                                    <field name="expiry_notice_sent"/>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="blanket_sale_agreement_view_search" model="ir.ui.view">
+        <field name="name">blanket.sale.agreement.search</field>
+        <field name="model">blanket.sale.agreement</field>
+        <field name="arch" type="xml">
+            <search string="Blanket Agreements">
+                <field name="name"/>
+                <field name="partner_id" operator="child_of"/>
+                <field name="client_order_ref"/>
+                <field name="user_id"/>
+                <field name="line_ids" string="Product" filter_domain="[('line_ids.product_id', 'ilike', self)]"/>
+                <filter string="My Agreements" name="my_agreements" domain="[('user_id', '=', uid)]"/>
+                <filter string="My Pending Approvals" name="my_pending_approvals"
+                        domain="[('state', '=', 'to_approve'), ('approval_ids.state', '=', 'pending'), ('approval_ids.approver_ids', 'in', [uid])]"/>
+                <separator/>
+                <filter string="Draft" name="draft" domain="[('state', '=', 'draft')]"/>
+                <filter string="Waiting Approval" name="to_approve" domain="[('state', '=', 'to_approve')]"/>
+                <filter string="Approved" name="approved" domain="[('state', '=', 'approved')]"/>
+                <filter string="Issued" name="issued" domain="[('state', '=', 'issued')]"/>
+                <filter string="Expired" name="expired" domain="[('state', '=', 'expired')]"/>
+                <separator/>
+                <filter string="Expiring within 30 Days" name="expiring_soon"
+                        domain="[('state', '=', 'issued'), ('date_end', '&lt;=', (context_today() + relativedelta(days=30)).strftime('%Y-%m-%d'))]"/>
+                <separator/>
+                <filter string="Start Date" name="date_start" date="date_start"/>
+                <filter string="End Date" name="date_end" date="date_end"/>
+                <group expand="0" string="Group By">
+                    <filter string="Customer" name="group_partner" context="{'group_by': 'partner_id'}"/>
+                    <filter string="Responsible" name="group_user" context="{'group_by': 'user_id'}"/>
+                    <filter string="Status" name="group_state" context="{'group_by': 'state'}"/>
+                    <filter string="End Date" name="group_date_end" context="{'group_by': 'date_end:month'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_blanket_sale_agreement" model="ir.actions.act_window">
+        <field name="name">Blanket Agreements</field>
+        <field name="res_model">blanket.sale.agreement</field>
+        <field name="view_mode">tree,form,activity</field>
+        <field name="search_view_id" ref="blanket_sale_agreement_view_search"/>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Create a blanket sales agreement</p>
+            <p>Agree on long-term quantities and prices with a customer, get it approved and issue it.</p>
+        </field>
+    </record>
+</odoo>
