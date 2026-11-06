@@ -107,7 +107,9 @@ class SaleOrderLine(models.Model):
         for line in self:
             if line._uses_blanket_price():
                 blanket_line = line.blanket_line_id.sudo()
-                line.price_unit = blanket_line.product_uom._compute_price(blanket_line.price_unit, line.product_uom)
+                price = blanket_line.product_uom._compute_price(blanket_line.price_unit, line.product_uom)
+                # v18: keep technical_price_unit in sync so the agreed price is not seen as a manual edit
+                line.update({"price_unit": price, "technical_price_unit": price})
 
     @api.depends("blanket_line_id")
     def _compute_discount(self):

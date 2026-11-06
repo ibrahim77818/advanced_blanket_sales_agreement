@@ -2,14 +2,14 @@
 <odoo>
     <!-- Roles -->
     <record id="blanket_approval_role_view_tree" model="ir.ui.view">
-        <field name="name">blanket.agreement.approval.role.tree</field>
+        <field name="name">blanket.agreement.approval.role.list</field>
         <field name="model">blanket.agreement.approval.role</field>
         <field name="arch" type="xml">
-            <tree string="Approval Roles">
+            <list string="Approval Roles">
                 <field name="name"/>
                 <field name="user_ids" widget="many2many_tags_avatar"/>
                 <field name="company_id" groups="base.group_multi_company" optional="show"/>
-            </tree>
+            </list>
         </field>
     </record>
     <record id="blanket_approval_role_view_form" model="ir.ui.view">
@@ -40,7 +40,7 @@
     <record id="action_blanket_approval_role" model="ir.actions.act_window">
         <field name="name">Approval Roles</field>
         <field name="res_model">blanket.agreement.approval.role</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">Create an approval role</p>
             <p>Roles group the users allowed to approve a tier of a blanket agreement.</p>
@@ -49,14 +49,14 @@
 
     <!-- Templates -->
     <record id="blanket_approval_template_view_tree" model="ir.ui.view">
-        <field name="name">blanket.agreement.approval.template.tree</field>
+        <field name="name">blanket.agreement.approval.template.list</field>
         <field name="model">blanket.agreement.approval.template</field>
         <field name="arch" type="xml">
-            <tree string="Approval Templates">
+            <list string="Approval Templates">
                 <field name="name"/>
                 <field name="tier_count" string="Tiers"/>
                 <field name="company_id" groups="base.group_multi_company" optional="show"/>
-            </tree>
+            </list>
         </field>
     </record>
     <record id="blanket_approval_template_view_form" model="ir.ui.view">
@@ -79,13 +79,13 @@
                     <notebook>
                         <page string="Approval Tiers" name="tiers">
                             <field name="line_ids">
-                                <tree editable="bottom">
+                                <list editable="bottom">
                                     <field name="sequence" widget="handle"/>
                                     <field name="name"/>
                                     <field name="approver_type"/>
                                     <field name="role_id" invisible="approver_type != 'role'" required="approver_type == 'role'"/>
                                     <field name="user_id" widget="many2one_avatar_user" invisible="approver_type != 'user'" required="approver_type == 'user'"/>
-                                </tree>
+                                </list>
                             </field>
                             <p class="text-muted">Tiers are approved sequentially, top to bottom. Any member of a role can approve its tier.</p>
                         </page>
@@ -100,7 +100,7 @@
     <record id="action_blanket_approval_template" model="ir.actions.act_window">
         <field name="name">Approval Templates</field>
         <field name="res_model">blanket.agreement.approval.template</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">Create an approval template</p>
             <p>Define the sequential approval tiers a blanket sales agreement must pass before issuance.</p>

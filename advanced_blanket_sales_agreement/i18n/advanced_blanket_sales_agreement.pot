@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 17.0\n"
+"Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-06 12:17+0000\n"
-"PO-Revision-Date: 2026-11-06 12:17+0000\n"
+"POT-Creation-Date: 2026-11-06 12:48+0000\n"
+"PO-Revision-Date: 2026-11-06 12:48+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -18,7 +18,6 @@ msgstr ""
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement_line.py:0
-#, python-format
 msgid ""
 "%(product)s appears more than once on agreement %(agreement)s. Use a single "
 "line per product."
@@ -27,14 +26,12 @@ msgstr ""
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/sale_order.py:0
-#, python-format
 msgid "%(product)s: agreed %(agreed)s, ordered %(ordered)s"
 msgstr ""
 
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement_line.py:0
-#, python-format
 msgid "%s is used on sales orders and cannot be removed from the agreement."
 msgstr ""
 
@@ -177,7 +174,6 @@ msgstr ""
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
 msgid "Add at least one order line before submitting agreement %s."
 msgstr ""
 
@@ -210,14 +206,12 @@ msgstr ""
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
 msgid "Agreement %(agreement)s ended on %(date)s. Extend its end date first."
 msgstr ""
 
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
 msgid ""
 "Agreement %(agreement)s is %(state)s: %(fields)s can no longer be changed. "
 "Only draft or rejected agreements can be edited."
@@ -226,21 +220,18 @@ msgstr ""
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/sale_order.py:0
-#, python-format
 msgid "Agreement %(agreement)s is only valid from %(start)s to %(end)s."
 msgstr ""
 
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
 msgid "Agreement %s has confirmed sales orders and cannot be cancelled."
 msgstr ""
 
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
 msgid "Agreement %s is not waiting for an approval."
 msgstr ""
 
@@ -285,14 +276,12 @@ msgstr ""
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
 msgid "Agreement expired on %s."
 msgstr ""
 
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
 msgid "Agreement issued"
 msgstr ""
 
@@ -304,14 +293,12 @@ msgstr ""
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
 msgid "Agreement rejected at tier '%(tier)s' by %(user)s. Reason: %(reason)s"
 msgstr ""
 
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
 msgid "Agreement submitted for approval by %s."
 msgstr ""
 
@@ -323,21 +310,18 @@ msgstr ""
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
 msgid "All agreed quantities have already been ordered."
 msgstr ""
 
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
 msgid "All agreement lines must have a positive agreed quantity."
 msgstr ""
 
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
 msgid ""
 "All approval tiers are complete. %s, the agreement is ready to be issued."
 msgstr ""
@@ -345,7 +329,6 @@ msgstr ""
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
 msgid ""
 "All approvers signed off. Issue the agreement to send it to the customer."
 msgstr ""
@@ -413,7 +396,6 @@ msgstr ""
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
 msgid ""
 "Approval tier '%(tier)s' of template '%(template)s' has no active approver "
 "other than %(user)s, who cannot approve their own agreement."
@@ -422,7 +404,6 @@ msgstr ""
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
 msgid ""
 "Approval tier '%(tier)s' of template '%(template)s' has no active approver."
 msgstr ""
@@ -440,7 +421,6 @@ msgstr ""
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
 msgid "Approve %(agreement)s - %(tier)s"
 msgstr ""
 
@@ -455,7 +435,6 @@ msgstr ""
 #: model:ir.model.fields.selection,name:advanced_blanket_sales_agreement.selection__blanket_sale_agreement__state__approved
 #: model:ir.model.fields.selection,name:advanced_blanket_sales_agreement.selection__blanket_sale_agreement_approval__state__approved
 #: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_sale_agreement_view_search
-#, python-format
 msgid "Approved"
 msgstr ""
 
@@ -651,7 +630,6 @@ msgstr ""
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/sale_order.py:0
-#, python-format
 msgid ""
 "Confirmed orders for %(product)s would total %(qty)s, more than the "
 "%(agreed)s agreed on %(agreement)s."
@@ -819,7 +797,6 @@ msgstr ""
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement_schedule.py:0
-#, python-format
 msgid ""
 "Delivery %(date)s of %(product)s already has quotation or order %(order)s. "
 "Cancel it before changing the schedule."
@@ -828,7 +805,6 @@ msgstr ""
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement_schedule.py:0
-#, python-format
 msgid ""
 "Delivery %(date)s of %(product)s is on confirmed order %(order)s and cannot "
 "be deleted."
@@ -854,7 +830,6 @@ msgstr ""
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement_schedule.py:0
-#, python-format
 msgid "Delivery schedule dates must fall within the agreement period."
 msgstr ""
 
@@ -1024,7 +999,6 @@ msgstr ""
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
 msgid ""
 "If you approve tier '%(tier)s', nobody would be left to approve tier "
 "'%(next)s'. Another approver of tier '%(tier)s' must approve it."
@@ -1071,7 +1045,6 @@ msgstr ""
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
 msgid "Issue agreement %s"
 msgstr ""
 
@@ -1181,10 +1154,6 @@ msgstr ""
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
 msgid "New"
 msgstr ""
 
@@ -1206,14 +1175,12 @@ msgstr ""
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
 msgid "No e-mail sent: customer %s has no e-mail address."
 msgstr ""
 
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
 msgid ""
 "No pricelist in %(currency)s is available for agreement %(agreement)s. Set a"
 " pricelist on the agreement."
@@ -1229,7 +1196,6 @@ msgstr ""
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
 msgid ""
 "Nothing left to quote: the remaining quantities are already in open "
 "quotations %s."
@@ -1270,35 +1236,30 @@ msgstr ""
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
 msgid "Only approved agreements can be issued."
 msgstr ""
 
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
 msgid "Only draft or rejected agreements can be submitted for approval."
 msgstr ""
 
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
 msgid "Only rejected or cancelled agreements can be reset to draft."
 msgstr ""
 
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
 msgid "Only the responsible user or a sales manager can issue agreement %s."
 msgstr ""
 
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/sale_order.py:0
-#, python-format
 msgid ""
 "Order %(order)s is in %(order_currency)s but agreement %(agreement)s is in "
 "%(currency)s. Use a pricelist in %(currency)s."
@@ -1307,7 +1268,6 @@ msgstr ""
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/sale_order.py:0
-#, python-format
 msgid ""
 "Order %(order)s is linked to agreement %(agreement)s which is not issued."
 msgstr ""
@@ -1315,7 +1275,6 @@ msgstr ""
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/sale_order.py:0
-#, python-format
 msgid ""
 "Order %(order)s uses a line of agreement %(agreement)s but is not linked to "
 "it. Set %(agreement)s as the order's blanket agreement."
@@ -1324,7 +1283,6 @@ msgstr ""
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/sale_order.py:0
-#, python-format
 msgid "Order %s customer does not match its blanket agreement."
 msgstr ""
 
@@ -1352,7 +1310,6 @@ msgstr ""
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/sale_order.py:0
-#, python-format
 msgid ""
 "Ordered quantity for %(product)s (%(qty)s) exceeds the remaining quantity on"
 " agreement %(agreement)s (%(remaining)s)."
@@ -1382,7 +1339,6 @@ msgstr ""
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
 msgid ""
 "Please review blanket sales agreement %(agreement)s for %(partner)s (total "
 "%(amount)s %(currency)s) and approve or reject it."
@@ -1401,7 +1357,6 @@ msgstr ""
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/sale_order.py:0
-#, python-format
 msgid "Prices differing from the agreed prices were accepted by %s:"
 msgstr ""
 
@@ -1437,7 +1392,6 @@ msgstr ""
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
 msgid "Quotations can only be created from issued agreements."
 msgstr ""
 
@@ -1461,7 +1415,6 @@ msgstr ""
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
 #: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_agreement_reject_wizard_form
-#, python-format
 msgid "Reject Agreement"
 msgstr ""
 
@@ -1604,7 +1557,6 @@ msgstr ""
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement_schedule.py:0
-#, python-format
 msgid ""
 "Scheduled quantities for %(product)s (%(scheduled)s) exceed the agreed "
 "quantity (%(agreed)s)."
@@ -1722,7 +1674,6 @@ msgstr ""
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
 msgid ""
 "Template '%s' cannot be approved by a different person at each tier: add "
 "approvers to its roles or turn off segregation of duties in the Sales "
@@ -1757,7 +1708,6 @@ msgstr ""
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement_line.py:0
-#, python-format
 msgid ""
 "The agreed quantity of %(product)s (%(agreed)s) cannot be lower than the "
 "quantity already ordered (%(ordered)s)."
@@ -1766,21 +1716,18 @@ msgstr ""
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
 msgid "The agreement end date must be on or after its start date."
 msgstr ""
 
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/sale_order.py:0
-#, python-format
 msgid "The agreement line product must match the order line product."
 msgstr ""
 
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
 msgid ""
 "The approval trail is maintained by the approval workflow and cannot be "
 "edited."
@@ -1789,7 +1736,6 @@ msgstr ""
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement_schedule.py:0
-#, python-format
 msgid ""
 "The delivery schedule of %(agreement)s must use one of its own lines, not a "
 "line of %(other)s."
@@ -1798,7 +1744,6 @@ msgstr ""
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement_schedule.py:0
-#, python-format
 msgid ""
 "The delivery schedule of agreement %(agreement)s cannot be changed while it "
 "is %(state)s."
@@ -1807,7 +1752,6 @@ msgstr ""
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement_line.py:0
-#, python-format
 msgid ""
 "The lines of agreement %(agreement)s can no longer be changed: it is "
 "%(state)s. Only draft or rejected agreements can be edited."
@@ -1816,14 +1760,12 @@ msgstr ""
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement_schedule.py:0
-#, python-format
 msgid "The selected delivery schedules already have a quotation or order."
 msgstr ""
 
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement_line.py:0
-#, python-format
 msgid ""
 "The unit of measure of line '%s' must belong to the same category as the "
 "product's unit."
@@ -1832,7 +1774,6 @@ msgstr ""
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/sale_order.py:0
-#, python-format
 msgid ""
 "These prices differ from the blanket agreement. Use the agreed price, or ask a Sales Administrator to confirm:\n"
 "%s"
@@ -1848,21 +1789,18 @@ msgstr ""
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
 msgid "Tier '%(tier)s' approved by %(user)s."
 msgstr ""
 
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_approval.py:0
-#, python-format
 msgid "Tier '%s' must define an approval role."
 msgstr ""
 
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_approval.py:0
-#, python-format
 msgid "Tier '%s' must define an approver."
 msgstr ""
 
@@ -1961,7 +1899,6 @@ msgstr ""
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
 msgid ""
 "You already approved another tier of agreement %(agreement)s; tier "
 "'%(tier)s' needs a different approver."
@@ -1970,7 +1907,6 @@ msgstr ""
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
 msgid ""
 "You are not an approver of tier '%(tier)s' for agreement %(agreement)s."
 msgstr ""
@@ -1978,14 +1914,12 @@ msgstr ""
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
 msgid "You can only delete draft, rejected or cancelled agreements."
 msgstr ""
 
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
 msgid "You cannot approve agreement %s: you are its responsible user."
 msgstr ""
 

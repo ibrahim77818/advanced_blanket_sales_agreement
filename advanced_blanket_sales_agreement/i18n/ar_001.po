@@ -1,7 +1,10 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* advanced_blanket_sales_agreement
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 17.0\n"
+"Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-11-04 21:26+0000\n"
 "PO-Revision-Date: 2026-11-04 21:26+0000\n"
@@ -16,21 +19,22 @@ msgstr ""
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement_line.py:0
-#, python-format
-msgid "%(product)s appears more than once on agreement %(agreement)s. Use a single line per product."
-msgstr "يظهر %(product)s أكثر من مرة في الاتفاقية %(agreement)s. استخدم بندًا واحدًا لكل منتج."
+msgid ""
+"%(product)s appears more than once on agreement %(agreement)s. Use a single "
+"line per product."
+msgstr ""
+"يظهر %(product)s أكثر من مرة في الاتفاقية %(agreement)s. استخدم بندًا واحدًا"
+" لكل منتج."
 
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/sale_order.py:0
-#, python-format
 msgid "%(product)s: agreed %(agreed)s, ordered %(ordered)s"
 msgstr "%(product)s: المتفق عليه %(agreed)s، المطلوب %(ordered)s"
 
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement_line.py:0
-#, python-format
 msgid "%s is used on sales orders and cannot be removed from the agreement."
 msgstr "%s مستخدم في أوامر بيع ولا يمكن حذفه من الاتفاقية."
 
@@ -197,11 +201,14 @@ msgstr ""
 
 #. module: advanced_blanket_sales_agreement
 #: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_sale_agreement_view_form
-msgid "<i class=\"fa fa-long-arrow-right mx-2\" aria-label=\"Arrow icon\" title=\"Arrow\"/>"
+msgid ""
+"<i class=\"fa fa-long-arrow-right mx-2\" aria-label=\"Arrow icon\" "
+"title=\"Arrow\"/>"
 msgstr "<i class=\"fa fa-long-arrow-left mx-2\" aria-label=\"Arrow icon\" title=\"سهم\"/>"
 
 #. module: advanced_blanket_sales_agreement
-#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_sale_agreement_view_form model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.report_blanket_agreement_document
+#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_sale_agreement_view_form
+#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.report_blanket_agreement_document
 msgid "<span>days</span>"
 msgstr "<span>أيام</span>"
 
@@ -211,7 +218,8 @@ msgid "Action Needed"
 msgstr "إجراء مطلوب"
 
 #. module: advanced_blanket_sales_agreement
-#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_approval_role__active model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_approval_template__active
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_approval_role__active
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_approval_template__active
 msgid "Active"
 msgstr "نشط"
 
@@ -238,14 +246,16 @@ msgstr "أيقونة نوع النشاط"
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
 msgid "Add at least one order line before submitting agreement %s."
 msgstr "أضف بندًا واحدًا على الأقل قبل إرسال الاتفاقية %s للاعتماد."
 
 #. module: advanced_blanket_sales_agreement
 #: model_terms:ir.actions.act_window,help:advanced_blanket_sales_agreement.action_blanket_sale_agreement
-msgid "Agree on long-term quantities and prices with a customer, get it approved and issue it."
-msgstr "اتفق مع العميل على كميات وأسعار طويلة الأجل، ثم اعتمد الاتفاقية وأصدرها."
+msgid ""
+"Agree on long-term quantities and prices with a customer, get it approved "
+"and issue it."
+msgstr ""
+"اتفق مع العميل على كميات وأسعار طويلة الأجل، ثم اعتمد الاتفاقية وأصدرها."
 
 #. module: advanced_blanket_sales_agreement
 #: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.report_blanket_agreement_document
@@ -253,47 +263,51 @@ msgid "Agreed Products &amp; Prices"
 msgstr "المنتجات والأسعار المتفق عليها"
 
 #. module: advanced_blanket_sales_agreement
-#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_line__product_uom_qty model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.report_blanket_agreement_document
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_line__product_uom_qty
+#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.report_blanket_agreement_document
 msgid "Agreed Qty"
 msgstr "الكمية المتفق عليها"
 
 #. module: advanced_blanket_sales_agreement
-#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_reject_wizard__agreement_id model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_approval__agreement_id model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_line__agreement_id model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_schedule__agreement_id
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_reject_wizard__agreement_id
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_approval__agreement_id
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_line__agreement_id
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_schedule__agreement_id
 msgid "Agreement"
 msgstr "الاتفاقية"
 
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
 msgid "Agreement %(agreement)s ended on %(date)s. Extend its end date first."
-msgstr "انتهت الاتفاقية %(agreement)s بتاريخ %(date)s. مدّد تاريخ انتهائها أولًا."
+msgstr ""
+"انتهت الاتفاقية %(agreement)s بتاريخ %(date)s. مدّد تاريخ انتهائها أولًا."
 
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
-msgid "Agreement %(agreement)s is %(state)s: %(fields)s can no longer be changed. Only draft or rejected agreements can be edited."
-msgstr "الاتفاقية %(agreement)s في حالة %(state)s: لم يعد بالإمكان تغيير %(fields)s. لا يمكن تعديل إلا الاتفاقيات المسودة أو المرفوضة."
+msgid ""
+"Agreement %(agreement)s is %(state)s: %(fields)s can no longer be changed. "
+"Only draft or rejected agreements can be edited."
+msgstr ""
+"الاتفاقية %(agreement)s في حالة %(state)s: لم يعد بالإمكان تغيير %(fields)s."
+" لا يمكن تعديل إلا الاتفاقيات المسودة أو المرفوضة."
 
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/sale_order.py:0
-#, python-format
 msgid "Agreement %(agreement)s is only valid from %(start)s to %(end)s."
 msgstr "الاتفاقية %(agreement)s سارية فقط من %(start)s إلى %(end)s."
 
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
 msgid "Agreement %s has confirmed sales orders and cannot be cancelled."
 msgstr "الاتفاقية %s لديها أوامر بيع مؤكدة ولا يمكن إلغاؤها."
 
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
 msgid "Agreement %s is not waiting for an approval."
 msgstr "الاتفاقية %s ليست بانتظار أي اعتماد."
 
@@ -308,12 +322,14 @@ msgid "Agreement Details"
 msgstr "تفاصيل الاتفاقية"
 
 #. module: advanced_blanket_sales_agreement
-#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_res_company__blanket_reminder_days model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_res_config_settings__blanket_reminder_days
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_res_company__blanket_reminder_days
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_res_config_settings__blanket_reminder_days
 msgid "Agreement Expiry Reminder (Days)"
 msgstr "التذكير بانتهاء الاتفاقية (أيام)"
 
 #. module: advanced_blanket_sales_agreement
-#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_schedule__line_id model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_sale_order_line__blanket_line_id
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_schedule__line_id
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_sale_order_line__blanket_line_id
 msgid "Agreement Line"
 msgstr "بند الاتفاقية"
 
@@ -323,7 +339,8 @@ msgid "Agreement Reference"
 msgstr "مرجع الاتفاقية"
 
 #. module: advanced_blanket_sales_agreement
-#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_res_company__blanket_segregation_of_duties model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_res_config_settings__blanket_segregation_of_duties
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_res_company__blanket_segregation_of_duties
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_res_config_settings__blanket_segregation_of_duties
 msgid "Agreement Segregation of Duties"
 msgstr "الفصل بين المهام في الاتفاقيات"
 
@@ -335,14 +352,12 @@ msgstr "إجمالي الاتفاقية"
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
 msgid "Agreement expired on %s."
 msgstr "انتهت الاتفاقية بتاريخ %s."
 
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
 msgid "Agreement issued"
 msgstr "تم إصدار الاتفاقية"
 
@@ -354,14 +369,13 @@ msgstr "يجب أن يكون مرجع الاتفاقية فريدًا لكل ش�
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
 msgid "Agreement rejected at tier '%(tier)s' by %(user)s. Reason: %(reason)s"
-msgstr "تم رفض الاتفاقية في مستوى '%(tier)s' بواسطة %(user)s. السبب: %(reason)s"
+msgstr ""
+"تم رفض الاتفاقية في مستوى '%(tier)s' بواسطة %(user)s. السبب: %(reason)s"
 
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
 msgid "Agreement submitted for approval by %s."
 msgstr "تم إرسال الاتفاقية للاعتماد بواسطة %s."
 
@@ -373,34 +387,34 @@ msgstr "شروط وأحكام الاتفاقية..."
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
 msgid "All agreed quantities have already been ordered."
 msgstr "تم طلب جميع الكميات المتفق عليها بالفعل."
 
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
 msgid "All agreement lines must have a positive agreed quantity."
 msgstr "يجب أن تكون الكمية المتفق عليها موجبة في جميع بنود الاتفاقية."
 
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
-msgid "All approval tiers are complete. %s, the agreement is ready to be issued."
+msgid ""
+"All approval tiers are complete. %s, the agreement is ready to be issued."
 msgstr "اكتملت جميع مستويات الاعتماد. %s، الاتفاقية جاهزة للإصدار."
 
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
-msgid "All approvers signed off. Issue the agreement to send it to the customer."
+msgid ""
+"All approvers signed off. Issue the agreement to send it to the customer."
 msgstr "وافق جميع المعتمدين. أصدر الاتفاقية لإرسالها إلى العميل."
 
 #. module: advanced_blanket_sales_agreement
 #: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_sale_agreement_view_form
-msgid "All approvers signed off. The agreement is ready to be issued to the customer."
+msgid ""
+"All approvers signed off. The agreement is ready to be issued to the "
+"customer."
 msgstr "وافق جميع المعتمدين. الاتفاقية جاهزة للإصدار إلى العميل."
 
 #. module: advanced_blanket_sales_agreement
@@ -424,22 +438,30 @@ msgid "Approval Role"
 msgstr "دور الاعتماد"
 
 #. module: advanced_blanket_sales_agreement
-#: model:ir.actions.act_window,name:advanced_blanket_sales_agreement.action_blanket_approval_role model:ir.ui.menu,name:advanced_blanket_sales_agreement.menu_blanket_approval_role model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_approval_role_view_tree model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.res_config_settings_view_form_blanket_agreement
+#: model:ir.actions.act_window,name:advanced_blanket_sales_agreement.action_blanket_approval_role
+#: model:ir.ui.menu,name:advanced_blanket_sales_agreement.menu_blanket_approval_role
+#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_approval_role_view_tree
+#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.res_config_settings_view_form_blanket_agreement
 msgid "Approval Roles"
 msgstr "أدوار الاعتماد"
 
 #. module: advanced_blanket_sales_agreement
-#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement__approval_template_id model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_approval_template_view_form
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement__approval_template_id
+#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_approval_template_view_form
 msgid "Approval Template"
 msgstr "قالب الاعتماد"
 
 #. module: advanced_blanket_sales_agreement
-#: model:ir.actions.act_window,name:advanced_blanket_sales_agreement.action_blanket_approval_template model:ir.ui.menu,name:advanced_blanket_sales_agreement.menu_blanket_approval_template model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_approval_template_view_tree model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.res_config_settings_view_form_blanket_agreement
+#: model:ir.actions.act_window,name:advanced_blanket_sales_agreement.action_blanket_approval_template
+#: model:ir.ui.menu,name:advanced_blanket_sales_agreement.menu_blanket_approval_template
+#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_approval_template_view_tree
+#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.res_config_settings_view_form_blanket_agreement
 msgid "Approval Templates"
 msgstr "قوالب الاعتماد"
 
 #. module: advanced_blanket_sales_agreement
-#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_approval_template__line_ids model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_approval_template_view_form
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_approval_template__line_ids
+#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_approval_template_view_form
 msgid "Approval Tiers"
 msgstr "مستويات الاعتماد"
 
@@ -451,16 +473,20 @@ msgstr "سجل الاعتمادات"
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
-msgid "Approval tier '%(tier)s' of template '%(template)s' has no active approver other than %(user)s, who cannot approve their own agreement."
-msgstr "مستوى الاعتماد '%(tier)s' في القالب '%(template)s' لا يحتوي على معتمد نشط غير %(user)s، ولا يمكنه اعتماد اتفاقيته."
+msgid ""
+"Approval tier '%(tier)s' of template '%(template)s' has no active approver "
+"other than %(user)s, who cannot approve their own agreement."
+msgstr ""
+"مستوى الاعتماد '%(tier)s' في القالب '%(template)s' لا يحتوي على معتمد نشط "
+"غير %(user)s، ولا يمكنه اعتماد اتفاقيته."
 
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
-msgid "Approval tier '%(tier)s' of template '%(template)s' has no active approver."
-msgstr "مستوى الاعتماد '%(tier)s' في القالب '%(template)s' لا يحتوي على معتمد نشط."
+msgid ""
+"Approval tier '%(tier)s' of template '%(template)s' has no active approver."
+msgstr ""
+"مستوى الاعتماد '%(tier)s' في القالب '%(template)s' لا يحتوي على معتمد نشط."
 
 #. module: advanced_blanket_sales_agreement
 #: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_sale_agreement_view_form
@@ -475,7 +501,6 @@ msgstr "اعتماد"
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
 msgid "Approve %(agreement)s - %(tier)s"
 msgstr "اعتماد %(agreement)s - %(tier)s"
 
@@ -486,8 +511,10 @@ msgstr "اعتماد اتفاقية المبيعات الإطارية"
 
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
-#: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0 model:ir.model.fields.selection,name:advanced_blanket_sales_agreement.selection__blanket_sale_agreement__state__approved model:ir.model.fields.selection,name:advanced_blanket_sales_agreement.selection__blanket_sale_agreement_approval__state__approved model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_sale_agreement_view_search
-#, python-format
+#: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
+#: model:ir.model.fields.selection,name:advanced_blanket_sales_agreement.selection__blanket_sale_agreement__state__approved
+#: model:ir.model.fields.selection,name:advanced_blanket_sales_agreement.selection__blanket_sale_agreement_approval__state__approved
+#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_sale_agreement_view_search
 msgid "Approved"
 msgstr "معتمدة"
 
@@ -517,12 +544,18 @@ msgid "Approvers"
 msgstr "المعتمدون"
 
 #. module: advanced_blanket_sales_agreement
-#: model:ir.model.fields,help:advanced_blanket_sales_agreement.field_res_company__blanket_segregation_of_duties model:ir.model.fields,help:advanced_blanket_sales_agreement.field_res_config_settings__blanket_segregation_of_duties
-msgid "Approvers cannot approve their own agreements, and one person cannot approve more than one tier of the same submission."
-msgstr "لا يمكن للمعتمدين اعتماد اتفاقياتهم، ولا يمكن لشخص واحد اعتماد أكثر من مستوى في الإرسال نفسه."
+#: model:ir.model.fields,help:advanced_blanket_sales_agreement.field_res_company__blanket_segregation_of_duties
+#: model:ir.model.fields,help:advanced_blanket_sales_agreement.field_res_config_settings__blanket_segregation_of_duties
+msgid ""
+"Approvers cannot approve their own agreements, and one person cannot approve"
+" more than one tier of the same submission."
+msgstr ""
+"لا يمكن للمعتمدين اعتماد اتفاقياتهم، ولا يمكن لشخص واحد اعتماد أكثر من مستوى"
+" في الإرسال نفسه."
 
 #. module: advanced_blanket_sales_agreement
-#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_approval_role_view_form model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_approval_template_view_form
+#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_approval_role_view_form
+#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_approval_template_view_form
 msgid "Archived"
 msgstr "مؤرشف"
 
@@ -572,7 +605,11 @@ msgid "Blanket Agreement: Issued"
 msgstr "الاتفاقية الإطارية: تم الإصدار"
 
 #. module: advanced_blanket_sales_agreement
-#: model:ir.actions.act_window,name:advanced_blanket_sales_agreement.action_blanket_sale_agreement model:ir.ui.menu,name:advanced_blanket_sales_agreement.menu_blanket_agreement_config model:ir.ui.menu,name:advanced_blanket_sales_agreement.menu_blanket_sale_agreement model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_sale_agreement_view_search model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_sale_agreement_view_tree
+#: model:ir.actions.act_window,name:advanced_blanket_sales_agreement.action_blanket_sale_agreement
+#: model:ir.ui.menu,name:advanced_blanket_sales_agreement.menu_blanket_agreement_config
+#: model:ir.ui.menu,name:advanced_blanket_sales_agreement.menu_blanket_sale_agreement
+#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_sale_agreement_view_search
+#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_sale_agreement_view_tree
 msgid "Blanket Agreements"
 msgstr "الاتفاقيات الإطارية"
 
@@ -582,7 +619,10 @@ msgid "Blanket Agreements: Expiry Reminders & Notices"
 msgstr "الاتفاقيات الإطارية: تذكيرات وإشعارات الانتهاء"
 
 #. module: advanced_blanket_sales_agreement
-#: model:ir.actions.report,name:advanced_blanket_sales_agreement.action_report_blanket_agreement model:ir.model,name:advanced_blanket_sales_agreement.model_blanket_sale_agreement model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_sale_agreement_view_form model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.report_blanket_agreement_document
+#: model:ir.actions.report,name:advanced_blanket_sales_agreement.action_report_blanket_agreement
+#: model:ir.model,name:advanced_blanket_sales_agreement.model_blanket_sale_agreement
+#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_sale_agreement_view_form
+#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.report_blanket_agreement_document
 msgid "Blanket Sales Agreement"
 msgstr "اتفاقية مبيعات إطارية"
 
@@ -607,7 +647,9 @@ msgid "Blanket Sales Agreement {{ object.name }} has reached its end date"
 msgstr "اتفاقية المبيعات الإطارية {{ object.name }} بلغت تاريخ انتهائها"
 
 #. module: advanced_blanket_sales_agreement
-#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_res_config_settings__group_blanket_sale_agreement model:res.groups,name:advanced_blanket_sales_agreement.group_blanket_sale_agreement model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.res_config_settings_view_form_blanket_agreement
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_res_config_settings__group_blanket_sale_agreement
+#: model:res.groups,name:advanced_blanket_sales_agreement.group_blanket_sale_agreement
+#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.res_config_settings_view_form_blanket_agreement
 msgid "Blanket Sales Agreements"
 msgstr "اتفاقيات المبيعات الإطارية"
 
@@ -627,7 +669,8 @@ msgid "Cancel this agreement?"
 msgstr "هل تريد إلغاء هذه الاتفاقية؟"
 
 #. module: advanced_blanket_sales_agreement
-#: model:ir.model.fields.selection,name:advanced_blanket_sales_agreement.selection__blanket_sale_agreement__state__cancel model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_sale_agreement_view_form
+#: model:ir.model.fields.selection,name:advanced_blanket_sales_agreement.selection__blanket_sale_agreement__state__cancel
+#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_sale_agreement_view_form
 msgid "Cancelled"
 msgstr "ملغاة"
 
@@ -652,7 +695,12 @@ msgid "Companies"
 msgstr "الشركات"
 
 #. module: advanced_blanket_sales_agreement
-#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_approval_role__company_id model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_approval_template__company_id model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement__company_id model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_approval__company_id model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_line__company_id model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_schedule__company_id
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_approval_role__company_id
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_approval_template__company_id
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement__company_id
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_approval__company_id
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_line__company_id
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_schedule__company_id
 msgid "Company"
 msgstr "الشركة"
 
@@ -664,9 +712,12 @@ msgstr "إعدادات التهيئة"
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/sale_order.py:0
-#, python-format
-msgid "Confirmed orders for %(product)s would total %(qty)s, more than the %(agreed)s agreed on %(agreement)s."
-msgstr "سيصبح إجمالي الأوامر المؤكدة من %(product)s %(qty)s، وهو أكثر من %(agreed)s المتفق عليه في %(agreement)s."
+msgid ""
+"Confirmed orders for %(product)s would total %(qty)s, more than the "
+"%(agreed)s agreed on %(agreement)s."
+msgstr ""
+"سيصبح إجمالي الأوامر المؤكدة من %(product)s %(qty)s، وهو أكثر من %(agreed)s "
+"المتفق عليه في %(agreement)s."
 
 #. module: advanced_blanket_sales_agreement
 #: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement__consumption_percent
@@ -675,8 +726,12 @@ msgstr "المستهلك (%)"
 
 #. module: advanced_blanket_sales_agreement
 #: model:ir.model.fields,help:advanced_blanket_sales_agreement.field_blanket_sale_agreement_line__product_uom_category_id
-msgid "Conversion between Units of Measure can only occur if they belong to the same category. The conversion will be made based on the ratios."
-msgstr "يمكن التحويل بين وحدات القياس فقط إذا كانت تنتمي إلى نفس الفئة. سيتم التحويل بناءً على النسب."
+msgid ""
+"Conversion between Units of Measure can only occur if they belong to the "
+"same category. The conversion will be made based on the ratios."
+msgstr ""
+"يمكن التحويل بين وحدات القياس فقط إذا كانت تنتمي إلى نفس الفئة. سيتم التحويل"
+" بناءً على النسب."
 
 #. module: advanced_blanket_sales_agreement
 #: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_sale_agreement_view_form
@@ -699,17 +754,32 @@ msgid "Create an approval template"
 msgstr "أنشئ قالب اعتماد"
 
 #. module: advanced_blanket_sales_agreement
-#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_approval_role__create_uid model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_approval_template__create_uid model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_approval_template_line__create_uid model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_reject_wizard__create_uid model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement__create_uid model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_approval__create_uid model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_line__create_uid model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_schedule__create_uid
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_approval_role__create_uid
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_approval_template__create_uid
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_approval_template_line__create_uid
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_reject_wizard__create_uid
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement__create_uid
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_approval__create_uid
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_line__create_uid
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_schedule__create_uid
 msgid "Created by"
 msgstr "أنشئ بواسطة"
 
 #. module: advanced_blanket_sales_agreement
-#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_approval_role__create_date model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_approval_template__create_date model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_approval_template_line__create_date model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_reject_wizard__create_date model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement__create_date model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_approval__create_date model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_line__create_date model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_schedule__create_date
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_approval_role__create_date
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_approval_template__create_date
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_approval_template_line__create_date
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_reject_wizard__create_date
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement__create_date
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_approval__create_date
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_line__create_date
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_schedule__create_date
 msgid "Created on"
 msgstr "أنشئ في"
 
 #. module: advanced_blanket_sales_agreement
-#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement__currency_id model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_line__currency_id
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement__currency_id
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_line__currency_id
 msgid "Currency"
 msgstr "العملة"
 
@@ -724,12 +794,16 @@ msgid "Current Approvers"
 msgstr "المعتمدون الحاليون"
 
 #. module: advanced_blanket_sales_agreement
-#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement__partner_id model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_line__partner_id model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_sale_agreement_view_search model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.report_blanket_agreement_document
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement__partner_id
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_line__partner_id
+#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_sale_agreement_view_search
+#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.report_blanket_agreement_document
 msgid "Customer"
 msgstr "العميل"
 
 #. module: advanced_blanket_sales_agreement
-#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement__client_order_ref model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.report_blanket_agreement_document
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement__client_order_ref
+#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.report_blanket_agreement_document
 msgid "Customer Reference"
 msgstr "مرجع العميل"
 
@@ -741,7 +815,9 @@ msgstr "التاريخ"
 #. module: advanced_blanket_sales_agreement
 #: model:ir.model.fields,help:advanced_blanket_sales_agreement.field_blanket_sale_agreement__reminder_date
 msgid "Date on which the pre-expiration reminder is e-mailed to the customer."
-msgstr "التاريخ الذي يُرسل فيه التذكير المسبق بالانتهاء إلى العميل عبر البريد الإلكتروني."
+msgstr ""
+"التاريخ الذي يُرسل فيه التذكير المسبق بالانتهاء إلى العميل عبر البريد "
+"الإلكتروني."
 
 #. module: advanced_blanket_sales_agreement
 #: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement__days_to_expiry
@@ -759,12 +835,14 @@ msgid "Decision Date"
 msgstr "تاريخ القرار"
 
 #. module: advanced_blanket_sales_agreement
-#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_res_company__blanket_approval_template_id model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_res_config_settings__blanket_approval_template_id
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_res_company__blanket_approval_template_id
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_res_config_settings__blanket_approval_template_id
 msgid "Default Agreement Approval Template"
 msgstr "قالب اعتماد الاتفاقية الافتراضي"
 
 #. module: advanced_blanket_sales_agreement
-#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_res_company__blanket_default_terms model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_res_config_settings__blanket_default_terms
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_res_company__blanket_default_terms
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_res_config_settings__blanket_default_terms
 msgid "Default Agreement Terms & Conditions"
 msgstr "الشروط والأحكام الافتراضية للاتفاقية"
 
@@ -775,18 +853,28 @@ msgstr "الشروط والأحكام الافتراضية"
 
 #. module: advanced_blanket_sales_agreement
 #: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.res_config_settings_view_form_blanket_agreement
-msgid "Default approval template and pre-expiration reminder for new agreements"
+msgid ""
+"Default approval template and pre-expiration reminder for new agreements"
 msgstr "قالب الاعتماد الافتراضي والتذكير المسبق بالانتهاء للاتفاقيات الجديدة"
 
 #. module: advanced_blanket_sales_agreement
-#: model:ir.model.fields,help:advanced_blanket_sales_agreement.field_res_company__blanket_reminder_days model:ir.model.fields,help:advanced_blanket_sales_agreement.field_res_config_settings__blanket_reminder_days
-msgid "Default number of days before the agreement end date on which the customer receives a pre-expiration reminder."
-msgstr "العدد الافتراضي للأيام قبل تاريخ انتهاء الاتفاقية الذي يتلقى فيه العميل تذكيرًا مسبقًا بالانتهاء."
+#: model:ir.model.fields,help:advanced_blanket_sales_agreement.field_res_company__blanket_reminder_days
+#: model:ir.model.fields,help:advanced_blanket_sales_agreement.field_res_config_settings__blanket_reminder_days
+msgid ""
+"Default number of days before the agreement end date on which the customer "
+"receives a pre-expiration reminder."
+msgstr ""
+"العدد الافتراضي للأيام قبل تاريخ انتهاء الاتفاقية الذي يتلقى فيه العميل "
+"تذكيرًا مسبقًا بالانتهاء."
 
 #. module: advanced_blanket_sales_agreement
 #: model_terms:ir.actions.act_window,help:advanced_blanket_sales_agreement.action_blanket_approval_template
-msgid "Define the sequential approval tiers a blanket sales agreement must pass before issuance."
-msgstr "حدد مستويات الاعتماد المتتابعة التي يجب أن تمر بها اتفاقية المبيعات الإطارية قبل إصدارها."
+msgid ""
+"Define the sequential approval tiers a blanket sales agreement must pass "
+"before issuance."
+msgstr ""
+"حدد مستويات الاعتماد المتتابعة التي يجب أن تمر بها اتفاقية المبيعات الإطارية"
+" قبل إصدارها."
 
 #. module: advanced_blanket_sales_agreement
 #: model:ir.model.fields.selection,name:advanced_blanket_sales_agreement.selection__blanket_sale_agreement_schedule__state__delivered
@@ -801,19 +889,25 @@ msgstr "الكمية المسلّمة"
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement_schedule.py:0
-#, python-format
-msgid "Delivery %(date)s of %(product)s already has quotation or order %(order)s. Cancel it before changing the schedule."
-msgstr "تسليم %(date)s من %(product)s مرتبط بعرض السعر أو الأمر %(order)s. ألغِه قبل تغيير الجدول."
+msgid ""
+"Delivery %(date)s of %(product)s already has quotation or order %(order)s. "
+"Cancel it before changing the schedule."
+msgstr ""
+"تسليم %(date)s من %(product)s مرتبط بعرض السعر أو الأمر %(order)s. ألغِه قبل"
+" تغيير الجدول."
 
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement_schedule.py:0
-#, python-format
-msgid "Delivery %(date)s of %(product)s is on confirmed order %(order)s and cannot be deleted."
-msgstr "تسليم %(date)s من %(product)s مدرج في الأمر المؤكد %(order)s ولا يمكن حذفه."
+msgid ""
+"Delivery %(date)s of %(product)s is on confirmed order %(order)s and cannot "
+"be deleted."
+msgstr ""
+"تسليم %(date)s من %(product)s مدرج في الأمر المؤكد %(order)s ولا يمكن حذفه."
 
 #. module: advanced_blanket_sales_agreement
-#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_schedule__note model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.report_blanket_agreement_document
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_schedule__note
+#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.report_blanket_agreement_document
 msgid "Delivery Notes"
 msgstr "ملاحظات التسليم"
 
@@ -823,19 +917,23 @@ msgid "Delivery Schedule"
 msgstr "جدول التسليم"
 
 #. module: advanced_blanket_sales_agreement
-#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement__schedule_ids model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_sale_agreement_view_form
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement__schedule_ids
+#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_sale_agreement_view_form
 msgid "Delivery Schedules"
 msgstr "جداول التسليم"
 
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement_schedule.py:0
-#, python-format
 msgid "Delivery schedule dates must fall within the agreement period."
 msgstr "يجب أن تقع تواريخ جدول التسليم ضمن فترة الاتفاقية."
 
 #. module: advanced_blanket_sales_agreement
-#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_approval_role__description model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_approval_template__note model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_line__name model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_approval_template_view_form model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.report_blanket_agreement_document
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_approval_role__description
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_approval_template__note
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_line__name
+#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_approval_template_view_form
+#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.report_blanket_agreement_document
 msgid "Description"
 msgstr "الوصف"
 
@@ -845,7 +943,8 @@ msgid "Detailed terms and conditions of the agreement..."
 msgstr "الشروط والأحكام التفصيلية للاتفاقية..."
 
 #. module: advanced_blanket_sales_agreement
-#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_line__discount model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.report_blanket_agreement_document
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_line__discount
+#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.report_blanket_agreement_document
 msgid "Disc.%"
 msgstr "الخصم %"
 
@@ -860,27 +959,39 @@ msgid "Discount must be between 0 and 100."
 msgstr "يجب أن يكون الخصم بين 0 و 100."
 
 #. module: advanced_blanket_sales_agreement
-#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_approval_role__display_name model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_approval_template__display_name model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_approval_template_line__display_name model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_reject_wizard__display_name model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement__display_name model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_approval__display_name model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_line__display_name model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_schedule__display_name
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_approval_role__display_name
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_approval_template__display_name
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_approval_template_line__display_name
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_reject_wizard__display_name
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement__display_name
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_approval__display_name
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_line__display_name
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_schedule__display_name
 msgid "Display Name"
 msgstr "الاسم المعروض"
 
 #. module: advanced_blanket_sales_agreement
-#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement__dispute_resolution model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.report_blanket_agreement_document
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement__dispute_resolution
+#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.report_blanket_agreement_document
 msgid "Dispute Resolution"
 msgstr "تسوية النزاعات"
 
 #. module: advanced_blanket_sales_agreement
-#: model:ir.model.fields.selection,name:advanced_blanket_sales_agreement.selection__blanket_sale_agreement__state__draft model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_sale_agreement_view_search
+#: model:ir.model.fields.selection,name:advanced_blanket_sales_agreement.selection__blanket_sale_agreement__state__draft
+#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_sale_agreement_view_search
 msgid "Draft"
 msgstr "مسودة"
 
 #. module: advanced_blanket_sales_agreement
-#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement__date_end model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_sale_agreement_view_search
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement__date_end
+#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_sale_agreement_view_search
 msgid "End Date"
 msgstr "تاريخ الانتهاء"
 
 #. module: advanced_blanket_sales_agreement
-#: model:ir.model.fields.selection,name:advanced_blanket_sales_agreement.selection__blanket_sale_agreement__state__expired model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_sale_agreement_view_form model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_sale_agreement_view_search
+#: model:ir.model.fields.selection,name:advanced_blanket_sales_agreement.selection__blanket_sale_agreement__state__expired
+#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_sale_agreement_view_form
+#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_sale_agreement_view_search
 msgid "Expired"
 msgstr "منتهية"
 
@@ -901,8 +1012,12 @@ msgstr "وضّح سبب رفض الاتفاقية..."
 
 #. module: advanced_blanket_sales_agreement
 #: model:ir.model.fields,help:advanced_blanket_sales_agreement.field_blanket_sale_agreement__pricelist_id
-msgid "Fills the agreed prices when a product is chosen and sets the agreement currency. Defaults to the customer's pricelist."
-msgstr "تُملأ منها الأسعار المتفق عليها عند اختيار المنتج وتحدد عملة الاتفاقية. القيمة الافتراضية قائمة أسعار العميل."
+msgid ""
+"Fills the agreed prices when a product is chosen and sets the agreement "
+"currency. Defaults to the customer's pricelist."
+msgstr ""
+"تُملأ منها الأسعار المتفق عليها عند اختيار المنتج وتحدد عملة الاتفاقية. "
+"القيمة الافتراضية قائمة أسعار العميل."
 
 #. module: advanced_blanket_sales_agreement
 #: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement__message_follower_ids
@@ -930,7 +1045,8 @@ msgid "For the Supplier"
 msgstr "عن المورّد"
 
 #. module: advanced_blanket_sales_agreement
-#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement__governing_law model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.report_blanket_agreement_document
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement__governing_law
+#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.report_blanket_agreement_document
 msgid "Governing Law"
 msgstr "القانون الحاكم"
 
@@ -945,7 +1061,14 @@ msgid "Has Message"
 msgstr "يحتوي على رسالة"
 
 #. module: advanced_blanket_sales_agreement
-#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_approval_role__id model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_approval_template__id model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_approval_template_line__id model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_reject_wizard__id model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement__id model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_approval__id model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_line__id model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_schedule__id
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_approval_role__id
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_approval_template__id
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_approval_template_line__id
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_reject_wizard__id
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement__id
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_approval__id
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_line__id
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_schedule__id
 msgid "ID"
 msgstr "المعرف"
 
@@ -965,19 +1088,24 @@ msgid "If checked, new messages require your attention."
 msgstr "إذا كان محددًا، فهناك رسائل جديدة تحتاج لانتباهك."
 
 #. module: advanced_blanket_sales_agreement
-#: model:ir.model.fields,help:advanced_blanket_sales_agreement.field_blanket_sale_agreement__message_has_error model:ir.model.fields,help:advanced_blanket_sales_agreement.field_blanket_sale_agreement__message_has_sms_error
+#: model:ir.model.fields,help:advanced_blanket_sales_agreement.field_blanket_sale_agreement__message_has_error
+#: model:ir.model.fields,help:advanced_blanket_sales_agreement.field_blanket_sale_agreement__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr "إذا كان محددًا، فقد حدث خطأ في تسليم بعض الرسائل."
 
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
-msgid "If you approve tier '%(tier)s', nobody would be left to approve tier '%(next)s'. Another approver of tier '%(tier)s' must approve it."
-msgstr "إذا اعتمدت المستوى '%(tier)s' فلن يبقى أحد لاعتماد المستوى '%(next)s'. يجب أن يعتمد المستوى '%(tier)s' معتمد آخر."
+msgid ""
+"If you approve tier '%(tier)s', nobody would be left to approve tier "
+"'%(next)s'. Another approver of tier '%(tier)s' must approve it."
+msgstr ""
+"إذا اعتمدت المستوى '%(tier)s' فلن يبقى أحد لاعتماد المستوى '%(next)s'. يجب "
+"أن يعتمد المستوى '%(tier)s' معتمد آخر."
 
 #. module: advanced_blanket_sales_agreement
-#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement__incoterm_id model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.report_blanket_agreement_document
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement__incoterm_id
+#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.report_blanket_agreement_document
 msgid "Incoterm"
 msgstr "شروط التجارة الدولية"
 
@@ -1002,19 +1130,20 @@ msgid "Is Follower"
 msgstr "متابع"
 
 #. module: advanced_blanket_sales_agreement
-#: model:mail.activity.type,name:advanced_blanket_sales_agreement.mail_activity_blanket_issue model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_sale_agreement_view_form
+#: model:mail.activity.type,name:advanced_blanket_sales_agreement.mail_activity_blanket_issue
+#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_sale_agreement_view_form
 msgid "Issue Agreement"
 msgstr "إصدار الاتفاقية"
 
 #. module: advanced_blanket_sales_agreement
-#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement__issue_date model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.report_blanket_agreement_document
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement__issue_date
+#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.report_blanket_agreement_document
 msgid "Issue Date"
 msgstr "تاريخ الإصدار"
 
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
 msgid "Issue agreement %s"
 msgstr "إصدار الاتفاقية %s"
 
@@ -1024,17 +1153,32 @@ msgid "Issue the approved agreement to the customer"
 msgstr "إصدار الاتفاقية المعتمدة إلى العميل"
 
 #. module: advanced_blanket_sales_agreement
-#: model:ir.model.fields.selection,name:advanced_blanket_sales_agreement.selection__blanket_sale_agreement__state__issued model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_sale_agreement_view_search
+#: model:ir.model.fields.selection,name:advanced_blanket_sales_agreement.selection__blanket_sale_agreement__state__issued
+#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_sale_agreement_view_search
 msgid "Issued"
 msgstr "صادرة"
 
 #. module: advanced_blanket_sales_agreement
-#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_approval_role__write_uid model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_approval_template__write_uid model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_approval_template_line__write_uid model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_reject_wizard__write_uid model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement__write_uid model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_approval__write_uid model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_line__write_uid model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_schedule__write_uid
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_approval_role__write_uid
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_approval_template__write_uid
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_approval_template_line__write_uid
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_reject_wizard__write_uid
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement__write_uid
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_approval__write_uid
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_line__write_uid
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_schedule__write_uid
 msgid "Last Updated by"
 msgstr "آخر تحديث بواسطة"
 
 #. module: advanced_blanket_sales_agreement
-#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_approval_role__write_date model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_approval_template__write_date model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_approval_template_line__write_date model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_reject_wizard__write_date model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement__write_date model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_approval__write_date model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_line__write_date model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_schedule__write_date
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_approval_role__write_date
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_approval_template__write_date
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_approval_template_line__write_date
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_reject_wizard__write_date
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement__write_date
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_approval__write_date
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_line__write_date
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_schedule__write_date
 msgid "Last Updated on"
 msgstr "آخر تحديث في"
 
@@ -1045,16 +1189,25 @@ msgstr "الشروط والأحكام القانونية"
 
 #. module: advanced_blanket_sales_agreement
 #: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.res_config_settings_view_form_blanket_agreement
-msgid "Long-term customer agreements with approvals, delivery schedules and expiry reminders"
-msgstr "اتفاقيات طويلة الأجل مع العملاء تشمل الاعتمادات وجداول التسليم وتذكيرات الانتهاء"
+msgid ""
+"Long-term customer agreements with approvals, delivery schedules and expiry "
+"reminders"
+msgstr ""
+"اتفاقيات طويلة الأجل مع العملاء تشمل الاعتمادات وجداول التسليم وتذكيرات "
+"الانتهاء"
 
 #. module: advanced_blanket_sales_agreement
 #: model:ir.model.fields,help:advanced_blanket_sales_agreement.field_res_config_settings__group_blanket_sale_agreement
-msgid "Manage long-term blanket sales agreements with approval cycles, delivery schedules and automated customer notifications."
-msgstr "إدارة اتفاقيات المبيعات الإطارية طويلة الأجل مع دورات الاعتماد وجداول التسليم والإشعارات التلقائية للعملاء."
+msgid ""
+"Manage long-term blanket sales agreements with approval cycles, delivery "
+"schedules and automated customer notifications."
+msgstr ""
+"إدارة اتفاقيات المبيعات الإطارية طويلة الأجل مع دورات الاعتماد وجداول "
+"التسليم والإشعارات التلقائية للعملاء."
 
 #. module: advanced_blanket_sales_agreement
-#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_approval_role__user_ids model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_approval_role_view_form
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_approval_role__user_ids
+#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_approval_role_view_form
 msgid "Members"
 msgstr "الأعضاء"
 
@@ -1084,7 +1237,8 @@ msgid "My Pending Approvals"
 msgstr "اعتماداتي المعلقة"
 
 #. module: advanced_blanket_sales_agreement
-#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_approval_role__name model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_approval_template__name
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_approval_role__name
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_approval_template__name
 msgid "Name"
 msgstr "الاسم"
 
@@ -1095,13 +1249,16 @@ msgstr "الاسم والتوقيع والتاريخ"
 
 #. module: advanced_blanket_sales_agreement
 #: model:ir.model.fields,help:advanced_blanket_sales_agreement.field_blanket_sale_agreement_line__price_unit
-msgid "Negotiated price. Filled from the pricelist when the product is chosen, then kept as entered."
-msgstr "السعر المتفاوض عليه. يُملأ من قائمة الأسعار عند اختيار المنتج ثم يبقى كما أُدخل."
+msgid ""
+"Negotiated price. Filled from the pricelist when the product is chosen, then"
+" kept as entered."
+msgstr ""
+"السعر المتفاوض عليه. يُملأ من قائمة الأسعار عند اختيار المنتج ثم يبقى كما "
+"أُدخل."
 
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
-#: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0 code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0 code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0 code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
+#: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
 msgid "New"
 msgstr "جديد"
 
@@ -1123,28 +1280,35 @@ msgstr "نوع النشاط التالي"
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
 msgid "No e-mail sent: customer %s has no e-mail address."
 msgstr "لم يتم إرسال البريد: العميل %s ليس لديه عنوان بريد إلكتروني."
 
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
-msgid "No pricelist in %(currency)s is available for agreement %(agreement)s. Set a pricelist on the agreement."
-msgstr "لا توجد قائمة أسعار بعملة %(currency)s للاتفاقية %(agreement)s. حدد قائمة أسعار في الاتفاقية."
+msgid ""
+"No pricelist in %(currency)s is available for agreement %(agreement)s. Set a"
+" pricelist on the agreement."
+msgstr ""
+"لا توجد قائمة أسعار بعملة %(currency)s للاتفاقية %(agreement)s. حدد قائمة "
+"أسعار في الاتفاقية."
 
 #. module: advanced_blanket_sales_agreement
 #: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.res_config_settings_view_form_blanket_agreement
-msgid "Nobody approves their own agreement or more than one tier of the same submission"
+msgid ""
+"Nobody approves their own agreement or more than one tier of the same "
+"submission"
 msgstr "لا يعتمد أحد اتفاقيته ولا أكثر من مستوى في الإرسال نفسه"
 
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
-msgid "Nothing left to quote: the remaining quantities are already in open quotations %s."
-msgstr "لا يوجد ما يمكن تسعيره: الكميات المتبقية موجودة بالفعل في عروض الأسعار المفتوحة %s."
+msgid ""
+"Nothing left to quote: the remaining quantities are already in open "
+"quotations %s."
+msgstr ""
+"لا يوجد ما يمكن تسعيره: الكميات المتبقية موجودة بالفعل في عروض الأسعار "
+"المفتوحة %s."
 
 #. module: advanced_blanket_sales_agreement
 #: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement__message_needaction_counter
@@ -1153,8 +1317,12 @@ msgstr "عدد الإجراءات"
 
 #. module: advanced_blanket_sales_agreement
 #: model:ir.model.fields,help:advanced_blanket_sales_agreement.field_blanket_sale_agreement__reminder_days
-msgid "Number of days before the end date on which the customer receives the pre-expiration reminder. 0 disables the reminder."
-msgstr "عدد الأيام قبل تاريخ الانتهاء التي يتلقى فيها العميل التذكير المسبق. القيمة 0 تعطّل التذكير."
+msgid ""
+"Number of days before the end date on which the customer receives the pre-"
+"expiration reminder. 0 disables the reminder."
+msgstr ""
+"عدد الأيام قبل تاريخ الانتهاء التي يتلقى فيها العميل التذكير المسبق. القيمة "
+"0 تعطّل التذكير."
 
 #. module: advanced_blanket_sales_agreement
 #: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement__message_has_error_counter
@@ -1179,61 +1347,64 @@ msgstr "رقم الإرسال الذي يتبعه هذا القرار."
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
 msgid "Only approved agreements can be issued."
 msgstr "لا يمكن إصدار إلا الاتفاقيات المعتمدة."
 
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
 msgid "Only draft or rejected agreements can be submitted for approval."
 msgstr "لا يمكن إرسال إلا الاتفاقيات المسودة أو المرفوضة للاعتماد."
 
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
 msgid "Only rejected or cancelled agreements can be reset to draft."
 msgstr "لا يمكن إعادة إلا الاتفاقيات المرفوضة أو الملغاة إلى مسودة."
 
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
 msgid "Only the responsible user or a sales manager can issue agreement %s."
-msgstr "لا يمكن إصدار الاتفاقية %s إلا من قبل المستخدم المسؤول أو مدير المبيعات."
+msgstr ""
+"لا يمكن إصدار الاتفاقية %s إلا من قبل المستخدم المسؤول أو مدير المبيعات."
 
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/sale_order.py:0
-#, python-format
-msgid "Order %(order)s is in %(order_currency)s but agreement %(agreement)s is in %(currency)s. Use a pricelist in %(currency)s."
-msgstr "الأمر %(order)s بعملة %(order_currency)s بينما الاتفاقية %(agreement)s بعملة %(currency)s. استخدم قائمة أسعار بعملة %(currency)s."
+msgid ""
+"Order %(order)s is in %(order_currency)s but agreement %(agreement)s is in "
+"%(currency)s. Use a pricelist in %(currency)s."
+msgstr ""
+"الأمر %(order)s بعملة %(order_currency)s بينما الاتفاقية %(agreement)s بعملة"
+" %(currency)s. استخدم قائمة أسعار بعملة %(currency)s."
 
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/sale_order.py:0
-#, python-format
-msgid "Order %(order)s is linked to agreement %(agreement)s which is not issued."
+msgid ""
+"Order %(order)s is linked to agreement %(agreement)s which is not issued."
 msgstr "الأمر %(order)s مرتبط بالاتفاقية %(agreement)s وهي غير صادرة."
 
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/sale_order.py:0
-#, python-format
-msgid "Order %(order)s uses a line of agreement %(agreement)s but is not linked to it. Set %(agreement)s as the order's blanket agreement."
-msgstr "الأمر %(order)s يستخدم بندًا من الاتفاقية %(agreement)s لكنه غير مرتبط بها. حدد %(agreement)s كاتفاقية إطارية للأمر."
+msgid ""
+"Order %(order)s uses a line of agreement %(agreement)s but is not linked to "
+"it. Set %(agreement)s as the order's blanket agreement."
+msgstr ""
+"الأمر %(order)s يستخدم بندًا من الاتفاقية %(agreement)s لكنه غير مرتبط بها. "
+"حدد %(agreement)s كاتفاقية إطارية للأمر."
 
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/sale_order.py:0
-#, python-format
 msgid "Order %s customer does not match its blanket agreement."
 msgstr "عميل الأمر %s لا يطابق اتفاقيته الإطارية."
 
 #. module: advanced_blanket_sales_agreement
-#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement__line_ids model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_sale_agreement_view_form
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement__line_ids
+#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_sale_agreement_view_form
 msgid "Order Lines"
 msgstr "بنود الطلب"
 
@@ -1255,9 +1426,12 @@ msgstr "الكمية المطلوبة"
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/sale_order.py:0
-#, python-format
-msgid "Ordered quantity for %(product)s (%(qty)s) exceeds the remaining quantity on agreement %(agreement)s (%(remaining)s)."
-msgstr "الكمية المطلوبة من %(product)s (%(qty)s) تتجاوز الكمية المتبقية في الاتفاقية %(agreement)s (%(remaining)s)."
+msgid ""
+"Ordered quantity for %(product)s (%(qty)s) exceeds the remaining quantity on"
+" agreement %(agreement)s (%(remaining)s)."
+msgstr ""
+"الكمية المطلوبة من %(product)s (%(qty)s) تتجاوز الكمية المتبقية في الاتفاقية"
+" %(agreement)s (%(remaining)s)."
 
 #. module: advanced_blanket_sales_agreement
 #: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_sale_agreement_view_form
@@ -1265,7 +1439,8 @@ msgid "Other Info"
 msgstr "معلومات أخرى"
 
 #. module: advanced_blanket_sales_agreement
-#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement__payment_term_id model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.report_blanket_agreement_document
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement__payment_term_id
+#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.report_blanket_agreement_document
 msgid "Payment Terms"
 msgstr "شروط الدفع"
 
@@ -1282,9 +1457,12 @@ msgstr "مخطط"
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
-msgid "Please review blanket sales agreement %(agreement)s for %(partner)s (total %(amount)s %(currency)s) and approve or reject it."
-msgstr "يرجى مراجعة اتفاقية المبيعات الإطارية %(agreement)s للعميل %(partner)s (الإجمالي %(amount)s %(currency)s) واعتمادها أو رفضها."
+msgid ""
+"Please review blanket sales agreement %(agreement)s for %(partner)s (total "
+"%(amount)s %(currency)s) and approve or reject it."
+msgstr ""
+"يرجى مراجعة اتفاقية المبيعات الإطارية %(agreement)s للعميل %(partner)s "
+"(الإجمالي %(amount)s %(currency)s) واعتمادها أو رفضها."
 
 #. module: advanced_blanket_sales_agreement
 #: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.res_config_settings_view_form_blanket_agreement
@@ -1299,7 +1477,6 @@ msgstr "قائمة الأسعار"
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/sale_order.py:0
-#, python-format
 msgid "Prices differing from the agreed prices were accepted by %s:"
 msgstr "قَبِل %s أسعارًا تختلف عن الأسعار المتفق عليها:"
 
@@ -1309,12 +1486,16 @@ msgid "Print"
 msgstr "طباعة"
 
 #. module: advanced_blanket_sales_agreement
-#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_line__product_id model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_schedule__product_id model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_sale_agreement_view_search model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.report_blanket_agreement_document
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_line__product_id
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_schedule__product_id
+#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_sale_agreement_view_search
+#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.report_blanket_agreement_document
 msgid "Product"
 msgstr "المنتج"
 
 #. module: advanced_blanket_sales_agreement
-#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_schedule__quantity model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.report_blanket_agreement_document
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_schedule__quantity
+#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.report_blanket_agreement_document
 msgid "Quantity"
 msgstr "الكمية"
 
@@ -1331,7 +1512,6 @@ msgstr "عرض السعر / الأمر"
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
 msgid "Quotations can only be created from issued agreements."
 msgstr "لا يمكن إنشاء عروض الأسعار إلا من الاتفاقيات الصادرة."
 
@@ -1346,14 +1526,15 @@ msgid "Quoted Qty"
 msgstr "الكمية المسعّرة"
 
 #. module: advanced_blanket_sales_agreement
-#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_agreement_reject_wizard_form model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_sale_agreement_view_form
+#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_agreement_reject_wizard_form
+#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_sale_agreement_view_form
 msgid "Reject"
 msgstr "رفض"
 
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
-#: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0 model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_agreement_reject_wizard_form
-#, python-format
+#: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
+#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_agreement_reject_wizard_form
 msgid "Reject Agreement"
 msgstr "رفض الاتفاقية"
 
@@ -1363,7 +1544,9 @@ msgid "Reject Blanket Sales Agreement"
 msgstr "رفض اتفاقية المبيعات الإطارية"
 
 #. module: advanced_blanket_sales_agreement
-#: model:ir.model.fields.selection,name:advanced_blanket_sales_agreement.selection__blanket_sale_agreement__state__rejected model:ir.model.fields.selection,name:advanced_blanket_sales_agreement.selection__blanket_sale_agreement_approval__state__rejected model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_sale_agreement_view_form
+#: model:ir.model.fields.selection,name:advanced_blanket_sales_agreement.selection__blanket_sale_agreement__state__rejected
+#: model:ir.model.fields.selection,name:advanced_blanket_sales_agreement.selection__blanket_sale_agreement_approval__state__rejected
+#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_sale_agreement_view_form
 msgid "Rejected"
 msgstr "مرفوضة"
 
@@ -1404,8 +1587,12 @@ msgstr "لا يمكن أن تكون أيام التذكير سالبة."
 
 #. module: advanced_blanket_sales_agreement
 #: model:mail.template,subject:advanced_blanket_sales_agreement.mail_template_blanket_reminder
-msgid "Reminder: Blanket Sales Agreement {{ object.name }} expires on {{ format_date(object.date_end) }}"
-msgstr "تذكير: اتفاقية المبيعات الإطارية {{ object.name }} تنتهي في {{ format_date(object.date_end) }}"
+msgid ""
+"Reminder: Blanket Sales Agreement {{ object.name }} expires on {{ "
+"format_date(object.date_end) }}"
+msgstr ""
+"تذكير: اتفاقية المبيعات الإطارية {{ object.name }} تنتهي في {{ "
+"format_date(object.date_end) }}"
 
 #. module: advanced_blanket_sales_agreement
 #: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_sale_agreement_view_form
@@ -1418,7 +1605,9 @@ msgid "Responsibilities of this role..."
 msgstr "مسؤوليات هذا الدور..."
 
 #. module: advanced_blanket_sales_agreement
-#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement__user_id model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_sale_agreement_view_search model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.report_blanket_agreement_document
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement__user_id
+#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_sale_agreement_view_search
+#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.report_blanket_agreement_document
 msgid "Responsible"
 msgstr "المسؤول"
 
@@ -1433,14 +1622,19 @@ msgid "Resubmit"
 msgstr "إعادة الإرسال"
 
 #. module: advanced_blanket_sales_agreement
-#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_approval_template_line__role_id model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_approval__role_id model:ir.model.fields.selection,name:advanced_blanket_sales_agreement.selection__blanket_agreement_approval_template_line__approver_type__role
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_approval_template_line__role_id
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_approval__role_id
+#: model:ir.model.fields.selection,name:advanced_blanket_sales_agreement.selection__blanket_agreement_approval_template_line__approver_type__role
 msgid "Role"
 msgstr "الدور"
 
 #. module: advanced_blanket_sales_agreement
 #: model_terms:ir.actions.act_window,help:advanced_blanket_sales_agreement.action_blanket_approval_role
-msgid "Roles group the users allowed to approve a tier of a blanket agreement."
-msgstr "تجمع الأدوار المستخدمين المخولين باعتماد مستوى من مستويات الاتفاقية الإطارية."
+msgid ""
+"Roles group the users allowed to approve a tier of a blanket agreement."
+msgstr ""
+"تجمع الأدوار المستخدمين المخولين باعتماد مستوى من مستويات الاتفاقية "
+"الإطارية."
 
 #. module: advanced_blanket_sales_agreement
 #: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement__message_has_sms_error
@@ -1468,12 +1662,14 @@ msgid "Sales Order Lines"
 msgstr "بنود أوامر البيع"
 
 #. module: advanced_blanket_sales_agreement
-#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement__sale_order_ids model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_sale_agreement_view_form
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement__sale_order_ids
+#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_sale_agreement_view_form
 msgid "Sales Orders"
 msgstr "أوامر البيع"
 
 #. module: advanced_blanket_sales_agreement
-#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_schedule__scheduled_date model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.report_blanket_agreement_document
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_schedule__scheduled_date
+#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.report_blanket_agreement_document
 msgid "Scheduled Date"
 msgstr "التاريخ المجدول"
 
@@ -1485,9 +1681,12 @@ msgstr "الكمية المجدولة"
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement_schedule.py:0
-#, python-format
-msgid "Scheduled quantities for %(product)s (%(scheduled)s) exceed the agreed quantity (%(agreed)s)."
-msgstr "الكميات المجدولة من %(product)s (%(scheduled)s) تتجاوز الكمية المتفق عليها (%(agreed)s)."
+msgid ""
+"Scheduled quantities for %(product)s (%(scheduled)s) exceed the agreed "
+"quantity (%(agreed)s)."
+msgstr ""
+"الكميات المجدولة من %(product)s (%(scheduled)s) تتجاوز الكمية المتفق عليها "
+"(%(agreed)s)."
 
 #. module: advanced_blanket_sales_agreement
 #: model:ir.model.constraint,message:advanced_blanket_sales_agreement.constraint_blanket_sale_agreement_schedule_quantity_positive
@@ -1515,7 +1714,9 @@ msgid "Sent to the customer when a blanket sales agreement is issued"
 msgstr "يُرسل إلى العميل عند إصدار اتفاقية المبيعات الإطارية"
 
 #. module: advanced_blanket_sales_agreement
-#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_approval_template_line__sequence model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_approval__sequence model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_line__sequence
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_approval_template_line__sequence
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_approval__sequence
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_line__sequence
 msgid "Sequence"
 msgstr "التسلسل"
 
@@ -1525,17 +1726,21 @@ msgid "Specific User"
 msgstr "مستخدم محدد"
 
 #. module: advanced_blanket_sales_agreement
-#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement__date_start model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_sale_agreement_view_search
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement__date_start
+#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_sale_agreement_view_search
 msgid "Start Date"
 msgstr "تاريخ البدء"
 
 #. module: advanced_blanket_sales_agreement
-#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement__state model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_approval__state model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_line__state
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement__state
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_approval__state
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_line__state
 msgid "State"
 msgstr "الحالة"
 
 #. module: advanced_blanket_sales_agreement
-#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_schedule__state model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_sale_agreement_view_search
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_schedule__state
+#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_sale_agreement_view_search
 msgid "Status"
 msgstr "الحالة"
 
@@ -1568,7 +1773,8 @@ msgid "Submitted Date"
 msgstr "تاريخ الإرسال"
 
 #. module: advanced_blanket_sales_agreement
-#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_line__price_subtotal model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.report_blanket_agreement_document
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_line__price_subtotal
+#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.report_blanket_agreement_document
 msgid "Subtotal"
 msgstr "المجموع الفرعي"
 
@@ -1583,21 +1789,28 @@ msgid "Tax"
 msgstr "الضريبة"
 
 #. module: advanced_blanket_sales_agreement
-#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement__amount_tax model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_line__tax_ids model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.report_blanket_agreement_document
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement__amount_tax
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_line__tax_ids
+#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.report_blanket_agreement_document
 msgid "Taxes"
 msgstr "الضرائب"
 
 #. module: advanced_blanket_sales_agreement
-#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_approval_template_line__template_id model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.res_config_settings_view_form_blanket_agreement
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_approval_template_line__template_id
+#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.res_config_settings_view_form_blanket_agreement
 msgid "Template"
 msgstr "القالب"
 
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
-msgid "Template '%s' cannot be approved by a different person at each tier: add approvers to its roles or turn off segregation of duties in the Sales settings."
-msgstr "لا يمكن اعتماد القالب '%s' بشخص مختلف في كل مستوى: أضف معتمدين إلى أدواره أو أوقف الفصل بين المهام في إعدادات المبيعات."
+msgid ""
+"Template '%s' cannot be approved by a different person at each tier: add "
+"approvers to its roles or turn off segregation of duties in the Sales "
+"settings."
+msgstr ""
+"لا يمكن اعتماد القالب '%s' بشخص مختلف في كل مستوى: أضف معتمدين إلى أدواره أو"
+" أوقف الفصل بين المهام في إعدادات المبيعات."
 
 #. module: advanced_blanket_sales_agreement
 #: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.report_blanket_agreement_document
@@ -1627,70 +1840,78 @@ msgstr "لا يمكن أن تكون الكمية المتفق عليها سال�
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement_line.py:0
-#, python-format
-msgid "The agreed quantity of %(product)s (%(agreed)s) cannot be lower than the quantity already ordered (%(ordered)s)."
-msgstr "لا يمكن أن تكون الكمية المتفق عليها من %(product)s (%(agreed)s) أقل من الكمية المطلوبة بالفعل (%(ordered)s)."
+msgid ""
+"The agreed quantity of %(product)s (%(agreed)s) cannot be lower than the "
+"quantity already ordered (%(ordered)s)."
+msgstr ""
+"لا يمكن أن تكون الكمية المتفق عليها من %(product)s (%(agreed)s) أقل من "
+"الكمية المطلوبة بالفعل (%(ordered)s)."
 
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
 msgid "The agreement end date must be on or after its start date."
 msgstr "يجب أن يكون تاريخ انتهاء الاتفاقية في تاريخ بدئها أو بعده."
 
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/sale_order.py:0
-#, python-format
 msgid "The agreement line product must match the order line product."
 msgstr "يجب أن يطابق منتج بند الاتفاقية منتج بند الأمر."
 
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
-msgid "The approval trail is maintained by the approval workflow and cannot be edited."
+msgid ""
+"The approval trail is maintained by the approval workflow and cannot be "
+"edited."
 msgstr "سجل الاعتمادات تديره دورة الاعتماد ولا يمكن تعديله."
 
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement_schedule.py:0
-#, python-format
-msgid "The delivery schedule of %(agreement)s must use one of its own lines, not a line of %(other)s."
-msgstr "يجب أن يستخدم جدول تسليم %(agreement)s أحد بنودها، وليس بندًا من %(other)s."
+msgid ""
+"The delivery schedule of %(agreement)s must use one of its own lines, not a "
+"line of %(other)s."
+msgstr ""
+"يجب أن يستخدم جدول تسليم %(agreement)s أحد بنودها، وليس بندًا من %(other)s."
 
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement_schedule.py:0
-#, python-format
-msgid "The delivery schedule of agreement %(agreement)s cannot be changed while it is %(state)s."
-msgstr "لا يمكن تغيير جدول تسليم الاتفاقية %(agreement)s وهي في حالة %(state)s."
+msgid ""
+"The delivery schedule of agreement %(agreement)s cannot be changed while it "
+"is %(state)s."
+msgstr ""
+"لا يمكن تغيير جدول تسليم الاتفاقية %(agreement)s وهي في حالة %(state)s."
 
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement_line.py:0
-#, python-format
-msgid "The lines of agreement %(agreement)s can no longer be changed: it is %(state)s. Only draft or rejected agreements can be edited."
-msgstr "لم يعد بالإمكان تغيير بنود الاتفاقية %(agreement)s: فهي في حالة %(state)s. لا يمكن تعديل إلا الاتفاقيات المسودة أو المرفوضة."
+msgid ""
+"The lines of agreement %(agreement)s can no longer be changed: it is "
+"%(state)s. Only draft or rejected agreements can be edited."
+msgstr ""
+"لم يعد بالإمكان تغيير بنود الاتفاقية %(agreement)s: فهي في حالة %(state)s. "
+"لا يمكن تعديل إلا الاتفاقيات المسودة أو المرفوضة."
 
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement_schedule.py:0
-#, python-format
 msgid "The selected delivery schedules already have a quotation or order."
 msgstr "جداول التسليم المحددة لديها عرض سعر أو أمر بالفعل."
 
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement_line.py:0
-#, python-format
-msgid "The unit of measure of line '%s' must belong to the same category as the product's unit."
+msgid ""
+"The unit of measure of line '%s' must belong to the same category as the "
+"product's unit."
 msgstr "يجب أن تنتمي وحدة قياس البند '%s' إلى نفس فئة وحدة المنتج."
 
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/sale_order.py:0
-#, python-format
 msgid ""
 "These prices differ from the blanket agreement. Use the agreed price, or ask a Sales Administrator to confirm:\n"
 "%s"
@@ -1699,28 +1920,27 @@ msgstr ""
 "%s"
 
 #. module: advanced_blanket_sales_agreement
-#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_approval_template_line__name model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_approval__name model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.report_blanket_agreement_document
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_approval_template_line__name
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_approval__name
+#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.report_blanket_agreement_document
 msgid "Tier"
 msgstr "المستوى"
 
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
 msgid "Tier '%(tier)s' approved by %(user)s."
 msgstr "تم اعتماد المستوى '%(tier)s' بواسطة %(user)s."
 
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_approval.py:0
-#, python-format
 msgid "Tier '%s' must define an approval role."
 msgstr "يجب أن يحدد المستوى '%s' دور اعتماد."
 
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_approval.py:0
-#, python-format
 msgid "Tier '%s' must define an approver."
 msgstr "يجب أن يحدد المستوى '%s' معتمدًا."
 
@@ -1736,11 +1956,17 @@ msgstr "المستويات"
 
 #. module: advanced_blanket_sales_agreement
 #: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_approval_template_view_form
-msgid "Tiers are approved sequentially, top to bottom. Any member of a role can approve its tier."
-msgstr "تُعتمد المستويات بالتتابع من الأعلى إلى الأسفل. يمكن لأي عضو في الدور اعتماد مستواه."
+msgid ""
+"Tiers are approved sequentially, top to bottom. Any member of a role can "
+"approve its tier."
+msgstr ""
+"تُعتمد المستويات بالتتابع من الأعلى إلى الأسفل. يمكن لأي عضو في الدور اعتماد"
+" مستواه."
 
 #. module: advanced_blanket_sales_agreement
-#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement__amount_total model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_line__price_total model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_sale_agreement_view_tree
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement__amount_total
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_line__price_total
+#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_sale_agreement_view_tree
 msgid "Total"
 msgstr "الإجمالي"
 
@@ -1750,32 +1976,41 @@ msgid "Type of the exception activity on record."
 msgstr "نوع النشاط الاستثنائي في السجل."
 
 #. module: advanced_blanket_sales_agreement
-#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_line__price_unit model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.report_blanket_agreement_document
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_line__price_unit
+#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.report_blanket_agreement_document
 msgid "Unit Price"
 msgstr "سعر الوحدة"
 
 #. module: advanced_blanket_sales_agreement
-#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_line__product_uom model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_schedule__product_uom
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_line__product_uom
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_schedule__product_uom
 msgid "Unit of Measure"
 msgstr "وحدة القياس"
 
 #. module: advanced_blanket_sales_agreement
-#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement__amount_untaxed model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.report_blanket_agreement_document
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement__amount_untaxed
+#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.report_blanket_agreement_document
 msgid "Untaxed Amount"
 msgstr "المبلغ دون الضريبة"
 
 #. module: advanced_blanket_sales_agreement
 #: model:ir.model.fields,help:advanced_blanket_sales_agreement.field_blanket_sale_agreement__amount_ordered
-msgid "Untaxed amount of confirmed sales orders placed against this agreement."
+msgid ""
+"Untaxed amount of confirmed sales orders placed against this agreement."
 msgstr "المبلغ دون الضريبة لأوامر البيع المؤكدة المسجلة على هذه الاتفاقية."
 
 #. module: advanced_blanket_sales_agreement
 #: model:ir.model.fields,help:advanced_blanket_sales_agreement.field_blanket_sale_agreement__user_id
-msgid "User who created the agreement. They are notified once all approvers sign off and are in charge of issuing it."
-msgstr "المستخدم الذي أنشأ الاتفاقية. يتم إشعاره عند موافقة جميع المعتمدين ويتولى إصدارها."
+msgid ""
+"User who created the agreement. They are notified once all approvers sign "
+"off and are in charge of issuing it."
+msgstr ""
+"المستخدم الذي أنشأ الاتفاقية. يتم إشعاره عند موافقة جميع المعتمدين ويتولى "
+"إصدارها."
 
 #. module: advanced_blanket_sales_agreement
-#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_sale_agreement_view_form model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.report_blanket_agreement_document
+#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_sale_agreement_view_form
+#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.report_blanket_agreement_document
 msgid "Validity"
 msgstr "مدة السريان"
 
@@ -1785,7 +2020,8 @@ msgid "Waiting"
 msgstr "في الانتظار"
 
 #. module: advanced_blanket_sales_agreement
-#: model:ir.model.fields.selection,name:advanced_blanket_sales_agreement.selection__blanket_sale_agreement__state__to_approve model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_sale_agreement_view_search
+#: model:ir.model.fields.selection,name:advanced_blanket_sales_agreement.selection__blanket_sale_agreement__state__to_approve
+#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_sale_agreement_view_search
 msgid "Waiting Approval"
 msgstr "بانتظار الاعتماد"
 
@@ -1807,28 +2043,29 @@ msgstr "سجل تواصل الموقع"
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
-msgid "You already approved another tier of agreement %(agreement)s; tier '%(tier)s' needs a different approver."
-msgstr "لقد اعتمدت مستوى آخر من الاتفاقية %(agreement)s؛ يحتاج المستوى '%(tier)s' إلى معتمد مختلف."
+msgid ""
+"You already approved another tier of agreement %(agreement)s; tier "
+"'%(tier)s' needs a different approver."
+msgstr ""
+"لقد اعتمدت مستوى آخر من الاتفاقية %(agreement)s؛ يحتاج المستوى '%(tier)s' "
+"إلى معتمد مختلف."
 
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
-msgid "You are not an approver of tier '%(tier)s' for agreement %(agreement)s."
+msgid ""
+"You are not an approver of tier '%(tier)s' for agreement %(agreement)s."
 msgstr "لست معتمدًا للمستوى '%(tier)s' في الاتفاقية %(agreement)s."
 
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
 msgid "You can only delete draft, rejected or cancelled agreements."
 msgstr "يمكنك حذف الاتفاقيات المسودة أو المرفوضة أو الملغاة فقط."
 
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement.py:0
-#, python-format
 msgid "You cannot approve agreement %s: you are its responsible user."
 msgstr "لا يمكنك اعتماد الاتفاقية %s: فأنت المستخدم المسؤول عنها."
 
@@ -1859,5 +2096,7 @@ msgstr "مثال: الاعتماد القياسي للاتفاقيات"
 
 #. module: advanced_blanket_sales_agreement
 #: model:mail.template,subject:advanced_blanket_sales_agreement.mail_template_blanket_issued
-msgid "{{ object.company_id.name }} - Blanket Sales Agreement {{ object.name }}"
-msgstr "{{ object.company_id.name }} - اتفاقية مبيعات إطارية {{ object.name }}"
+msgid ""
+"{{ object.company_id.name }} - Blanket Sales Agreement {{ object.name }}"
+msgstr ""
+"{{ object.company_id.name }} - اتفاقية مبيعات إطارية {{ object.name }}"
