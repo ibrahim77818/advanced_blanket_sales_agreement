@@ -18,7 +18,7 @@
         <field name="arch" type="xml">
             <form string="Approval Role">
                 <sheet>
-                    <widget name="web_ribbon" title="Archived" bg_color="bg-danger" attrs="{'invisible': [('active', '=', True)]}"/>
+                    <widget name="web_ribbon" title="Archived" bg_color="bg-danger" invisible="active"/>
                     <div class="oe_title">
                         <label for="name"/>
                         <h1><field name="name" placeholder="e.g. Sales Director"/></h1>
@@ -65,7 +65,7 @@
         <field name="arch" type="xml">
             <form string="Approval Template">
                 <sheet>
-                    <widget name="web_ribbon" title="Archived" bg_color="bg-danger" attrs="{'invisible': [('active', '=', True)]}"/>
+                    <widget name="web_ribbon" title="Archived" bg_color="bg-danger" invisible="active"/>
                     <div class="oe_title">
                         <label for="name"/>
                         <h1><field name="name" placeholder="e.g. Standard Agreement Approval"/></h1>
@@ -83,8 +83,8 @@
                                     <field name="sequence" widget="handle"/>
                                     <field name="name"/>
                                     <field name="approver_type"/>
-                                    <field name="role_id" attrs="{'invisible': [('approver_type', '!=', 'role')], 'required': [('approver_type', '=', 'role')]}"/>
-                                    <field name="user_id" widget="many2one_avatar_user" attrs="{'invisible': [('approver_type', '!=', 'user')], 'required': [('approver_type', '=', 'user')]}"/>
+                                    <field name="role_id" invisible="approver_type != 'role'" required="approver_type == 'role'"/>
+                                    <field name="user_id" widget="many2one_avatar_user" invisible="approver_type != 'user'" required="approver_type == 'user'"/>
                                 </tree>
                             </field>
                             <p class="text-muted">Tiers are approved sequentially, top to bottom. Any member of a role can approve its tier.</p>

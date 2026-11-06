@@ -8,7 +8,7 @@
             <xpath expr="//field[@name='payment_term_id']" position="after">
                 <field name="commercial_partner_id" invisible="1"/>
                 <field name="blanket_agreement_id" groups="advanced_blanket_sales_agreement.group_blanket_sale_agreement"
-                       options="{'no_create': True}"/>
+                       options="{'no_create': True}" readonly="state not in ('draft', 'sent') or locked"/>
             </xpath>
             <xpath expr="//field[@name='order_line']/tree/field[@name='product_uom_qty']" position="before">
                 <field name="blanket_line_id" optional="hide" options="{'no_create': True}"

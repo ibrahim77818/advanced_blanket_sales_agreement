@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 16.0\n"
+"Project-Id-Version: Odoo Server 17.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-11-06 12:17+0000\n"
 "PO-Revision-Date: 2026-11-06 12:17+0000\n"
@@ -133,27 +133,8 @@ msgstr ""
 #. module: advanced_blanket_sales_agreement
 #: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_sale_agreement_view_form
 msgid ""
-"<i class=\"fa fa-long-arrow-right mx-2 oe_edit_only\" aria-label=\"Arrow "
-"icon\" title=\"Arrow\"/>"
-msgstr ""
-
-#. module: advanced_blanket_sales_agreement
-#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.res_config_settings_view_form_blanket_agreement
-msgid ""
-"<span class=\"fa fa-lg fa-building-o\" title=\"Values set here are company-"
-"specific.\" groups=\"base.group_multi_company\"/>"
-msgstr ""
-
-#. module: advanced_blanket_sales_agreement
-#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.res_config_settings_view_form_blanket_agreement
-msgid ""
-"<span class=\"o_form_label\">Approval &amp; Reminders</span>\n"
-"                            <span class=\"fa fa-lg fa-building-o\" title=\"Values set here are company-specific.\" groups=\"base.group_multi_company\"/>"
-msgstr ""
-
-#. module: advanced_blanket_sales_agreement
-#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.res_config_settings_view_form_blanket_agreement
-msgid "<span class=\"o_form_label\">Default Terms &amp; Conditions</span>"
+"<i class=\"fa fa-long-arrow-right mx-2\" aria-label=\"Arrow icon\" "
+"title=\"Arrow\"/>"
 msgstr ""
 
 #. module: advanced_blanket_sales_agreement
@@ -387,6 +368,11 @@ msgid "Any member of the role can approve a tier assigned to this role."
 msgstr ""
 
 #. module: advanced_blanket_sales_agreement
+#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.res_config_settings_view_form_blanket_agreement
+msgid "Approval & Reminders"
+msgstr ""
+
+#. module: advanced_blanket_sales_agreement
 #: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_approval_role_view_form
 msgid "Approval Role"
 msgstr ""
@@ -568,7 +554,6 @@ msgstr ""
 
 #. module: advanced_blanket_sales_agreement
 #: model:ir.actions.server,name:advanced_blanket_sales_agreement.ir_cron_blanket_agreement_expiration_ir_actions_server
-#: model:ir.cron,cron_name:advanced_blanket_sales_agreement.ir_cron_blanket_agreement_expiration
 msgid "Blanket Agreements: Expiry Reminders & Notices"
 msgstr ""
 
@@ -793,6 +778,11 @@ msgstr ""
 #: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_res_company__blanket_default_terms
 #: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_res_config_settings__blanket_default_terms
 msgid "Default Agreement Terms & Conditions"
+msgstr ""
+
+#. module: advanced_blanket_sales_agreement
+#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.res_config_settings_view_form_blanket_agreement
+msgid "Default Terms & Conditions"
 msgstr ""
 
 #. module: advanced_blanket_sales_agreement
@@ -1097,18 +1087,6 @@ msgid "Issued"
 msgstr ""
 
 #. module: advanced_blanket_sales_agreement
-#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_approval_role____last_update
-#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_approval_template____last_update
-#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_approval_template_line____last_update
-#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_reject_wizard____last_update
-#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement____last_update
-#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_approval____last_update
-#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_line____last_update
-#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_schedule____last_update
-msgid "Last Modified on"
-msgstr ""
-
-#. module: advanced_blanket_sales_agreement
 #: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_approval_role__write_uid
 #: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_approval_template__write_uid
 #: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_agreement_approval_template_line__write_uid
@@ -1142,11 +1120,6 @@ msgstr ""
 msgid ""
 "Long-term customer agreements with approvals, delivery schedules and expiry "
 "reminders"
-msgstr ""
-
-#. module: advanced_blanket_sales_agreement
-#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement__message_main_attachment_id
-msgid "Main Attachment"
 msgstr ""
 
 #. module: advanced_blanket_sales_agreement
@@ -2039,11 +2012,6 @@ msgstr ""
 #. module: advanced_blanket_sales_agreement
 #: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_approval_template_view_form
 msgid "e.g. Standard Agreement Approval"
-msgstr ""
-
-#. module: advanced_blanket_sales_agreement
-#: model:mail.template,report_name:advanced_blanket_sales_agreement.mail_template_blanket_issued
-msgid "{{ (object.name or 'Agreement').replace('/', '_') }}"
 msgstr ""
 
 #. module: advanced_blanket_sales_agreement

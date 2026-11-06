@@ -149,7 +149,7 @@ class BlanketSaleAgreementLine(models.Model):
             # sudo: quantities must be visible to approvers without Sales rights
             for sale_line in line.sudo().sale_line_ids:
                 qty = sale_line.product_uom._compute_quantity(sale_line.product_uom_qty, line.product_uom)
-                if sale_line.state in ("sale", "done"):
+                if sale_line.state == "sale":
                     ordered += qty
                     delivered += sale_line.product_uom._compute_quantity(sale_line.qty_delivered, line.product_uom)
                 elif sale_line.state in ("draft", "sent"):
@@ -191,8 +191,10 @@ class BlanketSaleAgreementLine(models.Model):
                     agreed=formatLang(self.env, line.product_uom_qty, dp="Product Unit of Measure"),
                     ordered=formatLang(self.env, line.qty_ordered, dp="Product Unit of Measure")))
 
-    def name_get(self):
-        return [(line.id, "%s - %s" % (line.agreement_id.name, line.product_id.display_name)) for line in self]
+    @api.depends("agreement_id.name", "product_id.display_name")
+    def _compute_display_name(self):
+        for line in self:
+            line.display_name = "%s - %s" % (line.agreement_id.name or "", line.product_id.display_name or "")
 
     # ------------------------------------------------------------------
     # Lock: lines change only while the agreement is a draft or rejected

@@ -9,8 +9,7 @@
             <field name="email_from">{{ (object.user_id.email_formatted or object.company_id.email_formatted or user.email_formatted) }}</field>
             <field name="partner_to">{{ object.partner_id.id }}</field>
             <field name="lang">{{ object.partner_id.lang }}</field>
-            <field name="report_template" ref="action_report_blanket_agreement"/>
-            <field name="report_name">{{ (object.name or 'Agreement').replace('/', '_') }}</field>
+            <field name="report_template_ids" eval="[(4, ref('action_report_blanket_agreement'))]"/>
             <field name="auto_delete" eval="True"/>
             <field name="description">Sent to the customer when a blanket sales agreement is issued</field>
             <field name="body_html" type="html">

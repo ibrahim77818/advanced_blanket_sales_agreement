@@ -14,10 +14,10 @@
                 <field name="user_id" widget="many2one_avatar_user" optional="show"/>
                 <field name="date_start"/>
                 <field name="date_end"/>
-                <field name="days_to_expiry" invisible="1"/>
-                <field name="reminder_days" invisible="1"/>
+                <field name="days_to_expiry" column_invisible="True"/>
+                <field name="reminder_days" column_invisible="True"/>
                 <field name="company_id" groups="base.group_multi_company" optional="show"/>
-                <field name="currency_id" invisible="1"/>
+                <field name="currency_id" column_invisible="True"/>
                 <field name="amount_total" sum="Total" widget="monetary" decoration-bf="1"/>
                 <field name="consumption_percent" widget="progressbar" optional="show"/>
                 <field name="activity_ids" widget="list_activity" optional="show"/>
@@ -37,73 +37,74 @@
             <form string="Blanket Sales Agreement">
                 <header>
                     <button name="action_submit" type="object" string="Submit for Approval" class="btn-primary" groups="sales_team.group_sale_salesman"
-                            states="draft" data-hotkey="v"/>
+                            invisible="state != 'draft'" data-hotkey="v"/>
                     <button name="action_approve" type="object" string="Approve" class="btn-primary"
-                            attrs="{'invisible': [('can_approve', '=', False)]}" data-hotkey="a"/>
+                            invisible="not can_approve" data-hotkey="a"/>
                     <button name="action_open_reject_wizard" type="object" string="Reject"
-                            attrs="{'invisible': [('can_approve', '=', False)]}" data-hotkey="r"/>
+                            invisible="not can_approve" data-hotkey="r"/>
                     <button name="action_issue" type="object" string="Issue Agreement" class="btn-primary" groups="sales_team.group_sale_salesman"
-                            states="approved" data-hotkey="i"/>
+                            invisible="state != 'approved'" data-hotkey="i"/>
                     <button name="action_create_quotation" type="object" string="Create Quotation" class="btn-primary" groups="sales_team.group_sale_salesman"
-                            states="issued" data-hotkey="q"/>
-                    <button name="action_print" type="object" string="Print" states="approved,issued,expired"/>
-                    <button name="action_submit" type="object" string="Resubmit" states="rejected" groups="sales_team.group_sale_salesman"/>
-                    <button name="action_draft" type="object" string="Reset to Draft" states="rejected,cancel" groups="sales_team.group_sale_salesman"/>
-                    <button name="action_cancel" type="object" string="Cancel" states="draft,to_approve,approved,issued" groups="sales_team.group_sale_salesman"
+                            invisible="state != 'issued'" data-hotkey="q"/>
+                    <button name="action_print" type="object" string="Print" invisible="state not in ('approved', 'issued', 'expired')"/>
+                    <button name="action_submit" type="object" string="Resubmit" invisible="state != 'rejected'" groups="sales_team.group_sale_salesman"/>
+                    <button name="action_draft" type="object" string="Reset to Draft" invisible="state not in ('rejected', 'cancel')" groups="sales_team.group_sale_salesman"/>
+                    <button name="action_cancel" type="object" string="Cancel" invisible="state not in ('draft', 'to_approve', 'approved', 'issued')" groups="sales_team.group_sale_salesman"
                             confirm="Cancel this agreement?" data-hotkey="z"/>
                     <field name="state" widget="statusbar" statusbar_visible="draft,to_approve,approved,issued,expired"/>
                 </header>
                 <div class="alert alert-info mb-0" role="alert"
-                     attrs="{'invisible': [('state', '!=', 'to_approve')]}">
+                     invisible="state != 'to_approve'">
                     Waiting for approval: <strong><field name="current_approval_id" readonly="1" options="{'no_open': True}" class="oe_inline"/></strong>
                     (<field name="current_approver_ids" widget="many2many_tags" readonly="1" class="oe_inline"/>)
                 </div>
                 <div class="alert alert-success mb-0" role="alert"
-                     attrs="{'invisible': [('state', '!=', 'approved')]}">
+                     invisible="state != 'approved'">
                     All approvers signed off. The agreement is ready to be issued to the customer.
                 </div>
                 <sheet>
                     <div class="oe_button_box" name="button_box">
                         <button name="action_view_sale_orders" type="object" class="oe_stat_button" icon="fa-dollar"
                                 groups="sales_team.group_sale_salesman"
-                                attrs="{'invisible': [('sale_order_count', '=', 0)]}">
+                                invisible="not sale_order_count">
                             <field name="sale_order_count" widget="statinfo" string="Sales Orders"/>
                         </button>
                     </div>
-                    <widget name="web_ribbon" title="Expired" bg_color="bg-warning" attrs="{'invisible': [('state', '!=', 'expired')]}"/>
-                    <widget name="web_ribbon" title="Rejected" bg_color="bg-danger" attrs="{'invisible': [('state', '!=', 'rejected')]}"/>
-                    <widget name="web_ribbon" title="Cancelled" bg_color="bg-danger" attrs="{'invisible': [('state', '!=', 'cancel')]}"/>
+                    <widget name="web_ribbon" title="Expired" bg_color="bg-warning" invisible="state != 'expired'"/>
+                    <widget name="web_ribbon" title="Rejected" bg_color="bg-danger" invisible="state != 'rejected'"/>
+                    <widget name="web_ribbon" title="Cancelled" bg_color="bg-danger" invisible="state != 'cancel'"/>
                     <div class="oe_title">
                         <h1><field name="name" readonly="1"/></h1>
                     </div>
                     <group>
                         <group name="customer">
-                            <field name="partner_id" widget="res_partner_many2one" attrs="{'readonly': [('state', 'not in', ('draft', 'rejected'))]}"
+                            <field name="partner_id" widget="res_partner_many2one" readonly="state not in ('draft', 'rejected')"
                                    context="{'res_partner_search_mode': 'customer', 'show_vat': True}"/>
-                            <field name="client_order_ref" attrs="{'readonly': [('state', 'not in', ('draft', 'rejected'))]}"/>
+                            <field name="client_order_ref" readonly="state not in ('draft', 'rejected')"/>
                             <field name="pricelist_id" groups="product.group_product_pricelist" options="{'no_create': True}"
-                                   attrs="{'readonly': [('state', 'not in', ('draft', 'rejected'))]}"/>
+                                   readonly="state not in ('draft', 'rejected')"/>
                             <field name="currency_id" invisible="1"/>
-                            <field name="payment_term_id" options="{'no_create': True}" attrs="{'readonly': [('state', 'not in', ('draft', 'rejected'))]}"/>
-                            <field name="incoterm_id" attrs="{'readonly': [('state', 'not in', ('draft', 'rejected'))]}"/>
+                            <field name="payment_term_id" options="{'no_create': True}" readonly="state not in ('draft', 'rejected')"/>
+                            <field name="incoterm_id" readonly="state not in ('draft', 'rejected')"/>
                         </group>
                         <group name="validity">
                             <label for="date_start" string="Validity"/>
                             <div class="o_row">
-                                <field name="date_start" attrs="{'readonly': [('state', 'not in', ('draft', 'rejected'))]}"/>
-                                <i class="fa fa-long-arrow-right mx-2 oe_edit_only" aria-label="Arrow icon" title="Arrow"/>
-                                <field name="date_end" attrs="{'readonly': [('state', 'not in', ('draft', 'rejected', 'approved', 'issued'))]}"/>
+                                <field name="date_start" readonly="state not in ('draft', 'rejected')"/>
+                                <i class="fa fa-long-arrow-right mx-2" aria-label="Arrow icon" title="Arrow"/>
+                                <field name="date_end" readonly="state not in ('draft', 'rejected', 'approved', 'issued')"/>
                             </div>
                             <label for="reminder_days"/>
                             <div class="o_row">
                                 <field name="reminder_days" class="oe_inline"/>
                                 <span>days</span>
-                                <span class="text-muted" attrs="{'invisible': [('reminder_date', '=', False)]}">
+                                <span class="text-muted" invisible="not reminder_date">
                                     (<field name="reminder_date" readonly="1" class="oe_inline"/>)
                                 </span>
                             </div>
                             <field name="user_id" widget="many2one_avatar_user"/>
-                            <field name="approval_template_id" options="{'no_create': True}" attrs="{'readonly': [('state', 'not in', ('draft', 'rejected'))]}"/>
+                            <field name="approval_template_id" options="{'no_create': True}"
+                                   readonly="state not in ('draft', 'rejected')"/>
                             <field name="company_id" groups="base.group_multi_company" options="{'no_create': True}"/>
                             <field name="can_approve" invisible="1"/>
                             <field name="company_id" invisible="1"/>
@@ -111,13 +112,14 @@
                     </group>
                     <notebook>
                         <page string="Order Lines" name="order_lines">
-                            <field name="line_ids" attrs="{'readonly': [('state', 'not in', ('draft', 'rejected'))]}"
+                            <field name="line_ids"
+                                   readonly="state not in ('draft', 'rejected')"
                                    context="{'default_agreement_id': id}">
                                 <tree editable="bottom">
                                     <field name="sequence" widget="handle"/>
-                                    <field name="company_id" invisible="1"/>
-                                    <field name="currency_id" invisible="1"/>
-                                    <field name="product_uom_category_id" invisible="1"/>
+                                    <field name="company_id" column_invisible="True"/>
+                                    <field name="currency_id" column_invisible="True"/>
+                                    <field name="product_uom_category_id" column_invisible="True"/>
                                     <field name="product_id" options="{'no_create': True}"/>
                                     <field name="name" optional="show"/>
                                     <field name="product_uom_qty"/>
@@ -153,9 +155,9 @@
                         </page>
                         <page string="Delivery Schedules" name="delivery_schedules">
                             <field name="schedule_ids" context="{'default_agreement_id': id}"
-                                   attrs="{'readonly': [('state', 'in', ('to_approve', 'cancel', 'expired'))]}">
+                                   readonly="state in ('to_approve', 'cancel', 'expired')">
                                 <tree editable="bottom" decoration-muted="state == 'delivered'" decoration-info="state == 'quoted'">
-                                    <field name="agreement_id" invisible="1"/>
+                                    <field name="agreement_id" column_invisible="True"/>
                                     <field name="scheduled_date"/>
                                     <field name="line_id" options="{'no_create': True, 'no_open': True}"/>
                                     <field name="quantity"/>
@@ -167,35 +169,35 @@
                                            decoration-info="state in ('quoted', 'ordered')"/>
                                     <button name="action_create_quotation" type="object" icon="fa-file-text-o" groups="sales_team.group_sale_salesman"
                                             title="Create Quotation"
-                                            attrs="{'invisible': ['|', ('state', '!=', 'planned'), ('parent.state', '!=', 'issued')]}"/>
+                                            invisible="state != 'planned' or parent.state != 'issued'"/>
                                 </tree>
                             </field>
                         </page>
                         <page string="Legal Terms &amp; Conditions" name="legal_terms">
                             <group>
                                 <group>
-                                    <field name="governing_law" attrs="{'readonly': [('state', 'not in', ('draft', 'rejected'))]}" placeholder="e.g. Laws of the Kingdom of Saudi Arabia"/>
-                                    <field name="dispute_resolution" attrs="{'readonly': [('state', 'not in', ('draft', 'rejected'))]}" placeholder="e.g. Arbitration in Riyadh"/>
+                                    <field name="governing_law" readonly="state not in ('draft', 'rejected')" placeholder="e.g. Laws of the Kingdom of Saudi Arabia"/>
+                                    <field name="dispute_resolution" readonly="state not in ('draft', 'rejected')" placeholder="e.g. Arbitration in Riyadh"/>
                                 </group>
                                 <group>
                                     <label for="termination_notice_days"/>
                                     <div class="o_row">
-                                        <field name="termination_notice_days" class="oe_inline" attrs="{'readonly': [('state', 'not in', ('draft', 'rejected'))]}"/>
+                                        <field name="termination_notice_days" class="oe_inline" readonly="state not in ('draft', 'rejected')"/>
                                         <span>days</span>
                                     </div>
                                 </group>
                             </group>
-                            <field name="terms_conditions" class="oe-bordered-editor" attrs="{'readonly': [('state', 'not in', ('draft', 'rejected'))]}"
+                            <field name="terms_conditions" class="oe-bordered-editor" readonly="state not in ('draft', 'rejected')"
                                    placeholder="Detailed terms and conditions of the agreement..."/>
                         </page>
-                        <page string="Approvals" name="approvals" attrs="{'invisible': [('approval_ids', '=', [])]}">
+                        <page string="Approvals" name="approvals" invisible="not approval_ids">
                             <field name="approval_ids">
                                 <tree decoration-success="state == 'approved' and not superseded"
                                       decoration-danger="state == 'rejected' and not superseded"
                                       decoration-info="state == 'pending'"
                                       decoration-muted="state == 'waiting' or superseded">
-                                    <field name="sequence" invisible="1"/>
-                                    <field name="superseded" invisible="1"/>
+                                    <field name="sequence" column_invisible="True"/>
+                                    <field name="superseded" column_invisible="True"/>
                                     <field name="cycle"/>
                                     <field name="name"/>
                                     <field name="role_id"/>

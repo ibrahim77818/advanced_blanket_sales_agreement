@@ -7,7 +7,7 @@ from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
 from odoo.tools import float_compare, formatLang
 
-CONFIRMED_ORDER_STATES = ("sale", "done")
+CONFIRMED_ORDER_STATES = ("sale",)
 # Order line fields whose change on a confirmed order is re-checked against the agreement.
 BLANKET_CHECKED_FIELDS = {"product_uom_qty", "product_uom", "price_unit", "discount", "blanket_line_id", "product_id"}
 
@@ -19,7 +19,6 @@ class SaleOrder(models.Model):
         "blanket.sale.agreement", string="Blanket Agreement", index=True, copy=False,
         domain="[('state', '=', 'issued'), ('partner_id', 'child_of', commercial_partner_id),"
                " ('company_id', '=', company_id)]",
-        states={"sale": [("readonly", True)], "done": [("readonly", True)], "cancel": [("readonly", True)]},
     )
     commercial_partner_id = fields.Many2one(related="partner_id.commercial_partner_id")
 

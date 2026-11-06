@@ -1,6 +1,6 @@
 # Advanced Blanket Sales Agreement
 
-![Odoo 16.0](https://img.shields.io/badge/Odoo-16.0-714B67)
+![Odoo 17.0](https://img.shields.io/badge/Odoo-17.0-714B67)
 ![Community & Enterprise](https://img.shields.io/badge/edition-Community%20%26%20Enterprise-017E84)
 ![License: LGPL-3](https://img.shields.io/badge/license-LGPL--3-blue)
 ![Arabic RTL](https://img.shields.io/badge/Arabic-RTL-2E7D32)
@@ -12,8 +12,8 @@ confirmation is checked against the remaining agreed quantity.
 
 ![Agreement form](advanced_blanket_sales_agreement/static/description/banner.png)
 
-**Branches:** **`16.0`** · [`17.0`](../../tree/17.0) · [`18.0`](../../tree/18.0) · [`19.0`](../../tree/19.0). Each branch holds the module ported to that Odoo version.
-This branch: Odoo **16.0**, module version **16.0.1.1.0**.
+**Branches:** [`16.0`](../../tree/16.0) · **`17.0`** · [`18.0`](../../tree/18.0) · [`19.0`](../../tree/19.0). Each branch holds the module ported to that Odoo version.
+This branch: Odoo **17.0**, module version **17.0.1.1.0**.
 
 ## Features
 
@@ -33,7 +33,7 @@ This branch: Odoo **16.0**, module version **16.0.1.1.0**.
 - **Locks.** Approved agreements are read-only except for the end date and the delivery schedules.
 - **Units.** The line unit must be in the product's UoM category.
 - **Record rules** for own, all and approver access, multi-company.
-- **Arabic (`ar_001`)** translation (318 terms) and an RTL-safe PDF report.
+- **Arabic (`ar_001`)** translation (314 terms) and an RTL-safe PDF report.
 
 ## Installation
 
@@ -45,7 +45,7 @@ This branch: Odoo **16.0**, module version **16.0.1.1.0**.
 Depends on `sale_management` and `account`.
 
 ```bash
-git clone -b 16.0 https://github.com/ibrahim77818/advanced_blanket_sales_agreement.git
+git clone -b 17.0 https://github.com/ibrahim77818/advanced_blanket_sales_agreement.git
 ```
 
 ## Tests

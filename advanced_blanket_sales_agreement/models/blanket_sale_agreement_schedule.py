@@ -7,7 +7,7 @@ from odoo.tools import float_compare, formatLang
 SCHEDULE_EDITABLE_STATES = ("draft", "rejected", "approved", "issued")
 # Changing these on a row that already has an order would contradict that order.
 ORDER_BOUND_FIELDS = {"agreement_id", "line_id", "quantity", "scheduled_date"}
-CONFIRMED_ORDER_STATES = ("sale", "done")
+CONFIRMED_ORDER_STATES = ("sale",)
 
 
 class BlanketSaleAgreementSchedule(models.Model):

@@ -221,9 +221,9 @@ class BlanketSaleAgreement(models.Model):
     def _compute_sale_order_count(self):
         # sudo: approvers without Sales rights only need the count, not the orders
         data = self.env["sale.order"].sudo()._read_group(
-            [("blanket_agreement_id", "in", self.ids)], ["blanket_agreement_id"], ["blanket_agreement_id"],
+            [("blanket_agreement_id", "in", self.ids)], ["blanket_agreement_id"], ["__count"],
         )
-        counts = {d["blanket_agreement_id"][0]: d["blanket_agreement_id_count"] for d in data}
+        counts = {agreement.id: count for agreement, count in data}
         for agreement in self:
             agreement.sale_order_count = counts.get(agreement.id, 0)
 
@@ -555,17 +555,17 @@ class BlanketSaleAgreement(models.Model):
             )
             return False
         template = self.env.ref(template_xmlid)
-        self.with_context(mail_post_autofollow=False).message_post_with_template(
-            template.id,
-            composition_mode="comment",
+        self.with_context(mail_post_autofollow=False).message_post_with_source(
+            template,
             message_type="comment",
+            subtype_xmlid="mail.mt_comment",
             email_layout_xmlid="mail.mail_notification_light",
         )
         return True
 
     def action_cancel(self):
         for agreement in self:
-            if agreement.sale_order_ids.filtered(lambda so: so.state in ("sale", "done")):
+            if agreement.sale_order_ids.filtered(lambda so: so.state == "sale"):
                 raise UserError(_("Agreement %s has confirmed sales orders and cannot be cancelled.",
                                   agreement.name))
             agreement._clear_workflow_activities()
