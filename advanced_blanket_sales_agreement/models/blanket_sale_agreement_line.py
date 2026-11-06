@@ -30,13 +30,13 @@ class BlanketSaleAgreementLine(models.Model):
     name = fields.Text(
         string="Description", compute="_compute_name", store=True, readonly=False, precompute=True,
     )
-    product_uom_category_id = fields.Many2one(related="product_id.uom_id.category_id")
+    allowed_uom_ids = fields.Many2many("uom.uom", string="Allowed Units", compute="_compute_allowed_uom_ids")
     product_uom = fields.Many2one(
-        "uom.uom", string="Unit of Measure", required=True,
+        "uom.uom", string="Unit", required=True,
         compute="_compute_product_uom", store=True, readonly=False, precompute=True,
-        domain="[('category_id', '=', product_uom_category_id)]",
+        domain="[('id', 'in', allowed_uom_ids)]",
     )
-    product_uom_qty = fields.Float(string="Agreed Qty", digits="Product Unit of Measure", default=1.0,
+    product_uom_qty = fields.Float(string="Agreed Qty", digits="Product Unit", default=1.0,
                                    required=True)
     price_unit = fields.Float(
         string="Unit Price", digits="Product Price",
@@ -55,23 +55,22 @@ class BlanketSaleAgreementLine(models.Model):
     price_total = fields.Monetary(compute="_compute_amount", store=True, string="Total")
 
     sale_line_ids = fields.One2many("sale.order.line", "blanket_line_id", string="Sales Order Lines")
-    qty_ordered = fields.Float(compute="_compute_quantities", digits="Product Unit of Measure",
+    qty_ordered = fields.Float(compute="_compute_quantities", digits="Product Unit",
                                string="Ordered Qty")
-    qty_quoted = fields.Float(compute="_compute_quantities", digits="Product Unit of Measure",
+    qty_quoted = fields.Float(compute="_compute_quantities", digits="Product Unit",
                               string="Quoted Qty",
                               help="Quantity in open quotations that are not confirmed yet.")
-    qty_delivered = fields.Float(compute="_compute_quantities", digits="Product Unit of Measure",
+    qty_delivered = fields.Float(compute="_compute_quantities", digits="Product Unit",
                                  string="Delivered Qty")
-    qty_remaining = fields.Float(compute="_compute_quantities", digits="Product Unit of Measure",
+    qty_remaining = fields.Float(compute="_compute_quantities", digits="Product Unit",
                                  string="Remaining Qty")
-    qty_scheduled = fields.Float(compute="_compute_quantities", digits="Product Unit of Measure",
+    qty_scheduled = fields.Float(compute="_compute_quantities", digits="Product Unit",
                                  string="Scheduled Qty")
     schedule_ids = fields.One2many("blanket.sale.agreement.schedule", "line_id", string="Schedules")
 
-    _sql_constraints = [
-        ("qty_positive", "CHECK(product_uom_qty >= 0)", "The agreed quantity cannot be negative."),
-        ("discount_range", "CHECK(discount >= 0 AND discount <= 100)", "Discount must be between 0 and 100."),
-    ]
+    _qty_positive = models.Constraint("CHECK(product_uom_qty >= 0)", "The agreed quantity cannot be negative.")
+    _discount_range = models.Constraint("CHECK(discount >= 0 AND discount <= 100)",
+                                        "Discount must be between 0 and 100.")
 
     @api.depends("product_id")
     def _compute_name(self):
@@ -83,9 +82,15 @@ class BlanketSaleAgreementLine(models.Model):
                 line.name = False
 
     @api.depends("product_id")
+    def _compute_allowed_uom_ids(self):
+        # v19: no UoM categories; a line may use the product unit or one of its packagings
+        for line in self:
+            line.allowed_uom_ids = line.product_id.uom_id | line.product_id.uom_ids
+
+    @api.depends("product_id")
     def _compute_product_uom(self):
         for line in self:
-            if not line.product_uom or line.product_id.uom_id.category_id != line.product_uom.category_id:
+            if not line.product_uom or line.product_uom not in (line.product_id.uom_id | line.product_id.uom_ids):
                 line.product_uom = line.product_id.uom_id
 
     @api.depends("product_id")
@@ -117,7 +122,7 @@ class BlanketSaleAgreementLine(models.Model):
         """Switching the unit converts the negotiated price instead of re-pricing it."""
         previous = self._origin.product_uom or self.product_id.uom_id
         if self.product_uom and previous and previous != self.product_uom \
-                and previous.category_id == self.product_uom.category_id:
+                and previous._has_common_reference(self.product_uom):
             self.price_unit = previous._compute_price(self.price_unit, self.product_uom)
 
     @api.depends("product_id", "agreement_id.partner_id")
@@ -142,16 +147,16 @@ class BlanketSaleAgreementLine(models.Model):
             line.price_tax = taxes["total_included"] - taxes["total_excluded"]
 
     @api.depends("sale_line_ids.product_uom_qty", "sale_line_ids.qty_delivered", "sale_line_ids.state",
-                 "sale_line_ids.product_uom", "schedule_ids.quantity", "product_uom_qty")
+                 "sale_line_ids.product_uom_id", "schedule_ids.quantity", "product_uom_qty")
     def _compute_quantities(self):
         for line in self:
             ordered = delivered = quoted = 0.0
             # sudo: quantities must be visible to approvers without Sales rights
             for sale_line in line.sudo().sale_line_ids:
-                qty = sale_line.product_uom._compute_quantity(sale_line.product_uom_qty, line.product_uom)
+                qty = sale_line.product_uom_id._compute_quantity(sale_line.product_uom_qty, line.product_uom)
                 if sale_line.state == "sale":
                     ordered += qty
-                    delivered += sale_line.product_uom._compute_quantity(sale_line.qty_delivered, line.product_uom)
+                    delivered += sale_line.product_uom_id._compute_quantity(sale_line.qty_delivered, line.product_uom)
                 elif sale_line.state in ("draft", "sent"):
                     quoted += qty
             line.qty_ordered = ordered
@@ -164,9 +169,9 @@ class BlanketSaleAgreementLine(models.Model):
     def _check_uom_category(self):
         for line in self:
             if line.product_uom and line.product_id and \
-                    line.product_uom.category_id != line.product_id.uom_id.category_id:
+                    not line.product_uom._has_common_reference(line.product_id.uom_id):
                 raise ValidationError(_(
-                    "The unit of measure of line '%s' must belong to the same category as the product's unit.",
+                    "The unit of line '%s' must be convertible to the product's unit.",
                     line.product_id.display_name))
 
     @api.constrains("product_id", "agreement_id")
@@ -188,8 +193,8 @@ class BlanketSaleAgreementLine(models.Model):
                     "The agreed quantity of %(product)s (%(agreed)s) cannot be lower than the quantity "
                     "already ordered (%(ordered)s).",
                     product=line.product_id.display_name,
-                    agreed=formatLang(self.env, line.product_uom_qty, dp="Product Unit of Measure"),
-                    ordered=formatLang(self.env, line.qty_ordered, dp="Product Unit of Measure")))
+                    agreed=formatLang(self.env, line.product_uom_qty, dp="Product Unit"),
+                    ordered=formatLang(self.env, line.qty_ordered, dp="Product Unit")))
 
     @api.depends("agreement_id.name", "product_id.display_name")
     def _compute_display_name(self):
@@ -238,9 +243,9 @@ class BlanketSaleAgreementLine(models.Model):
             "product_id": self.product_id.id,
             "name": self.name,
             "product_uom_qty": quantity,
-            "product_uom": self.product_uom.id,
+            "product_uom_id": self.product_uom.id,
             "price_unit": self.price_unit,
             "discount": self.discount,
-            "tax_id": [(6, 0, self.tax_ids.ids)],
+            "tax_ids": [(6, 0, self.tax_ids.ids)],
             "blanket_line_id": self.id,
         }

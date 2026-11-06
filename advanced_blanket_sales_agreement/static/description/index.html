@@ -1,4 +1,4 @@
-<!-- Odoo Apps description page for advanced_blanket_sales_agreement (Odoo 18.0). Inline styles only: apps.odoo.com strips <style> and <script> blocks. -->
+<!-- Odoo Apps description page for advanced_blanket_sales_agreement (Odoo 19.0). Inline styles only: apps.odoo.com strips <style> and <script> blocks. -->
 <section style="max-width:1120px;margin:0 auto;padding:0 16px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;color:#2b2b33;">
 
 <!-- ============================== HERO ============================== -->
@@ -7,10 +7,10 @@
   <h1 style="font-size:40px;line-height:1.15;font-weight:700;margin:0 0 14px;color:#ffffff;">Advanced Blanket Sales Agreement</h1>
   <p style="font-size:19px;line-height:1.55;max-width:760px;margin:0 0 24px;color:#ffffff;opacity:.95;">Agree long-term quantities and prices with a customer, take the agreement through a sequential multi-tier approval, and issue it as a formal PDF by e-mail. Call-off quotations, quantity consumption, expiry reminders and the final expiration notice then run on their own.</p>
   <div>
-    <span style="display:inline-block;border:1px solid rgba(255,255,255,.7);border-radius:20px;padding:6px 14px;margin:0 8px 8px 0;font-size:14px;">Odoo 18.0</span>
+    <span style="display:inline-block;border:1px solid rgba(255,255,255,.7);border-radius:20px;padding:6px 14px;margin:0 8px 8px 0;font-size:14px;">Odoo 19.0</span>
     <span style="display:inline-block;border:1px solid rgba(255,255,255,.7);border-radius:20px;padding:6px 14px;margin:0 8px 8px 0;font-size:14px;">Community &amp; Enterprise</span>
     <span style="display:inline-block;border:1px solid rgba(255,255,255,.7);border-radius:20px;padding:6px 14px;margin:0 8px 8px 0;font-size:14px;">Arabic (ar_001) &amp; RTL PDF</span>
-    <span style="display:inline-block;border:1px solid rgba(255,255,255,.7);border-radius:20px;padding:6px 14px;margin:0 8px 8px 0;font-size:14px;">33 automated tests</span>
+    <span style="display:inline-block;border:1px solid rgba(255,255,255,.7);border-radius:20px;padding:6px 14px;margin:0 8px 8px 0;font-size:14px;">35 automated tests</span>
     <span style="display:inline-block;border:1px solid rgba(255,255,255,.7);border-radius:20px;padding:6px 14px;margin:0 8px 8px 0;font-size:14px;">Technical name: advanced_blanket_sales_agreement</span>
     <span style="display:inline-block;border:1px solid rgba(255,255,255,.7);border-radius:20px;padding:6px 14px;margin:0 8px 8px 0;font-size:14px;">LGPL-3</span>
   </div>
@@ -26,10 +26,10 @@
 
 <!-- ============================== WHY ============================== -->
 <h2 style="font-size:28px;font-weight:700;margin:40px 0 6px;color:#2b2b33;">Why this module</h2>
-<p style="font-size:16px;color:#555;margin:0 0 18px;">Odoo 18 has blanket orders on the purchase side only. On the sales side, framework agreements usually live in spreadsheets and e-mail threads, away from the quotations they govern.</p>
+<p style="font-size:16px;color:#555;margin:0 0 18px;">Odoo 19 has blanket orders on the purchase side only. On the sales side, framework agreements usually live in spreadsheets and e-mail threads, away from the quotations they govern.</p>
 <div style="display:flex;flex-wrap:wrap;margin:0 -10px;">
   <div style="flex:1 1 440px;margin:10px;border:1px solid #f1d6d6;background:#fff8f8;border-radius:14px;padding:24px 26px;">
-    <h3 style="font-size:19px;font-weight:700;color:#b33939;margin:0 0 12px;">In standard Odoo 18</h3>
+    <h3 style="font-size:19px;font-weight:700;color:#b33939;margin:0 0 12px;">In standard Odoo 19</h3>
     <ul style="font-size:15px;line-height:1.65;margin:0;padding-left:20px;color:#3a3a42;">
       <li>No <b>sales blanket agreement</b> document: agreed volumes and prices are tracked outside Odoo.</li>
       <li>No <b>approval cycle</b> for a customer commitment before it is sent.</li>
@@ -83,7 +83,7 @@
 <div style="margin:44px 0 0;">
   <div style="font-size:13px;font-weight:700;color:#017E84;letter-spacing:1px;text-transform:uppercase;">Feature 2</div>
   <h3 style="font-size:23px;font-weight:700;margin:4px 0 8px;">Order lines with live consumption</h3>
-  <p style="font-size:15px;line-height:1.6;color:#555;margin:0 0 14px;">Each line holds the <b>Agreed Qty</b>, <b>Unit of Measure</b>, <b>Unit Price</b>, <b>Disc.%</b> and <b>Taxes</b>. The price is suggested from the pricelist (or the product price) when the product is chosen, then stays as negotiated: changing the quantity or the pricelist never overwrites it. Taxes are mapped through the customer&rsquo;s fiscal position. <b>Ordered Qty</b>, <b>Delivered Qty</b> and <b>Remaining Qty</b> are computed from confirmed sales orders, with UoM conversion. The footer adds <b>Ordered Amount</b> and <b>Consumed (%)</b> to the usual totals.</p>
+  <p style="font-size:15px;line-height:1.6;color:#555;margin:0 0 14px;">Each line holds the <b>Agreed Qty</b>, <b>Unit</b> (the product unit or one of its packagings), <b>Unit Price</b>, <b>Disc.%</b> and <b>Taxes</b>. The price is suggested from the pricelist (or the product price) when the product is chosen, then stays as negotiated: changing the quantity or the pricelist never overwrites it. Taxes are mapped through the customer&rsquo;s fiscal position. <b>Ordered Qty</b>, <b>Delivered Qty</b> and <b>Remaining Qty</b> are computed from confirmed sales orders, with UoM conversion. The footer adds <b>Ordered Amount</b> and <b>Consumed (%)</b> to the usual totals.</p>
   <img src="bsa_03_form_lines.png" alt="Issued agreement with order lines, remaining quantities and the issue e-mail in the chatter" style="width:100%;border:1px solid #e1e1e6;border-radius:10px;box-shadow:0 6px 24px rgba(30,30,60,.10);"/>
   <div style="font-size:13px;color:#777;margin:6px 0 22px;">BSA/2026/0001: 120 t of rebar already ordered, 360 t remaining. The chatter shows the formal e-mail sent to the customer with the agreement PDF.</div>
 </div>
@@ -192,7 +192,7 @@
   <div style="flex:1 1 320px;margin:8px;padding:16px 18px;border:1px solid #e8e8ee;border-radius:12px;"><b>Approver outside the sales team</b><br/><span style="color:#555;">Approvers only need to be internal users. They can open, approve, reject and comment on the agreements assigned to them, and see nothing else.</span></div>
   <div style="flex:1 1 320px;margin:8px;padding:16px 18px;border:1px solid #e8e8ee;border-radius:12px;"><b>Wrong person clicks Approve</b><br/><span style="color:#555;">Only approvers of the current tier can decide, never the Responsible user, and nobody twice in one submission. Tested.</span></div>
   <div style="flex:1 1 320px;margin:8px;padding:16px 18px;border:1px solid #e8e8ee;border-radius:12px;"><b>Empty role in a tier</b><br/><span style="color:#555;">Submission is refused when a tier has no active approver, so an agreement can never get stuck waiting for nobody. Tested.</span></div>
-  <div style="flex:1 1 320px;margin:8px;padding:16px 18px;border:1px solid #e8e8ee;border-radius:12px;"><b>Different units of measure</b><br/><span style="color:#555;">Ordered and remaining quantities convert sales order units to the agreement line unit. The line unit must be in the product&rsquo;s UoM category.</span></div>
+  <div style="flex:1 1 320px;margin:8px;padding:16px 18px;border:1px solid #e8e8ee;border-radius:12px;"><b>Different units of measure</b><br/><span style="color:#555;">Ordered and remaining quantities convert sales order units to the agreement line unit. The line unit is the product unit or one of its packaging units; a unit that cannot convert to the product unit is refused. Tested.</span></div>
   <div style="flex:1 1 320px;margin:8px;padding:16px 18px;border:1px solid #e8e8ee;border-radius:12px;"><b>Orders changed after confirmation</b><br/><span style="color:#555;">Raising a quantity, changing a price or adding a linked line on a confirmed order is checked against the agreement again. Tested.</span></div>
   <div style="flex:1 1 320px;margin:8px;padding:16px 18px;border:1px solid #e8e8ee;border-radius:12px;"><b>Customer without e-mail</b><br/><span style="color:#555;">Issuing still works and a note in the chatter records that no e-mail could be sent (tested). The cron logs the same note for reminders and notices.</span></div>
   <div style="flex:1 1 320px;margin:8px;padding:16px 18px;border:1px solid #e8e8ee;border-radius:12px;"><b>Cron runs every day</b><br/><span style="color:#555;">Reminders and notices are flagged once sent and never repeat (tested). Each agreement is processed in its own savepoint, so one failure does not block the others.</span></div>
@@ -223,7 +223,7 @@
 <h2 style="font-size:28px;font-weight:700;margin:40px 0 6px;color:#2b2b33;">Technical details</h2>
 <table style="width:100%;border-collapse:collapse;font-size:15px;">
   <tbody>
-    <tr style="border-bottom:1px solid #eee;"><td style="padding:10px 14px;width:30%;color:#777;vertical-align:top;">Odoo version</td><td style="padding:10px 14px;word-break:break-word;">18.0, Community and Enterprise (module version 18.0.1.0.0)</td></tr>
+    <tr style="border-bottom:1px solid #eee;"><td style="padding:10px 14px;width:30%;color:#777;vertical-align:top;">Odoo version</td><td style="padding:10px 14px;word-break:break-word;">19.0, Community and Enterprise (module version 19.0.1.0.0)</td></tr>
     <tr style="border-bottom:1px solid #eee;background:#fafafa;"><td style="padding:10px 14px;width:30%;color:#777;vertical-align:top;">Depends on</td><td style="padding:10px 14px;word-break:break-word;"><code>sale_management</code>, <code>account</code></td></tr>
     <tr style="border-bottom:1px solid #eee;"><td style="padding:10px 14px;width:30%;color:#777;vertical-align:top;">Python dependency</td><td style="padding:10px 14px;word-break:break-word;">None</td></tr>
     <tr style="border-bottom:1px solid #eee;background:#fafafa;"><td style="padding:10px 14px;width:30%;color:#777;vertical-align:top;">Menus</td><td style="padding:10px 14px;word-break:break-word;">Sales &rsaquo; Orders &rsaquo; Blanket Agreements; Sales &rsaquo; Configuration &rsaquo; Blanket Agreements &rsaquo; Approval Templates / Approval Roles</td></tr>
@@ -231,7 +231,7 @@
     <tr style="border-bottom:1px solid #eee;background:#fafafa;"><td style="padding:10px 14px;width:30%;color:#777;vertical-align:top;">Models</td><td style="padding:10px 14px;word-break:break-word;"><code>blanket.sale.agreement</code>, <code>.line</code>, <code>.schedule</code>, <code>.approval</code>, <code>blanket.agreement.approval.role</code>, <code>blanket.agreement.approval.template</code>, <code>.template.line</code>; extends <code>sale.order</code>, <code>sale.order.line</code>, <code>res.company</code></td></tr>
     <tr style="border-bottom:1px solid #eee;"><td style="padding:10px 14px;width:30%;color:#777;vertical-align:top;">Automation</td><td style="padding:10px 14px;word-break:break-word;">Daily scheduled action; activity types <b>Agreement Approval</b> and <b>Issue Agreement</b>; mail templates <b>Issued</b>, <b>Expiry Reminder</b>, <b>Expiration Notice</b></td></tr>
     <tr style="border-bottom:1px solid #eee;background:#fafafa;"><td style="padding:10px 14px;width:30%;color:#777;vertical-align:top;">Report</td><td style="padding:10px 14px;word-break:break-word;">QWeb PDF <b>Blanket Sales Agreement</b> with its own A4 paper format, printed in the customer&rsquo;s language</td></tr>
-    <tr style="border-bottom:1px solid #eee;"><td style="padding:10px 14px;width:30%;color:#777;vertical-align:top;">Automated tests</td><td style="padding:10px 14px;word-break:break-word;">33 tests covering:
+    <tr style="border-bottom:1px solid #eee;"><td style="padding:10px 14px;width:30%;color:#777;vertical-align:top;">Automated tests</td><td style="padding:10px 14px;word-break:break-word;">35 tests covering:
       <ul style="margin:6px 0 0;padding-left:20px;">
         <li>the settings toggle, amounts and sequence;</li>
         <li>the full multi-tier cycle with access checks, and the approver-without-Sales-rights view;</li>
@@ -239,11 +239,12 @@
         <li>rejection and resubmission, plus submission checks;</li>
         <li>the reminder, expiration notice and expiry cron;</li>
         <li>quotations and quantity consumption, currency conversion, delivery schedules and confirmation rules;</li>
+        <li>units: packaging units on agreement lines, quantity and price conversion to quotations, and unrelated units refused;</li>
         <li>LTR and RTL report rendering, deletion and reset, the form flow and the read-only rules per status;</li>
         <li>one regression test for each issue of an independent functional review: negotiated prices, post-confirmation changes, currency, server-side locks, schedules, past end dates, price deviations, open quotations, order linkage, one line per product, approval history, segregation of duties and record rules.</li>
       </ul>
       The suite passes on an English and on an Arabic-default database.</td></tr>
-    <tr style="border-bottom:1px solid #eee;background:#fafafa;"><td style="padding:10px 14px;width:30%;color:#777;vertical-align:top;">Translations</td><td style="padding:10px 14px;word-break:break-word;">Arabic <code>ar_001</code> (all 314 terms, including the three e-mail bodies)</td></tr>
+    <tr style="border-bottom:1px solid #eee;background:#fafafa;"><td style="padding:10px 14px;width:30%;color:#777;vertical-align:top;">Translations</td><td style="padding:10px 14px;word-break:break-word;">Arabic <code>ar_001</code> (all 313 terms, including the three e-mail bodies)</td></tr>
     <tr style="border-bottom:1px solid #eee;"><td style="padding:10px 14px;width:30%;color:#777;vertical-align:top;">License</td><td style="padding:10px 14px;word-break:break-word;">LGPL-3</td></tr>
   </tbody>
 </table>

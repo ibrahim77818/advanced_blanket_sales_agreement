@@ -26,7 +26,7 @@ class BlanketSaleAgreementSchedule(models.Model):
     product_id = fields.Many2one(related="line_id.product_id", store=True, string="Product")
     product_uom = fields.Many2one(related="line_id.product_uom", string="Unit of Measure")
     scheduled_date = fields.Date(string="Scheduled Date", required=True)
-    quantity = fields.Float(digits="Product Unit of Measure", required=True, default=1.0)
+    quantity = fields.Float(digits="Product Unit", required=True, default=1.0)
     note = fields.Char(string="Delivery Notes")
     sale_order_id = fields.Many2one("sale.order", string="Quotation / Order", readonly=True, copy=False)
     state = fields.Selection(
@@ -34,9 +34,7 @@ class BlanketSaleAgreementSchedule(models.Model):
         compute="_compute_state", string="Status",
     )
 
-    _sql_constraints = [
-        ("quantity_positive", "CHECK(quantity > 0)", "Scheduled quantity must be positive."),
-    ]
+    _quantity_positive = models.Constraint("CHECK(quantity > 0)", "Scheduled quantity must be positive.")
 
     @api.depends("sale_order_id.state", "sale_order_id.order_line.qty_delivered")
     def _compute_state(self):
@@ -79,8 +77,8 @@ class BlanketSaleAgreementSchedule(models.Model):
                 raise ValidationError(_(
                     "Scheduled quantities for %(product)s (%(scheduled)s) exceed the agreed quantity (%(agreed)s).",
                     product=line.product_id.display_name,
-                    scheduled=formatLang(self.env, scheduled, dp="Product Unit of Measure"),
-                    agreed=formatLang(self.env, line.product_uom_qty, dp="Product Unit of Measure")))
+                    scheduled=formatLang(self.env, scheduled, dp="Product Unit"),
+                    agreed=formatLang(self.env, line.product_uom_qty, dp="Product Unit")))
 
     # ------------------------------------------------------------------
     # Locks

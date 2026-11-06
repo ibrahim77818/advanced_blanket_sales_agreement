@@ -9,7 +9,7 @@ from odoo.tools import float_compare, formatLang
 
 CONFIRMED_ORDER_STATES = ("sale",)
 # Order line fields whose change on a confirmed order is re-checked against the agreement.
-BLANKET_CHECKED_FIELDS = {"product_uom_qty", "product_uom", "price_unit", "discount", "blanket_line_id", "product_id"}
+BLANKET_CHECKED_FIELDS = {"product_uom_qty", "product_uom_id", "price_unit", "discount", "blanket_line_id", "product_id"}
 
 
 class SaleOrder(models.Model):
@@ -53,7 +53,7 @@ class SaleOrder(models.Model):
                     currency=agreement.currency_id.name))
             for sale_line in order.order_line.filtered("blanket_line_id"):
                 blanket_line = sale_line.blanket_line_id.sudo()
-                consumed[blanket_line] += sale_line.product_uom._compute_quantity(
+                consumed[blanket_line] += sale_line.product_uom_id._compute_quantity(
                     sale_line.product_uom_qty, blanket_line.product_uom)
         for blanket_line, qty in consumed.items():
             available = blanket_line.qty_remaining
@@ -62,9 +62,9 @@ class SaleOrder(models.Model):
                     "Ordered quantity for %(product)s (%(qty)s) exceeds the remaining quantity "
                     "on agreement %(agreement)s (%(remaining)s).",
                     product=blanket_line.product_id.display_name,
-                    qty=formatLang(self.env, qty, dp="Product Unit of Measure"),
+                    qty=formatLang(self.env, qty, dp="Product Unit"),
                     agreement=blanket_line.agreement_id.name,
-                    remaining=formatLang(self.env, available, dp="Product Unit of Measure")))
+                    remaining=formatLang(self.env, available, dp="Product Unit")))
         self.order_line.filtered("blanket_line_id")._check_blanket_price()
 
 
@@ -99,7 +99,7 @@ class SaleOrderLine(models.Model):
         self.ensure_one()
         blanket_line = self.blanket_line_id.sudo()
         return bool(blanket_line) and not self.qty_invoiced and \
-            self.order_id.currency_id == blanket_line.currency_id and bool(self.product_uom)
+            self.order_id.currency_id == blanket_line.currency_id and bool(self.product_uom_id)
 
     @api.depends("blanket_line_id")
     def _compute_price_unit(self):
@@ -107,7 +107,7 @@ class SaleOrderLine(models.Model):
         for line in self:
             if line._uses_blanket_price():
                 blanket_line = line.blanket_line_id.sudo()
-                price = blanket_line.product_uom._compute_price(blanket_line.price_unit, line.product_uom)
+                price = blanket_line.product_uom._compute_price(blanket_line.price_unit, line.product_uom_id)
                 # v18: keep technical_price_unit in sync so the agreed price is not seen as a manual edit
                 line.update({"price_unit": price, "technical_price_unit": price})
 
@@ -123,7 +123,7 @@ class SaleOrderLine(models.Model):
         self.ensure_one()
         blanket_line = self.blanket_line_id.sudo()
         agreed = blanket_line.price_unit * (1 - (blanket_line.discount or 0.0) / 100.0)
-        ordered = self.product_uom._compute_price(
+        ordered = self.product_uom_id._compute_price(
             self.price_unit * (1 - (self.discount or 0.0) / 100.0), blanket_line.product_uom)
         rounding = blanket_line.currency_id.rounding or 0.01
         if float_compare(agreed, ordered, precision_rounding=rounding):
@@ -170,8 +170,8 @@ class SaleOrderLine(models.Model):
                     "Confirmed orders for %(product)s would total %(qty)s, more than the %(agreed)s "
                     "agreed on %(agreement)s.",
                     product=blanket_line.product_id.display_name,
-                    qty=formatLang(self.env, blanket_line.qty_ordered, dp="Product Unit of Measure"),
-                    agreed=formatLang(self.env, blanket_line.product_uom_qty, dp="Product Unit of Measure"),
+                    qty=formatLang(self.env, blanket_line.qty_ordered, dp="Product Unit"),
+                    agreed=formatLang(self.env, blanket_line.product_uom_qty, dp="Product Unit"),
                     agreement=blanket_line.agreement_id.name))
         lines._check_blanket_price()
 

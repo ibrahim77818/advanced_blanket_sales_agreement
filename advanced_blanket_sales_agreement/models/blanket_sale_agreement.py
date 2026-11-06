@@ -172,10 +172,9 @@ class BlanketSaleAgreement(models.Model):
     reminder_sent = fields.Boolean(readonly=True, copy=False)
     expiry_notice_sent = fields.Boolean(readonly=True, copy=False)
 
-    _sql_constraints = [
-        ("name_company_uniq", "unique(name, company_id)", "Agreement reference must be unique per company!"),
-        ("reminder_days_positive", "CHECK(reminder_days >= 0)", "Reminder days cannot be negative."),
-    ]
+    _name_company_uniq = models.Constraint("unique(name, company_id)",
+                                           "Agreement reference must be unique per company!")
+    _reminder_days_positive = models.Constraint("CHECK(reminder_days >= 0)", "Reminder days cannot be negative.")
 
     # ------------------------------------------------------------------
     # Computes & constraints

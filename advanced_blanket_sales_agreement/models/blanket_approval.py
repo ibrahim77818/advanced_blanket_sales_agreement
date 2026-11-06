@@ -22,10 +22,8 @@ class BlanketAgreementApprovalRole(models.Model):
     company_id = fields.Many2one("res.company", default=lambda self: self.env.company)
     active = fields.Boolean(default=True)
 
-    _sql_constraints = [
-        ("name_company_uniq", "unique(name, company_id)",
-         "An approval role with this name already exists for this company."),
-    ]
+    _name_company_uniq = models.Constraint(
+        "unique(name, company_id)", "An approval role with this name already exists for this company.")
 
 
 class BlanketAgreementApprovalTemplate(models.Model):

@@ -119,7 +119,7 @@
                                     <field name="sequence" widget="handle"/>
                                     <field name="company_id" column_invisible="True"/>
                                     <field name="currency_id" column_invisible="True"/>
-                                    <field name="product_uom_category_id" column_invisible="True"/>
+                                    <field name="allowed_uom_ids" column_invisible="True"/>
                                     <field name="product_id" options="{'no_create': True}"/>
                                     <field name="name" optional="show"/>
                                     <field name="product_uom_qty"/>
@@ -254,7 +254,7 @@
                 <separator/>
                 <filter string="Start Date" name="date_start" date="date_start"/>
                 <filter string="End Date" name="date_end" date="date_end"/>
-                <group expand="0" string="Group By">
+                <group>
                     <filter string="Customer" name="group_partner" context="{'group_by': 'partner_id'}"/>
                     <filter string="Responsible" name="group_user" context="{'group_by': 'user_id'}"/>
                     <filter string="Status" name="group_state" context="{'group_by': 'state'}"/>

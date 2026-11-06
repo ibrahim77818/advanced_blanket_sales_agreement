@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 18.0\n"
+"Project-Id-Version: Odoo Server 19.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-06 12:48+0000\n"
-"PO-Revision-Date: 2026-11-06 12:48+0000\n"
+"POT-Creation-Date: 2026-11-06 14:36+0000\n"
+"PO-Revision-Date: 2026-11-06 14:36+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -341,6 +341,11 @@ msgid ""
 msgstr ""
 
 #. module: advanced_blanket_sales_agreement
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_line__allowed_uom_ids
+msgid "Allowed Units"
+msgstr ""
+
+#. module: advanced_blanket_sales_agreement
 #: model:ir.model.constraint,message:advanced_blanket_sales_agreement.constraint_blanket_agreement_approval_role_name_company_uniq
 msgid "An approval role with this name already exists for this company."
 msgstr ""
@@ -593,11 +598,6 @@ msgid "Cancelled"
 msgstr ""
 
 #. module: advanced_blanket_sales_agreement
-#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_line__product_uom_category_id
-msgid "Category"
-msgstr ""
-
-#. module: advanced_blanket_sales_agreement
 #: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_approval__comment
 msgid "Comment"
 msgstr ""
@@ -638,13 +638,6 @@ msgstr ""
 #. module: advanced_blanket_sales_agreement
 #: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement__consumption_percent
 msgid "Consumed (%)"
-msgstr ""
-
-#. module: advanced_blanket_sales_agreement
-#: model:ir.model.fields,help:advanced_blanket_sales_agreement.field_blanket_sale_agreement_line__product_uom_category_id
-msgid ""
-"Conversion between Units of Measure can only occur if they belong to the "
-"same category. The conversion will be made based on the ratios."
 msgstr ""
 
 #. module: advanced_blanket_sales_agreement
@@ -872,6 +865,10 @@ msgstr ""
 #: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_approval__display_name
 #: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_line__display_name
 #: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_schedule__display_name
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_res_company__display_name
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_res_config_settings__display_name
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_sale_order__display_name
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_sale_order_line__display_name
 msgid "Display Name"
 msgstr ""
 
@@ -954,11 +951,6 @@ msgid "Governing Law"
 msgstr ""
 
 #. module: advanced_blanket_sales_agreement
-#: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.blanket_sale_agreement_view_search
-msgid "Group By"
-msgstr ""
-
-#. module: advanced_blanket_sales_agreement
 #: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement__has_message
 msgid "Has Message"
 msgstr ""
@@ -972,6 +964,10 @@ msgstr ""
 #: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_approval__id
 #: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_line__id
 #: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_schedule__id
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_res_company__id
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_res_config_settings__id
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_sale_order__id
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_sale_order_line__id
 msgid "ID"
 msgstr ""
 
@@ -1766,9 +1762,7 @@ msgstr ""
 #. module: advanced_blanket_sales_agreement
 #. odoo-python
 #: code:addons/advanced_blanket_sales_agreement/models/blanket_sale_agreement_line.py:0
-msgid ""
-"The unit of measure of line '%s' must belong to the same category as the "
-"product's unit."
+msgid "The unit of line '%s' must be convertible to the product's unit."
 msgstr ""
 
 #. module: advanced_blanket_sales_agreement
@@ -1834,13 +1828,17 @@ msgid "Type of the exception activity on record."
 msgstr ""
 
 #. module: advanced_blanket_sales_agreement
+#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_line__product_uom
+msgid "Unit"
+msgstr ""
+
+#. module: advanced_blanket_sales_agreement
 #: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_line__price_unit
 #: model_terms:ir.ui.view,arch_db:advanced_blanket_sales_agreement.report_blanket_agreement_document
 msgid "Unit Price"
 msgstr ""
 
 #. module: advanced_blanket_sales_agreement
-#: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_line__product_uom
 #: model:ir.model.fields,field_description:advanced_blanket_sales_agreement.field_blanket_sale_agreement_schedule__product_uom
 msgid "Unit of Measure"
 msgstr ""

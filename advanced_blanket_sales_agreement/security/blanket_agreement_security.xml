@@ -2,7 +2,6 @@
 <odoo>
     <record id="group_blanket_sale_agreement" model="res.groups">
         <field name="name">Blanket Sales Agreements</field>
-        <field name="category_id" ref="base.module_category_hidden"/>
     </record>
 
     <data noupdate="1">
